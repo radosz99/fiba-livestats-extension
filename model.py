@@ -31,6 +31,11 @@ class TeamStatisticLine:
     def __repr__(self):
         return f'\nPoints - {self.points}, Team - {self.teamname}'
 
+    def __eq__(self, other):
+        if not isinstance(other, TeamStatisticLine):
+            return False
+        return self.teamname == other.teamname
+
 
 class PlayerStatisticLine:
     """Klasa reprezentujaca linijke statystyczna zawodnika"""
@@ -66,6 +71,11 @@ class PlayerStatisticLine:
         
     def __repr__(self):
         return f'{self.name}, {self.surname}, {self.number}, {self.teamname}, {self.oncourt}'
+
+    def __eq__(self, other):
+        if not isinstance(other, PlayerStatisticLine):
+            return False
+        return self.name == other.name and self.surname == other.surname and self.teamname == other.teamname and self.number == other.number
 
 def make_player_statistic_line(player_stat, player_detail, teamname):
     info = get_dict_from_list_of_tuples(player_stat.items())
@@ -127,3 +137,45 @@ def get_informations_from_root(root):
             if(player is not None):
                 players.append(player)
     return players, teams, date
+
+
+def get_points_difference(prefix, value, object_with_stats):
+    return f"{prefix} - {value} {get_polish_plural('punkt', 'punkty', 'punktów', value)}, {object_with_stats.fgm3}/{object_with_stats.fga3} za 3, {object_with_stats.fgm2}/{object_with_stats.fga2} za 2, {object_with_stats.ftm}/{object_with_stats.fta} za 1"
+
+def get_fga2_difference(prefix, value, object_with_stats):
+    return f"{prefix} - {value} {get_polish_plural('punkt', 'punkty', 'punktów', value)}, {object_with_stats.fgm2}/{object_with_stats.fga2} za 2"
+
+def get_fga3_difference(prefix, value, object_with_stats):
+    return f"{prefix} - {value} {get_polish_plural('punkt', 'punkty', 'punktów', value)}, {object_with_stats.fgm3}/{object_with_stats.fga3} za 3"
+
+def get_fta_difference(prefix, value, object_with_stats):
+    return f"{prefix} - {value} {get_polish_plural('punkt', 'punkty', 'punktów', value)}, {object_with_stats.ftm}/{object_with_stats.fta} za 1"
+
+def get_blocks_difference(prefix, value, object_with_stats):
+    return f"{prefix} - {value} {get_polish_plural('blok', 'bloki', 'bloków', value)}"
+
+def get_steals_difference(prefix, value, object_with_stats):
+    return f"{prefix} - {value} {get_polish_plural('przechwyt', 'przechwyty', 'przechwytów', value)}"
+
+def get_assists_difference(prefix, value, object_with_stats):
+    return f"{prefix} - {value} {get_polish_plural('asysta', 'asysty', 'asyst', value)}"
+
+def get_offensive_rebounds_difference(prefix, value, object_with_stats):
+    return f"{prefix} - {value} {get_polish_plural('zbiórka', 'zbiórki', 'zbiórek', value)} w ataku"
+
+def get_defensive_rebounds_difference(prefix, value, object_with_stats):
+    return f"{prefix} - {value} {get_polish_plural('zbiórka', 'zbiórki', 'zbiórek', value)} w obronie"
+
+def get_fouls_difference(prefix, value, object_with_stats):
+    return f"{prefix} - {value} {get_polish_plural('faul', 'faule', 'fauli', value)}"
+
+def get_turnovers_difference(prefix, value, object_with_stats):
+    return f"{prefix} - {value} {get_polish_plural('strata', 'straty', 'strat', value)}"
+
+def get_polish_plural(singularNominativ, pluralNominativ, pluralGenitive, value):
+    if (value == 1):
+        return singularNominativ
+    elif (value % 10 >= 2 and value % 10 <= 4 and (value % 100 < 10 or value % 100 >= 20)):
+        return pluralNominativ
+    else:
+        return pluralGenitive
