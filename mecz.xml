@@ -1,0 +1,1462 @@
+<bbgame source="Basketball LiveStats In-Arena Tool" toolVersion="1.25.0" version="1.1.1" generated="Feb 26, 2021">
+  <venue gameid="121827" visid="DOL" visname="Dolnośląskie" homeid="DOL" homename="Dolnośląskie" date="02/26/2021" location="Hala Powiatowej Bursy Szkolnej" start="03:30 PM" leaguegame="N" neutralgame="N" nitegame="N" postseason="N">
+    <officials text="Mateusz Kreft">
+    </officials>
+    <rules prds="4" minutes="10" minutesot="5" fouls="5" qh="Q">
+    </rules>
+  </venue>
+  <status complete="Y" period="4" clock="00:00" running="F">
+  </status>
+  <team vh="V" code="804" id="DOL" name="Dolnośląskie">
+    <linescore line="16,25,13,15" score="69">
+      <lineprd prd="1" score="16">
+      </lineprd>
+      <lineprd prd="2" score="25">
+      </lineprd>
+      <lineprd prd="3" score="13">
+      </lineprd>
+      <lineprd prd="4" score="15">
+      </lineprd>
+    </linescore>
+    <totals>
+      <stats fgm="26" fga="65" fgm3="6" fga3="21" ftm="11" fta="20" tp="69" blk="0" stl="11" ast="9" min="200" oreb="16" dreb="24" treb="40" pf="22" tf="0" to="21" dq="0" fgpct="40" fg3pct="28.6" ftpct="55">
+      </stats>
+      <special vh="V" pts_to="23" pts_ch2="9" pts_paint="26" pts_fastb="10" pts_bench="35" ties="0" leads="0" lead_time="1782" large_lead="13">
+      </special>
+      <statsbyprd prd="1" fgm="7" fga="14" fgm3="1" fga3="5" ftm="1" fta="1" tp="16" blk="0" stl="2" ast="3" min="50" oreb="3" dreb="8" treb="11" pf="4" tf="0" to="8" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="9" fga="15" fgm3="2" fga3="4" ftm="5" fta="8" tp="25" blk="0" stl="1" ast="2" min="50" oreb="3" dreb="7" treb="10" pf="7" tf="0" to="4" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="4" fga="17" fgm3="2" fga3="7" ftm="3" fta="7" tp="13" blk="0" stl="3" ast="3" min="50" oreb="5" dreb="7" treb="12" pf="6" tf="0" to="6" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="6" fga="19" fgm3="1" fga3="5" ftm="2" fta="4" tp="15" blk="0" stl="5" ast="1" min="50" oreb="5" dreb="2" treb="7" pf="5" tf="0" to="3" dq="0">
+      </statsbyprd>
+    </totals>
+    <player uni="4" code="4" name="Morawska, Julia" checkname="MORAWSKA,JULIA" class="" gp="1" gs="0" pos="S" oncourt="N">
+      <stats fgm="1" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="4" blk="0" stl="0" ast="0" min="3" sec="-" oreb="0" dreb="1" treb="1" pf="2" tf="0" to="1" dq="0" fgpct="100" fg3pct="0" ftpct="0">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="1" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="2" blk="0" stl="0" ast="0" min="3" sec="-" oreb="0" dreb="1" treb="1" pf="2" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="5" code="5" name="Stępień, Zuzanna" checkname="STĘPIEŃ,ZUZANNA" class="" gp="1" gs="1" pos="G" oncourt="Y">
+      <stats fgm="0" fga="2" fgm3="0" fga3="0" ftm="0" fta="2" tp="0" blk="0" stl="0" ast="1" min="25" sec="-" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="1" dq="0" fgpct="0" fg3pct="0" ftpct="0">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="2" tp="0" blk="0" stl="0" ast="1" min="7" sec="+" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="7" sec="+" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="6" code="6" name="Surowiec, Lena" checkname="SUROWIEC,LENA" class="" gp="1" gs="0" pos="G" oncourt="N">
+      <stats fgm="0" fga="3" fgm3="0" fga3="2" ftm="0" fta="2" tp="0" blk="0" stl="1" ast="0" min="18" sec="-" oreb="2" dreb="0" treb="2" pf="1" tf="0" to="1" dq="0" fgpct="0" fg3pct="0" ftpct="0">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="2" tp="0" blk="0" stl="1" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="3" fgm3="0" fga3="2" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" sec="-" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="3" sec="-" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="7" code="7" name="Murat, Julia" checkname="MURAT,JULIA" class="" gp="0" gs="0" pos="S" oncourt="N">
+      <stats fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0" fgpct="0" fg3pct="0" ftpct="0">
+      </stats>
+    </player>
+    <player uni="8" code="8" name="Główczak, Martyna" checkname="GŁÓWCZAK,MARTYNA" class="" gp="1" gs="0" pos="G" oncourt="Y">
+      <stats fgm="7" fga="16" fgm3="0" fga3="2" ftm="2" fta="3" tp="16" blk="0" stl="1" ast="5" min="27" oreb="0" dreb="4" treb="4" pf="4" tf="0" to="1" dq="0" fgpct="43.8" fg3pct="0" ftpct="66.7">
+      </stats>
+      <statsbyprd prd="1" fgm="1" fga="3" fgm3="0" fga3="1" ftm="1" fta="1" tp="3" blk="0" stl="1" ast="2" min="5" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="4" fga="6" fgm3="0" fga3="1" ftm="0" fta="0" tp="8" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="2" fgm3="0" fga3="0" ftm="1" fta="2" tp="1" blk="0" stl="0" ast="2" min="7" sec="+" oreb="0" dreb="2" treb="2" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="2" fga="5" fgm3="0" fga3="0" ftm="0" fta="0" tp="4" blk="0" stl="0" ast="1" min="10" oreb="0" dreb="1" treb="1" pf="3" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="9" code="9" name="Warsińska, Blanka" checkname="WARSIŃSKA,BLANKA" class="" gp="1" gs="1" pos="G" oncourt="Y">
+      <stats fgm="7" fga="19" fgm3="3" fga3="9" ftm="2" fta="2" tp="19" blk="0" stl="4" ast="1" min="30" oreb="0" dreb="2" treb="2" pf="3" tf="0" to="4" dq="0" fgpct="36.8" fg3pct="33.3" ftpct="100">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="2" fgm3="0" fga3="1" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="1" fga="2" fgm3="0" fga3="1" ftm="2" fta="2" tp="4" blk="0" stl="0" ast="1" min="5" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="3" fga="6" fgm3="2" fga3="3" ftm="0" fta="0" tp="8" blk="0" stl="3" ast="0" min="10" oreb="0" dreb="1" treb="1" pf="1" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="3" fga="9" fgm3="1" fga3="4" ftm="0" fta="0" tp="7" blk="0" stl="1" ast="0" min="10" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="2" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="10" code="10" name="Suwała, Marta" checkname="SUWAŁA,MARTA" class="" gp="1" gs="0" pos="G" oncourt="N">
+      <stats fgm="0" fga="1" fgm3="0" fga3="0" ftm="1" fta="2" tp="1" blk="0" stl="1" ast="0" min="13" sec="+" oreb="0" dreb="2" treb="2" pf="3" tf="0" to="3" dq="0" fgpct="0" fg3pct="0" ftpct="50">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="1" ast="0" min="5" oreb="0" dreb="2" treb="2" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="1" fgm3="0" fga3="0" ftm="1" fta="2" tp="1" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="3" sec="+" oreb="0" dreb="0" treb="0" pf="3" tf="0" to="2" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="11" code="11" name="Bajus, Katarzyna" checkname="BAJUS,KATARZYNA" class="" gp="1" gs="0" pos="S" oncourt="Y">
+      <stats fgm="3" fga="4" fgm3="1" fga3="1" ftm="2" fta="2" tp="9" blk="0" stl="3" ast="1" min="26" sec="+" oreb="1" dreb="4" treb="5" pf="2" tf="0" to="3" dq="0" fgpct="75" fg3pct="100" ftpct="100">
+      </stats>
+      <statsbyprd prd="1" fgm="2" fga="2" fgm3="0" fga3="0" ftm="0" fta="0" tp="4" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="2" treb="2" pf="0" tf="0" to="2" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="1" fga="1" fgm3="1" fga3="1" ftm="2" fta="2" tp="5" blk="0" stl="0" ast="1" min="5" oreb="1" dreb="1" treb="2" pf="1" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="7" sec="-" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="3" ast="0" min="10" sec="-" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="13" code="13" name="Zyzańska, Amelia" checkname="ZYZAŃSKA,AMELIA" class="" gp="1" gs="1" pos="G" oncourt="N">
+      <stats fgm="1" fga="6" fgm3="0" fga3="3" ftm="1" fta="1" tp="3" blk="0" stl="0" ast="0" min="14" sec="-" oreb="2" dreb="0" treb="2" pf="2" tf="0" to="0" dq="0" fgpct="16.7" fg3pct="0" ftpct="100">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="2" fgm3="0" fga3="2" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="2" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="1" dreb="0" treb="1" pf="2" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="1" fga="2" fgm3="0" fga3="1" ftm="1" fta="1" tp="3" blk="0" stl="0" ast="0" min="3" sec="+" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" sec="+" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="14" code="14" name="Puzio, Dominika" checkname="PUZIO,DOMINIKA" class="" gp="1" gs="1" pos="F" oncourt="Y">
+      <stats fgm="3" fga="7" fgm3="2" fga3="4" ftm="2" fta="4" tp="10" blk="0" stl="1" ast="0" min="19" sec="+" oreb="1" dreb="7" treb="8" pf="4" tf="0" to="0" dq="0" fgpct="42.9" fg3pct="50" ftpct="50">
+      </stats>
+      <statsbyprd prd="1" fgm="1" fga="1" fgm3="1" fga3="1" ftm="0" fta="0" tp="3" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="3" treb="3" pf="1" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="1" fga="1" fgm3="1" fga3="1" ftm="0" fta="0" tp="3" blk="0" stl="0" ast="0" min="2" sec="+" oreb="0" dreb="1" treb="1" pf="1" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="3" fgm3="0" fga3="1" ftm="1" fta="2" tp="1" blk="0" stl="0" ast="0" min="6" sec="+" oreb="0" dreb="2" treb="2" pf="2" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="1" fga="2" fgm3="0" fga3="1" ftm="1" fta="2" tp="3" blk="0" stl="1" ast="0" min="6" sec="-" oreb="1" dreb="1" treb="2" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="15" code="15" name="Gryszko, Milena" checkname="GRYSZKO,MILENA" class="" gp="1" gs="1" pos="G" oncourt="N">
+      <stats fgm="1" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="2" blk="0" stl="0" ast="1" min="10" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="4" dq="0" fgpct="100" fg3pct="0" ftpct="0">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="1" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="3" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="1" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="2" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="16" code="16" name="Kaławaj, Karolina" checkname="KAŁAWAJ,KAROLINA" class="" gp="1" gs="0" pos="S" oncourt="N">
+      <stats fgm="3" fga="5" fgm3="0" fga3="0" ftm="1" fta="2" tp="7" blk="0" stl="0" ast="0" min="15" sec="-" oreb="3" dreb="1" treb="4" pf="1" tf="0" to="1" dq="0" fgpct="60" fg3pct="0" ftpct="50">
+      </stats>
+      <statsbyprd prd="1" fgm="3" fga="4" fgm3="0" fga3="0" ftm="0" fta="0" tp="6" blk="0" stl="0" ast="0" min="5" oreb="2" dreb="0" treb="2" pf="1" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="1" sec="-" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="1" fgm3="0" fga3="0" ftm="1" fta="2" tp="1" blk="0" stl="0" ast="0" min="4" sec="+" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="TM" code="TM" name="TEAM" checkname="TEAM" class="" gp="1" gs="0" oncourt="N">
+      <stats oreb="6" dreb="2" treb="8" pf="0" tf="0" to="2" dq="0">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="0" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="0" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="0" oreb="2" dreb="1" treb="3" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" oreb="3" dreb="0" treb="3" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+  </team>
+  <team vh="H" code="798" id="POM" name="Pomorskie">
+    <linescore line="16,14,16,26" score="72">
+      <lineprd prd="1" score="16">
+      </lineprd>
+      <lineprd prd="2" score="14">
+      </lineprd>
+      <lineprd prd="3" score="16">
+      </lineprd>
+      <lineprd prd="4" score="26">
+      </lineprd>
+    </linescore>
+    <totals>
+      <stats fgm="25" fga="59" fgm3="3" fga3="12" ftm="19" fta="26" tp="72" blk="4" stl="13" ast="16" min="200" oreb="15" dreb="25" treb="40" pf="20" tf="0" to="25" dq="0" fgpct="42.4" fg3pct="25" ftpct="73.1">
+      </stats>
+      <special vh="H" pts_to="16" pts_ch2="6" pts_paint="36" pts_fastb="19" pts_bench="40" ties="0" leads="0" lead_time="383" large_lead="6">
+      </special>
+      <statsbyprd prd="1" fgm="7" fga="18" fgm3="1" fga3="4" ftm="1" fta="3" tp="16" blk="0" stl="6" ast="4" min="50" oreb="5" dreb="4" treb="9" pf="4" tf="0" to="6" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="3" fga="16" fgm3="0" fga3="2" ftm="8" fta="8" tp="14" blk="0" stl="2" ast="0" min="50" oreb="5" dreb="4" treb="9" pf="8" tf="0" to="5" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="5" fga="12" fgm3="0" fga3="2" ftm="6" fta="10" tp="16" blk="2" stl="4" ast="4" min="50" oreb="3" dreb="9" treb="12" pf="6" tf="0" to="7" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="10" fga="13" fgm3="2" fga3="4" ftm="4" fta="5" tp="26" blk="2" stl="1" ast="8" min="50" oreb="2" dreb="8" treb="10" pf="2" tf="0" to="7" dq="0">
+      </statsbyprd>
+    </totals>
+    <player uni="4" code="4" name="Kloska, Magdalena" checkname="KLOSKA,MAGDALENA" class="" gp="1" gs="0" pos="P" oncourt="Y">
+      <stats fgm="2" fga="8" fgm3="0" fga3="3" ftm="4" fta="4" tp="8" blk="0" stl="2" ast="3" min="27" sec="-" oreb="0" dreb="2" treb="2" pf="1" tf="0" to="0" dq="0" fgpct="25" fg3pct="0" ftpct="100">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="1" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="3" fgm3="0" fga3="1" ftm="2" fta="2" tp="2" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="1" fga="2" fgm3="0" fga3="1" ftm="0" fta="0" tp="2" blk="0" stl="1" ast="1" min="7" sec="-" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="1" fga="2" fgm3="0" fga3="1" ftm="2" fta="2" tp="4" blk="0" stl="0" ast="2" min="10" oreb="0" dreb="2" treb="2" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="6" code="6" name="Bargiel, Amelia" checkname="BARGIEL,AMELIA" class="" gp="1" gs="0" pos="S" oncourt="N">
+      <stats fgm="0" fga="2" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="1" ast="0" min="3" sec="-" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="1" dq="0" fgpct="0" fg3pct="0" ftpct="0">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="2" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="1" ast="0" min="3" sec="-" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="7" code="7" name="Leman, Lidia" checkname="LEMAN,LIDIA" class="" gp="1" gs="0" pos="P" oncourt="N">
+      <stats fgm="1" fga="3" fgm3="0" fga3="1" ftm="0" fta="0" tp="2" blk="0" stl="0" ast="1" min="11" sec="+" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="2" dq="0" fgpct="33.3" fg3pct="0" ftpct="0">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="1" fgm3="0" fga3="1" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="1" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="1" fga="2" fgm3="0" fga3="0" ftm="0" fta="0" tp="2" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="1" sec="+" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="9" code="9" name="Pażucha, Amelia" checkname="PAŻUCHA,AMELIA" class="" gp="1" gs="1" pos="P" oncourt="N">
+      <stats fgm="1" fga="4" fgm3="0" fga3="2" ftm="1" fta="3" tp="3" blk="0" stl="0" ast="2" min="15" sec="+" oreb="0" dreb="1" treb="1" pf="5" tf="0" to="0" dq="0" fgpct="25" fg3pct="0" ftpct="33.3">
+      </stats>
+      <statsbyprd prd="1" fgm="1" fga="3" fgm3="0" fga3="1" ftm="0" fta="1" tp="2" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="4" sec="-" oreb="0" dreb="0" treb="0" pf="3" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="1" fgm3="0" fga3="1" ftm="1" fta="2" tp="1" blk="0" stl="0" ast="1" min="4" sec="+" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="1" min="2" sec="+" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="10" code="10" name="Właz, Agata" checkname="WŁAZ,AGATA" class="" gp="1" gs="0" pos="S" oncourt="Y">
+      <stats fgm="2" fga="3" fgm3="0" fga3="0" ftm="1" fta="2" tp="5" blk="0" stl="0" ast="0" min="24" sec="-" oreb="1" dreb="1" treb="2" pf="1" tf="0" to="4" dq="0" fgpct="66.7" fg3pct="0" ftpct="50">
+      </stats>
+      <statsbyprd prd="1" fgm="2" fga="2" fgm3="0" fga3="0" ftm="1" fta="2" tp="5" blk="0" stl="0" ast="0" min="5" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="6" sec="-" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="8" sec="-" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="2" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="11" code="11" name="Chilińska, Klaudia" checkname="CHILIŃSKA,KLAUDIA" class="" gp="1" gs="1" pos="S" oncourt="N">
+      <stats fgm="0" fga="7" fgm3="0" fga3="2" ftm="0" fta="0" tp="0" blk="1" stl="3" ast="2" min="12" sec="+" oreb="2" dreb="2" treb="4" pf="2" tf="0" to="2" dq="0" fgpct="0" fg3pct="0" ftpct="0">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="3" fgm3="0" fga3="1" ftm="0" fta="0" tp="0" blk="0" stl="2" ast="2" min="5" oreb="1" dreb="2" treb="3" pf="1" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="4" fgm3="0" fga3="1" ftm="0" fta="0" tp="0" blk="0" stl="1" ast="0" min="5" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="1" stl="0" ast="0" min="2" sec="+" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="2" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="12" code="12" name="Ustaszewska, Alicja" checkname="USTASZEWSKA,ALICJA" class="" gp="1" gs="1" pos="S" oncourt="Y">
+      <stats fgm="3" fga="5" fgm3="0" fga3="0" ftm="4" fta="4" tp="10" blk="0" stl="2" ast="1" min="29" sec="-" oreb="4" dreb="2" treb="6" pf="2" tf="0" to="1" dq="0" fgpct="60" fg3pct="0" ftpct="100">
+      </stats>
+      <statsbyprd prd="1" fgm="1" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="2" blk="0" stl="2" ast="0" min="5" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="1" fgm3="0" fga3="0" ftm="2" fta="2" tp="2" blk="0" stl="0" ast="0" min="5" oreb="3" dreb="0" treb="3" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="2" fga="3" fgm3="0" fga3="0" ftm="2" fta="2" tp="6" blk="0" stl="0" ast="0" min="9" sec="-" oreb="0" dreb="0" treb="0" pf="2" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="1" min="10" oreb="0" dreb="2" treb="2" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="13" code="13" name="Groth, Marta" checkname="GROTH,MARTA" class="" gp="1" gs="1" pos="G" oncourt="Y">
+      <stats fgm="6" fga="12" fgm3="3" fga3="4" ftm="4" fta="6" tp="19" blk="0" stl="3" ast="4" min="27" sec="+" oreb="1" dreb="6" treb="7" pf="4" tf="0" to="6" dq="0" fgpct="50" fg3pct="75" ftpct="66.7">
+      </stats>
+      <statsbyprd prd="1" fgm="2" fga="3" fgm3="1" fga3="1" ftm="0" fta="0" tp="5" blk="0" stl="0" ast="1" min="5" oreb="0" dreb="2" treb="2" pf="1" tf="0" to="3" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="1" fga="2" fgm3="0" fga3="0" ftm="2" fta="2" tp="4" blk="0" stl="0" ast="0" min="3" sec="+" oreb="0" dreb="0" treb="0" pf="2" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="2" fgm3="0" fga3="0" ftm="2" fta="4" tp="2" blk="0" stl="3" ast="1" min="9" sec="-" oreb="0" dreb="2" treb="2" pf="1" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="3" fga="5" fgm3="2" fga3="3" ftm="0" fta="0" tp="8" blk="0" stl="0" ast="2" min="10" oreb="1" dreb="2" treb="3" pf="0" tf="0" to="2" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="14" code="14" name="Baranowska, Oliwia" checkname="BARANOWSKA,OLIWIA" class="" gp="1" gs="0" pos="C" oncourt="N">
+      <stats fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="7" sec="+" oreb="0" dreb="1" treb="1" pf="1" tf="0" to="0" dq="0" fgpct="0" fg3pct="0" ftpct="0">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="2" sec="+" oreb="0" dreb="1" treb="1" pf="1" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="15" code="15" name="Danielewicz, Helena" checkname="DANIELEWICZ,HELENA" class="" gp="1" gs="0" pos="F" oncourt="Y">
+      <stats fgm="10" fga="13" fgm3="0" fga3="0" ftm="5" fta="7" tp="25" blk="3" stl="2" ast="3" min="29" sec="-" oreb="4" dreb="5" treb="9" pf="4" tf="0" to="5" dq="0" fgpct="76.9" fg3pct="0" ftpct="71.4">
+      </stats>
+      <statsbyprd prd="1" fgm="1" fga="3" fgm3="0" fga3="0" ftm="0" fta="0" tp="2" blk="0" stl="1" ast="0" min="5" oreb="1" dreb="0" treb="1" pf="1" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="1" fga="2" fgm3="0" fga3="0" ftm="2" fta="2" tp="4" blk="0" stl="0" ast="0" min="5" oreb="1" dreb="1" treb="2" pf="1" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="2" fga="2" fgm3="0" fga3="0" ftm="1" fta="2" tp="5" blk="1" stl="0" ast="1" min="9" sec="-" oreb="1" dreb="3" treb="4" pf="1" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="6" fga="6" fgm3="0" fga3="0" ftm="2" fta="3" tp="14" blk="2" stl="1" ast="2" min="10" oreb="1" dreb="1" treb="2" pf="1" tf="0" to="2" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="16" code="16" name="Flis, Nicola" checkname="FLIS,NICOLA" class="" gp="1" gs="1" pos="S" oncourt="N">
+      <stats fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="13" sec="+" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="1" dq="0" fgpct="0" fg3pct="0" ftpct="0">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="3" sec="+" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="18" code="18" name="Szwichtenberg, Zofia" checkname="SZWICHTENBERG,ZOFIA" class="" gp="1" gs="0" pos="C" oncourt="N">
+      <stats fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="3" sec="-" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0" fgpct="0" fg3pct="0" ftpct="0">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="3" sec="-" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+    <player uni="TM" code="TM" name="TEAM" checkname="TEAM" class="" gp="1" gs="0" oncourt="N">
+      <stats oreb="3" dreb="3" treb="6" pf="0" tf="0" to="3" dq="0">
+      </stats>
+      <statsbyprd prd="1" fgm="0" fga="0" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="2" fgm="0" fga="0" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="2" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="3" fgm="0" fga="0" oreb="2" dreb="1" treb="3" pf="0" tf="0" to="1" dq="0">
+      </statsbyprd>
+      <statsbyprd prd="4" fgm="0" fga="0" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="0" dq="0">
+      </statsbyprd>
+    </player>
+  </team>
+  <plays format="tokens">
+    <period number="1" time="10:00">
+      <special vh="V" pts_to="4" pts_ch2="2" pts_paint="8" pts_fastb="5" pts_bench="13" ties="0" leads="0" lead_time="0" large_lead="0">
+      </special>
+      <special vh="H" pts_to="7" pts_ch2="2" pts_paint="8" pts_fastb="3" pts_bench="7" ties="0" leads="0" lead_time="0" large_lead="0">
+      </special>
+      <summary vh="V" fgm="7" fga="14" fgm3="1" fga3="5" ftm="1" fta="1" blk="0" stl="2" ast="3" oreb="3" dreb="7" treb="11" pf="4" tf="0" to="8">
+      </summary>
+      <summary vh="H" fgm="7" fga="18" fgm3="1" fga3="4" ftm="1" fta="3" blk="0" stl="6" ast="4" oreb="4" dreb="4" treb="9" pf="4" tf="0" to="6">
+      </summary>
+      <play vh="V" time="09:48" uni="15" team="DOL" checkname="GRYSZKO,MILENA" action="TURNOVER" side="right">
+      </play>
+      <play vh="H" time="09:48" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="STEAL" side="left">
+      </play>
+      <play vh="H" time="09:33" uni="13" team="POM" checkname="GROTH,MARTA" action="TURNOVER" side="left">
+      </play>
+      <play vh="V" time="09:18" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="TURNOVER" side="right">
+      </play>
+      <play vh="H" time="09:18" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="STEAL" side="left">
+      </play>
+      <play vh="H" time="09:08" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="MISS" type="JUMPER" x="12.640000343322754" y="71.80999755859375" side="left">
+      </play>
+      <play vh="H" time="09:06" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="H" time="09:03" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="MISS" type="3PTR" x="25.739999771118164" y="89.889999389648438" side="left">
+      </play>
+      <play vh="V" time="09:01" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="08:38" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="GOOD" type="3PTR" vscore="3" hscore="0" x="80.660003662109375" y="4.8600001335144043" side="right">
+      </play>
+      <play vh="V" time="08:38" uni="15" team="DOL" checkname="GRYSZKO,MILENA" action="ASSIST" side="right">
+      </play>
+      <play vh="H" time="08:12" uni="13" team="POM" checkname="GROTH,MARTA" action="MISS" type="JUMPER" x="18.100000381469727" y="70.680000305175781" side="left">
+      </play>
+      <play vh="V" time="08:09" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="08:06" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="FOUL" side="left">
+      </play>
+      <play vh="V" time="08:00" uni="15" team="DOL" checkname="GRYSZKO,MILENA" action="TURNOVER" side="right">
+      </play>
+      <play vh="H" time="08:00" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="STEAL" side="left">
+      </play>
+      <play vh="V" time="07:52" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="FOUL" side="right">
+      </play>
+      <play vh="H" time="07:38" uni="13" team="POM" checkname="GROTH,MARTA" action="GOOD" type="3PTR" vscore="3" hscore="3" x="33.069999694824219" y="49.209999084472656" side="left">
+      </play>
+      <play vh="H" time="07:38" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="ASSIST" side="left">
+      </play>
+      <play vh="V" time="07:23" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="MISS" type="3PTR" x="71.919998168945313" y="71.80999755859375" side="right">
+      </play>
+      <play vh="H" time="07:20" uni="13" team="POM" checkname="GROTH,MARTA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="H" time="07:06" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="MISS" type="3PTR" x="29.639999389648438" y="74.069999694824219" side="left">
+      </play>
+      <play vh="V" time="07:02" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="06:58" uni="15" team="DOL" checkname="GRYSZKO,MILENA" action="TURNOVER" side="right">
+      </play>
+      <play vh="H" time="06:58" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="STEAL" side="left">
+      </play>
+      <play vh="H" time="06:50" uni="13" team="POM" checkname="GROTH,MARTA" action="TURNOVER" side="left">
+      </play>
+      <play vh="H" time="06:48" uni="13" team="POM" checkname="GROTH,MARTA" action="GOOD" type="JUMPER" vscore="3" hscore="5" x="8.2700004577636719" y="31.690000534057617" side="left">
+      </play>
+      <play vh="H" time="06:35" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="FOUL" side="left">
+      </play>
+      <play vh="V" time="06:19" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="MISS" type="3PTR" x="70.510002136230469" y="81.9800033569336" side="right">
+      </play>
+      <play vh="H" time="06:17" uni="13" team="POM" checkname="GROTH,MARTA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="H" time="06:09" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="GOOD" type="JUMPER" paint="Y" vscore="3" hscore="7" x="9.1999998092651367" y="57.119998931884766" side="left">
+      </play>
+      <play vh="H" time="06:09" uni="13" team="POM" checkname="GROTH,MARTA" action="ASSIST" side="left">
+      </play>
+      <play vh="V" time="05:49" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="MISS" type="3PTR" x="74.569999694824219" y="87.629997253417969" side="right">
+      </play>
+      <play vh="H" time="05:47" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="H" time="05:38" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="MISS" type="JUMPER" paint="Y" x="13.100000381469727" y="62.4900016784668" side="left">
+      </play>
+      <play vh="H" time="05:35" uni="TM" team="POM" checkname="TEAM" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="H" time="05:27" uni="13" team="POM" checkname="GROTH,MARTA" action="TURNOVER" side="left">
+      </play>
+      <play vh="H" time="05:19" uni="13" team="POM" checkname="GROTH,MARTA" action="FOUL" side="left">
+      </play>
+      <play vh="V" time="05:13" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="MISS" type="JUMPER" x="85.800003051757813" y="24.6299991607666" side="right">
+      </play>
+      <play vh="H" time="05:10" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="V" time="05:10" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="FOUL" paint="Y" x="12.640000343322754" y="53.450000762939453" side="right">
+      </play>
+      <play vh="H" time="05:09" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="GOOD" type="LAYUP" paint="Y" fastb="Y" vscore="3" hscore="9" x="12.640000343322754" y="53.450000762939453" side="left">
+      </play>
+      <play vh="H" time="05:09" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="ASSIST" side="left">
+      </play>
+      <play vh="H" time="05:09" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="MISS" type="FT" fastb="Y" side="left">
+      </play>
+      <play vh="H" time="05:09" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="H" time="05:05" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="MISS" type="JUMPER" paint="Y" x="16.3799991607666" y="62.770000457763672" side="left">
+      </play>
+      <play vh="V" time="05:02" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="05:00" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="13" team="POM" checkname="GROTH,MARTA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="16" team="POM" checkname="FLIS,NICOLA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="7" team="POM" checkname="LEMAN,LIDIA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="10" team="POM" checkname="WŁAZ,AGATA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="14" team="POM" checkname="BARANOWSKA,OLIWIA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="V" time="05:00" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="15" team="DOL" checkname="GRYSZKO,MILENA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="H" time="04:28" uni="10" team="POM" checkname="WŁAZ,AGATA" action="TURNOVER" side="left">
+      </play>
+      <play vh="V" time="04:28" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="STEAL" side="right">
+      </play>
+      <play vh="V" time="04:25" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="GOOD" type="JUMPER" paint="Y" vscore="5" hscore="9" x="89.239997863769531" y="57.970001220703125" side="right">
+      </play>
+      <play vh="V" time="04:25" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="ASSIST" side="right">
+      </play>
+      <play vh="H" time="04:10" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="MISS" type="JUMPER" paint="Y" x="13.260000228881836" y="43.560001373291016" side="left">
+      </play>
+      <play vh="V" time="04:07" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="04:04" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="GOOD" type="JUMPER" fastb="Y" vscore="7" hscore="9" x="87.989997863769531" y="70.4000015258789" side="right">
+      </play>
+      <play vh="H" time="03:39" uni="14" team="POM" checkname="BARANOWSKA,OLIWIA" action="MISS" type="JUMPER" x="20.440000534057617" y="51.189998626708984" side="left">
+      </play>
+      <play vh="V" time="03:35" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="03:26" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="MISS" type="LAYUP" paint="Y" x="82.370002746582031" y="36.209999084472656" side="right">
+      </play>
+      <play vh="V" time="03:22" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="REBOUND" type="OFF" side="right">
+      </play>
+      <play vh="V" time="03:22" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="MISS" type="LAYUP" x="94" y="50" side="right">
+      </play>
+      <play vh="V" time="03:22" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="REBOUND" type="OFF" side="right">
+      </play>
+      <play vh="V" time="03:22" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="GOOD" type="LAYUP" vscore="9" hscore="9" x="94" y="50" side="right">
+      </play>
+      <play vh="H" time="03:22" uni="TM" team="POM" checkname="TEAM" action="TIMEOUT" type="TEAM" side="left">
+      </play>
+      <play vh="H" time="03:07" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="LAYUP" paint="Y" vscore="9" hscore="11" x="11.539999961853027" y="59.380001068115234" side="left">
+      </play>
+      <play vh="H" time="03:07" uni="7" team="POM" checkname="LEMAN,LIDIA" action="ASSIST" side="left">
+      </play>
+      <play vh="V" time="03:00" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="02:57" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="FOUL" side="right">
+      </play>
+      <play vh="H" time="02:35" uni="7" team="POM" checkname="LEMAN,LIDIA" action="MISS" type="3PTR" x="31.510000228881836" y="25.200000762939453" side="left">
+      </play>
+      <play vh="V" time="02:33" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="02:25" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="GOOD" type="JUMPER" paint="Y" vscore="11" hscore="11" x="90.949996948242188" y="41.580001831054688" side="right">
+      </play>
+      <play vh="H" time="02:11" uni="7" team="POM" checkname="LEMAN,LIDIA" action="TURNOVER" side="left">
+      </play>
+      <play vh="V" time="02:11" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="STEAL" side="right">
+      </play>
+      <play vh="V" time="02:07" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="GOOD" type="LAYUP" paint="Y" fastb="Y" vscore="13" hscore="11" x="87.989997863769531" y="50.340000152587891" side="right">
+      </play>
+      <play vh="H" time="02:04" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="FOUL" paint="Y" x="87.989997863769531" y="50.340000152587891" side="left">
+      </play>
+      <play vh="V" time="02:04" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="GOOD" type="FT" fastb="Y" vscore="14" hscore="11" side="right">
+      </play>
+      <play vh="H" time="01:55" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="TURNOVER" side="left">
+      </play>
+      <play vh="V" time="01:52" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="MISS" type="3PTR" x="72.389999389648438" y="82.819999694824219" side="right">
+      </play>
+      <play vh="V" time="01:52" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="REBOUND" type="OFF" side="right">
+      </play>
+      <play vh="V" time="01:32" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="TURNOVER" x="87.5199966430664" y="72.94000244140625" side="right">
+      </play>
+      <play vh="H" time="01:32" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="STEAL" side="left">
+      </play>
+      <play vh="H" time="01:29" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="MISS" type="JUMPER" paint="Y" x="14.979999542236328" y="55.419998168945313" side="left">
+      </play>
+      <play vh="H" time="01:26" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="H" time="01:09" uni="10" team="POM" checkname="WŁAZ,AGATA" action="GOOD" type="LAYUP" paint="Y" vscore="14" hscore="13" x="11.079999923706055" y="63.330001831054688" side="left">
+      </play>
+      <play vh="V" time="00:49" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="TURNOVER" side="right">
+      </play>
+      <play vh="H" time="00:49" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="STEAL" side="left">
+      </play>
+      <play vh="H" time="00:47" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="MISS" type="JUMPER" paint="Y" x="13.880000114440918" y="55.709999084472656" side="left">
+      </play>
+      <play vh="H" time="00:43" uni="10" team="POM" checkname="WŁAZ,AGATA" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="V" time="00:43" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="FOUL" side="right">
+      </play>
+      <play vh="H" time="00:43" uni="10" team="POM" checkname="WŁAZ,AGATA" action="GOOD" type="FT" fastb="Y" vscore="14" hscore="14" side="left">
+      </play>
+      <play vh="H" time="00:43" uni="10" team="POM" checkname="WŁAZ,AGATA" action="MISS" type="FT" fastb="Y" side="left">
+      </play>
+      <play vh="V" time="00:43" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="00:37" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="TURNOVER" side="right">
+      </play>
+      <play vh="H" time="00:17" uni="10" team="POM" checkname="WŁAZ,AGATA" action="GOOD" type="JUMPER" vscore="14" hscore="16" x="9.5200004577636719" y="67.8499984741211" side="left">
+      </play>
+      <play vh="V" time="00:01" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="GOOD" type="JUMPER" vscore="16" hscore="16" x="87.360000610351563" y="22.090000152587891" side="right">
+      </play>
+      <play vh="V" time="00:01" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="ASSIST" side="right">
+      </play>
+      <clock time="00:00">
+      </clock>
+    </period>
+    <period number="2" time="10:00">
+      <special vh="V" pts_to="5" pts_ch2="3" pts_paint="10" pts_fastb="2" pts_bench="16" ties="0" leads="0" lead_time="0" large_lead="0">
+      </special>
+      <special vh="H" pts_to="0" pts_ch2="2" pts_paint="6" pts_fastb="4" pts_bench="8" ties="0" leads="0" lead_time="0" large_lead="0">
+      </special>
+      <summary vh="V" fgm="9" fga="15" fgm3="2" fga3="4" ftm="5" fta="8" blk="0" stl="1" ast="2" oreb="2" dreb="7" treb="10" pf="7" tf="0" to="4">
+      </summary>
+      <summary vh="H" fgm="3" fga="16" fgm3="0" fga3="2" ftm="8" fta="8" blk="0" stl="2" ast="0" oreb="5" dreb="3" treb="9" pf="8" tf="0" to="5">
+      </summary>
+      <play vh="H" time="10:00" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="10:00" uni="7" team="POM" checkname="LEMAN,LIDIA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="10:00" uni="10" team="POM" checkname="WŁAZ,AGATA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="10:00" uni="14" team="POM" checkname="BARANOWSKA,OLIWIA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="10:00" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="10:00" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="10:00" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="10:00" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="10:00" uni="13" team="POM" checkname="GROTH,MARTA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="10:00" uni="16" team="POM" checkname="FLIS,NICOLA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="V" time="10:00" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="10:00" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="10:00" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="10:00" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="10:00" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="10:00" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="10:00" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="10:00" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="10:00" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="10:00" uni="15" team="DOL" checkname="GRYSZKO,MILENA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="H" time="09:49" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="MISS" type="JUMPER" paint="Y" x="13.260000228881836" y="52.599998474121094" side="left">
+      </play>
+      <play vh="V" time="09:47" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="09:32" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="GOOD" type="3PTR" vscore="19" hscore="16" x="76.44000244140625" y="15.029999732971191" side="right">
+      </play>
+      <play vh="V" time="09:32" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="ASSIST" side="right">
+      </play>
+      <play vh="V" time="09:08" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="FOUL" side="right">
+      </play>
+      <play vh="H" time="09:08" uni="13" team="POM" checkname="GROTH,MARTA" action="GOOD" type="FT" fastb="Y" vscore="19" hscore="17" side="left">
+      </play>
+      <play vh="H" time="09:08" uni="13" team="POM" checkname="GROTH,MARTA" action="GOOD" type="FT" fastb="Y" vscore="19" hscore="18" side="left">
+      </play>
+      <play vh="V" time="08:51" uni="15" team="DOL" checkname="GRYSZKO,MILENA" action="GOOD" type="JUMPER" vscore="21" hscore="18" x="91.110000610351563" y="71.529998779296875" side="right">
+      </play>
+      <play vh="H" time="08:39" uni="13" team="POM" checkname="GROTH,MARTA" action="GOOD" type="LAYUP" paint="Y" vscore="21" hscore="20" x="7.8000001907348633" y="41.580001831054688" side="left">
+      </play>
+      <play vh="H" time="08:32" uni="13" team="POM" checkname="GROTH,MARTA" action="FOUL" side="left">
+      </play>
+      <play vh="H" time="08:24" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="FOUL" side="left">
+      </play>
+      <play vh="V" time="08:09" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="MISS" type="3PTR" x="68.169998168945313" y="19.270000457763672" side="right">
+      </play>
+      <play vh="V" time="08:09" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="REBOUND" type="OFF" side="right">
+      </play>
+      <play vh="H" time="08:09" uni="13" team="POM" checkname="GROTH,MARTA" action="FOUL" side="left">
+      </play>
+      <play vh="V" time="07:59" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="MISS" type="JUMPER" x="90.4800033569336" y="24.6299991607666" side="right">
+      </play>
+      <play vh="H" time="07:59" uni="TM" team="POM" checkname="TEAM" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="V" time="07:59" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="FOUL" side="right">
+      </play>
+      <play vh="H" time="07:59" uni="13" team="POM" checkname="GROTH,MARTA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="07:59" uni="6" team="POM" checkname="BARGIEL,AMELIA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="V" time="07:59" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="07:59" uni="4" team="DOL" checkname="MORAWSKA,JULIA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="H" time="07:47" uni="6" team="POM" checkname="BARGIEL,AMELIA" action="MISS" type="JUMPER" x="5.7699999809265137" y="56.549999237060547" side="left">
+      </play>
+      <play vh="H" time="07:45" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="H" time="07:38" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="MISS" type="3PTR" x="28.239999771118164" y="72.660003662109375" side="left">
+      </play>
+      <play vh="V" time="07:35" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="07:20" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="MISS" type="JUMPER" x="93.139999389648438" y="17.850000381469727" side="right">
+      </play>
+      <play vh="H" time="07:17" uni="6" team="POM" checkname="BARGIEL,AMELIA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="H" time="07:14" uni="6" team="POM" checkname="BARGIEL,AMELIA" action="TURNOVER" side="left">
+      </play>
+      <play vh="V" time="07:07" uni="4" team="DOL" checkname="MORAWSKA,JULIA" action="TURNOVER" side="right">
+      </play>
+      <play vh="H" time="07:07" uni="6" team="POM" checkname="BARGIEL,AMELIA" action="STEAL" side="left">
+      </play>
+      <play vh="V" time="06:48" uni="4" team="DOL" checkname="MORAWSKA,JULIA" action="FOUL" side="right">
+      </play>
+      <play vh="H" time="06:33" uni="6" team="POM" checkname="BARGIEL,AMELIA" action="MISS" type="JUMPER" paint="Y" x="12.640000343322754" y="61.069999694824219" side="left">
+      </play>
+      <play vh="H" time="06:31" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="H" time="06:31" uni="TM" team="POM" checkname="TEAM" action="TURNOVER" side="left">
+      </play>
+      <play vh="H" time="06:25" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="FOUL" side="left">
+      </play>
+      <play vh="H" time="06:16" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="FOUL" side="left">
+      </play>
+      <play vh="V" time="06:16" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="GOOD" type="FT" vscore="22" hscore="20" side="right">
+      </play>
+      <play vh="V" time="06:16" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="GOOD" type="FT" vscore="23" hscore="20" side="right">
+      </play>
+      <play vh="H" time="06:16" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="06:16" uni="13" team="POM" checkname="GROTH,MARTA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="06:03" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="MISS" type="JUMPER" x="12.319999694824219" y="68.139999389648438" side="left">
+      </play>
+      <play vh="V" time="06:00" uni="4" team="DOL" checkname="MORAWSKA,JULIA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="05:51" uni="4" team="DOL" checkname="MORAWSKA,JULIA" action="GOOD" type="JUMPER" vscore="25" hscore="20" x="82.370002746582031" y="30" side="right">
+      </play>
+      <play vh="H" time="05:38" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="MISS" type="JUMPER" x="13.569999694824219" y="76.330001831054688" side="left">
+      </play>
+      <play vh="V" time="05:36" uni="15" team="DOL" checkname="GRYSZKO,MILENA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="05:35" uni="15" team="DOL" checkname="GRYSZKO,MILENA" action="TURNOVER" side="right">
+      </play>
+      <play vh="H" time="05:35" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="STEAL" side="left">
+      </play>
+      <play vh="H" time="05:29" uni="13" team="POM" checkname="GROTH,MARTA" action="MISS" type="JUMPER" paint="Y" x="14.659999847412109" y="64.459999084472656" side="left">
+      </play>
+      <play vh="H" time="05:29" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="V" time="05:29" uni="4" team="DOL" checkname="MORAWSKA,JULIA" action="FOUL" side="right">
+      </play>
+      <play vh="H" time="05:13" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="MISS" type="JUMPER" x="10.449999809265137" y="33.389999389648438" side="left">
+      </play>
+      <play vh="H" time="05:13" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="V" time="05:13" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="FOUL" side="right">
+      </play>
+      <play vh="H" time="05:13" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="GOOD" type="FT" vscore="25" hscore="21" side="left">
+      </play>
+      <play vh="H" time="05:13" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="GOOD" type="FT" vscore="25" hscore="22" side="left">
+      </play>
+      <play vh="V" time="05:04" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="GOOD" type="LAYUP" paint="Y" vscore="27" hscore="22" x="89.550003051757813" y="33.950000762939453" side="right">
+      </play>
+      <play vh="H" time="05:00" uni="6" team="POM" checkname="BARGIEL,AMELIA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="13" team="POM" checkname="GROTH,MARTA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="16" team="POM" checkname="FLIS,NICOLA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="7" team="POM" checkname="LEMAN,LIDIA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="10" team="POM" checkname="WŁAZ,AGATA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="14" team="POM" checkname="BARANOWSKA,OLIWIA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="05:00" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="V" time="05:00" uni="4" team="DOL" checkname="MORAWSKA,JULIA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="15" team="DOL" checkname="GRYSZKO,MILENA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="05:00" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="04:48" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="MISS" type="JUMPER" x="91.260002136230469" y="16.719999313354492" side="right">
+      </play>
+      <play vh="H" time="04:46" uni="14" team="POM" checkname="BARANOWSKA,OLIWIA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="H" time="04:44" uni="7" team="POM" checkname="LEMAN,LIDIA" action="MISS" type="LAYUP" paint="Y" x="8.7399997711181641" y="42.9900016784668" side="left">
+      </play>
+      <play vh="V" time="04:42" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="04:34" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="GOOD" type="JUMPER" paint="Y" vscore="29" hscore="22" x="90.639999389648438" y="35.369998931884766" side="right">
+      </play>
+      <play vh="H" time="04:31" uni="TM" team="POM" checkname="TEAM" action="TIMEOUT" type="TEAM" side="left">
+      </play>
+      <play vh="V" time="04:18" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="FOUL" side="right">
+      </play>
+      <play vh="H" time="04:18" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="FT" vscore="29" hscore="23" side="left">
+      </play>
+      <play vh="H" time="04:18" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="FT" vscore="29" hscore="24" side="left">
+      </play>
+      <play vh="V" time="04:06" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="GOOD" type="LAYUP" vscore="31" hscore="24" x="93.760002136230469" y="42.9900016784668" side="right">
+      </play>
+      <play vh="V" time="04:06" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="ASSIST" side="right">
+      </play>
+      <play vh="H" time="03:40" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="MISS" type="3PTR" x="6.7100000381469727" y="96.949996948242188" side="left">
+      </play>
+      <play vh="H" time="03:40" uni="TM" team="POM" checkname="TEAM" action="TURNOVER" x="6.7100000381469727" y="96.949996948242188" side="left">
+      </play>
+      <play vh="H" time="03:15" uni="14" team="POM" checkname="BARANOWSKA,OLIWIA" action="FOUL" side="left">
+      </play>
+      <play vh="V" time="03:15" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="MISS" type="FT" side="right">
+      </play>
+      <play vh="V" time="03:15" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="DEADB" side="right">
+      </play>
+      <play vh="V" time="03:15" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="MISS" type="FT" side="right">
+      </play>
+      <play vh="H" time="03:15" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="H" time="03:04" uni="7" team="POM" checkname="LEMAN,LIDIA" action="GOOD" type="JUMPER" vscore="31" hscore="26" x="7.179999828338623" y="56.270000457763672" side="left">
+      </play>
+      <play vh="V" time="02:55" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="TURNOVER" side="right">
+      </play>
+      <play vh="H" time="02:55" uni="14" team="POM" checkname="BARANOWSKA,OLIWIA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="H" time="02:55" uni="18" team="POM" checkname="SZWICHTENBERG,ZOFIA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="02:43" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="TURNOVER" paint="Y" x="3.2799999713897705" y="46.950000762939453" side="left">
+      </play>
+      <play vh="V" time="02:30" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="MISS" type="3PTR" x="81.9000015258789" y="95.25" side="right">
+      </play>
+      <play vh="V" time="02:28" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="REBOUND" type="OFF" side="right">
+      </play>
+      <play vh="V" time="02:19" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="GOOD" type="3PTR" vscore="34" hscore="26" x="80.029998779296875" y="9.380000114440918" side="right">
+      </play>
+      <play vh="H" time="01:58" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="MISS" type="JUMPER" x="5.1500000953674316" y="41.860000610351563" side="left">
+      </play>
+      <play vh="V" time="01:56" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="01:56" uni="10" team="POM" checkname="WŁAZ,AGATA" action="FOUL" side="left">
+      </play>
+      <play vh="V" time="01:56" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="GOOD" type="FT" fastb="Y" vscore="35" hscore="26" side="right">
+      </play>
+      <play vh="V" time="01:56" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="GOOD" type="FT" fastb="Y" vscore="36" hscore="26" side="right">
+      </play>
+      <play vh="V" time="01:55" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="FOUL" side="right">
+      </play>
+      <play vh="H" time="01:55" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="GOOD" type="FT" fastb="Y" vscore="36" hscore="27" side="left">
+      </play>
+      <play vh="H" time="01:55" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="GOOD" type="FT" fastb="Y" vscore="36" hscore="28" side="left">
+      </play>
+      <play vh="V" time="01:34" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="MISS" type="JUMPER" paint="Y" x="86.9000015258789" y="35.930000305175781" side="right">
+      </play>
+      <play vh="V" time="01:34" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="OFF" side="right">
+      </play>
+      <play vh="V" time="01:34" uni="TM" team="DOL" checkname="TEAM" action="TIMEOUT" type="TEAM" side="right">
+      </play>
+      <play vh="V" time="01:31" uni="TM" team="DOL" checkname="TEAM" action="TURNOVER" side="right">
+      </play>
+      <play vh="H" time="01:19" uni="7" team="POM" checkname="LEMAN,LIDIA" action="TURNOVER" side="left">
+      </play>
+      <play vh="V" time="01:19" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="STEAL" side="right">
+      </play>
+      <play vh="V" time="01:15" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="GOOD" type="JUMPER" vscore="38" hscore="28" x="93.139999389648438" y="43.560001373291016" side="right">
+      </play>
+      <play vh="H" time="00:51" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="MISS" type="LAYUP" paint="Y" x="7.6399998664855957" y="41.860000610351563" side="left">
+      </play>
+      <play vh="V" time="00:48" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="00:32" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="FOUL" side="left">
+      </play>
+      <play vh="V" time="00:32" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="MISS" type="FT" side="right">
+      </play>
+      <play vh="V" time="00:32" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="DEADB" side="right">
+      </play>
+      <play vh="V" time="00:32" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="GOOD" type="FT" vscore="39" hscore="28" side="right">
+      </play>
+      <play vh="H" time="00:18" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="MISS" type="JUMPER" paint="Y" x="15.289999961853027" y="45.540000915527344" side="left">
+      </play>
+      <play vh="H" time="00:14" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="H" time="00:14" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="LAYUP" vscore="39" hscore="30" x="6" y="50" side="left">
+      </play>
+      <play vh="V" time="00:03" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="GOOD" type="LAYUP" paint="Y" vscore="41" hscore="30" x="92.199996948242188" y="34.520000457763672" side="right">
+      </play>
+      <clock time="00:00">
+      </clock>
+    </period>
+    <period number="3" time="10:00">
+      <special vh="V" pts_to="10" pts_ch2="2" pts_paint="4" pts_fastb="2" pts_bench="1" ties="0" leads="0" lead_time="0" large_lead="0">
+      </special>
+      <special vh="H" pts_to="4" pts_ch2="0" pts_paint="10" pts_fastb="8" pts_bench="7" ties="0" leads="0" lead_time="0" large_lead="0">
+      </special>
+      <summary vh="V" fgm="4" fga="17" fgm3="2" fga3="7" ftm="3" fta="7" blk="0" stl="3" ast="3" oreb="3" dreb="6" treb="12" pf="6" tf="0" to="6">
+      </summary>
+      <summary vh="H" fgm="5" fga="12" fgm3="0" fga3="2" ftm="6" fta="10" blk="2" stl="4" ast="4" oreb="1" dreb="8" treb="12" pf="6" tf="0" to="7">
+      </summary>
+      <play vh="H" time="10:00" uni="7" team="POM" checkname="LEMAN,LIDIA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="H" time="10:00" uni="18" team="POM" checkname="SZWICHTENBERG,ZOFIA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="H" time="10:00" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="H" time="10:00" uni="13" team="POM" checkname="GROTH,MARTA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="10:00" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="V" time="10:00" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="V" time="10:00" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="V" time="10:00" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="V" time="10:00" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="V" time="10:00" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="09:47" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="GOOD" type="JUMPER" paint="Y" vscore="41" hscore="32" x="91.580001831054688" y="56.840000152587891" side="right">
+      </play>
+      <play vh="H" time="09:47" uni="13" team="POM" checkname="GROTH,MARTA" action="ASSIST" side="right">
+      </play>
+      <play vh="H" time="09:35" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="FOUL" side="right">
+      </play>
+      <play vh="V" time="09:35" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="MISS" type="FT" side="left">
+      </play>
+      <play vh="V" time="09:35" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="DEADB" side="left">
+      </play>
+      <play vh="V" time="09:35" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="GOOD" type="FT" vscore="42" hscore="32" side="left">
+      </play>
+      <play vh="V" time="09:35" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="ASSIST" side="left">
+      </play>
+      <play vh="H" time="09:15" uni="10" team="POM" checkname="WŁAZ,AGATA" action="MISS" type="JUMPER" x="87.830001831054688" y="31.1299991607666" side="right">
+      </play>
+      <play vh="V" time="09:13" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="V" time="09:09" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="MISS" type="JUMPER" paint="Y" x="10.609999656677246" y="57.970001220703125" side="left">
+      </play>
+      <play vh="H" time="09:07" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="08:31" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="MISS" type="3PTR" x="82.370002746582031" y="95.540000915527344" side="right">
+      </play>
+      <play vh="V" time="08:29" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="V" time="08:23" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="MISS" type="LAYUP" x="7.4899997711181641" y="55.139999389648438" side="left">
+      </play>
+      <play vh="H" time="08:20" uni="13" team="POM" checkname="GROTH,MARTA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="08:14" uni="10" team="POM" checkname="WŁAZ,AGATA" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="08:11" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="GOOD" type="3PTR" vscore="45" hscore="32" x="26.989999771118164" y="18.700000762939453" side="left">
+      </play>
+      <play vh="V" time="08:11" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="ASSIST" side="left">
+      </play>
+      <play vh="H" time="08:04" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="GOOD" type="LAYUP" fastb="Y" vscore="45" hscore="34" x="91.580001831054688" y="43.560001373291016" side="right">
+      </play>
+      <play vh="H" time="08:04" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="ASSIST" side="right">
+      </play>
+      <play vh="V" time="07:44" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="MISS" type="JUMPER" x="7.4899997711181641" y="49.770000457763672" side="left">
+      </play>
+      <play vh="H" time="07:42" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="07:19" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="FOUL" side="left">
+      </play>
+      <play vh="H" time="07:19" uni="13" team="POM" checkname="GROTH,MARTA" action="GOOD" type="FT" vscore="45" hscore="35" side="right">
+      </play>
+      <play vh="H" time="07:19" uni="13" team="POM" checkname="GROTH,MARTA" action="MISS" type="FT" side="right">
+      </play>
+      <play vh="V" time="07:19" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="V" time="07:02" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="TURNOVER" side="left">
+      </play>
+      <play vh="H" time="07:02" uni="13" team="POM" checkname="GROTH,MARTA" action="STEAL" side="right">
+      </play>
+      <play vh="H" time="06:58" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="GOOD" type="LAYUP" vscore="45" hscore="37" x="93.760002136230469" y="57.119998931884766" side="right">
+      </play>
+      <play vh="V" time="06:34" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="TURNOVER" side="left">
+      </play>
+      <play vh="H" time="06:34" uni="13" team="POM" checkname="GROTH,MARTA" action="STEAL" side="right">
+      </play>
+      <play vh="H" time="06:28" uni="13" team="POM" checkname="GROTH,MARTA" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="06:28" uni="TM" team="DOL" checkname="TEAM" action="TIMEOUT" type="TEAM" side="left">
+      </play>
+      <play vh="V" time="06:28" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="V" time="06:28" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="V" time="06:20" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="MISS" type="JUMPER" paint="Y" x="10.609999656677246" y="55.9900016784668" side="left">
+      </play>
+      <play vh="H" time="06:18" uni="10" team="POM" checkname="WŁAZ,AGATA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="06:00" uni="13" team="POM" checkname="GROTH,MARTA" action="MISS" type="JUMPER" x="93.139999389648438" y="24.920000076293945" side="right">
+      </play>
+      <play vh="V" time="05:58" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="V" time="05:52" uni="TM" team="DOL" checkname="TEAM" action="TURNOVER" side="left">
+      </play>
+      <play vh="H" time="05:51" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="05:51" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="STEAL" side="left">
+      </play>
+      <play vh="V" time="05:49" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="GOOD" type="LAYUP" paint="Y" fastb="Y" vscore="47" hscore="37" x="5.619999885559082" y="37.630001068115234" side="left">
+      </play>
+      <play vh="H" time="05:36" uni="13" team="POM" checkname="GROTH,MARTA" action="MISS" type="JUMPER" paint="Y" x="92.669998168945313" y="39.599998474121094" side="right">
+      </play>
+      <play vh="V" time="05:32" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="V" time="05:12" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="TURNOVER" side="left">
+      </play>
+      <play vh="H" time="05:12" uni="13" team="POM" checkname="GROTH,MARTA" action="STEAL" side="right">
+      </play>
+      <play vh="V" time="05:10" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="FOUL" side="left">
+      </play>
+      <play vh="H" time="05:10" uni="13" team="POM" checkname="GROTH,MARTA" action="MISS" type="FT" fastb="Y" side="right">
+      </play>
+      <play vh="H" time="05:10" uni="TM" team="POM" checkname="TEAM" action="REBOUND" type="DEADB" side="right">
+      </play>
+      <play vh="H" time="05:10" uni="13" team="POM" checkname="GROTH,MARTA" action="GOOD" type="FT" fastb="Y" vscore="47" hscore="38" side="right">
+      </play>
+      <play vh="H" time="04:58" uni="TM" team="POM" checkname="TEAM" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="04:58" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="V" time="04:58" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="V" time="04:45" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="TURNOVER" side="left">
+      </play>
+      <play vh="H" time="04:45" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="STEAL" side="right">
+      </play>
+      <play vh="H" time="04:28" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="LAYUP" vscore="47" hscore="40" x="92.9800033569336" y="46.950000762939453" side="right">
+      </play>
+      <play vh="H" time="04:28" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="ASSIST" side="right">
+      </play>
+      <play vh="H" time="04:16" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="FOUL" side="right">
+      </play>
+      <play vh="H" time="04:16" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="H" time="04:16" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="04:16" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="MISS" type="FT" side="left">
+      </play>
+      <play vh="V" time="04:16" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="DEADB" side="left">
+      </play>
+      <play vh="V" time="04:16" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="GOOD" type="FT" vscore="48" hscore="40" side="left">
+      </play>
+      <play vh="V" time="04:05" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="FOUL" side="left">
+      </play>
+      <play vh="H" time="04:05" uni="10" team="POM" checkname="WŁAZ,AGATA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="H" time="04:05" uni="16" team="POM" checkname="FLIS,NICOLA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="H" time="04:05" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="GOOD" type="FT" vscore="48" hscore="41" side="right">
+      </play>
+      <play vh="H" time="04:05" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="MISS" type="FT" side="right">
+      </play>
+      <play vh="H" time="04:05" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="REBOUND" type="OFF" side="right">
+      </play>
+      <play vh="H" time="03:53" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="MISS" type="3PTR" x="93.919998168945313" y="5.1399998664855957" side="right">
+      </play>
+      <play vh="V" time="03:50" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="V" time="03:42" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="MISS" type="3PTR" x="23.239999771118164" y="85.080001831054688" side="left">
+      </play>
+      <play vh="V" time="03:39" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="V" time="03:39" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="FOUL" side="left">
+      </play>
+      <play vh="V" time="03:39" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="TURNOVER" side="left">
+      </play>
+      <play vh="H" time="03:23" uni="16" team="POM" checkname="FLIS,NICOLA" action="MISS" type="JUMPER" x="91.7300033569336" y="19.549999237060547" side="right">
+      </play>
+      <play vh="H" time="03:21" uni="TM" team="POM" checkname="TEAM" action="REBOUND" type="OFF" side="right">
+      </play>
+      <play vh="V" time="03:21" uni="10" team="DOL" checkname="SUWAŁA,MARTA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="V" time="03:21" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="V" time="03:21" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="V" time="03:21" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="V" time="03:07" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="MISS" type="JUMPER" paint="Y" x="7.8000001907348633" y="62.770000457763672" side="left">
+      </play>
+      <play vh="H" time="03:07" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="BLOCK" side="right">
+      </play>
+      <play vh="V" time="03:03" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="V" time="03:02" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="MISS" type="JUMPER" paint="Y" x="10.760000228881836" y="50.340000152587891" side="left">
+      </play>
+      <play vh="V" time="02:59" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="V" time="02:41" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="MISS" type="3PTR" x="20.75" y="4.8600001335144043" side="left">
+      </play>
+      <play vh="H" time="02:38" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="02:35" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="LAYUP" paint="Y" fastb="Y" vscore="48" hscore="43" x="88.139999389648438" y="40.169998168945313" side="right">
+      </play>
+      <play vh="H" time="02:35" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="ASSIST" side="right">
+      </play>
+      <play vh="V" time="02:29" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="MISS" type="3PTR" x="24.489999771118164" y="18.979999542236328" side="left">
+      </play>
+      <play vh="H" time="02:29" uni="TM" team="POM" checkname="TEAM" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="02:28" uni="13" team="POM" checkname="GROTH,MARTA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="H" time="02:28" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="H" time="02:28" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="H" time="02:28" uni="13" team="POM" checkname="GROTH,MARTA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="02:26" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="FOUL" side="left">
+      </play>
+      <play vh="V" time="02:26" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="V" time="02:26" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="02:26" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="GOOD" type="FT" fastb="Y" vscore="48" hscore="44" side="right">
+      </play>
+      <play vh="H" time="02:26" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="GOOD" type="FT" fastb="Y" vscore="48" hscore="45" side="right">
+      </play>
+      <play vh="H" time="02:18" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="FOUL" side="right">
+      </play>
+      <play vh="V" time="02:18" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="MISS" type="3PTR" x="31.979999542236328" y="28.8700008392334" side="left">
+      </play>
+      <play vh="H" time="02:18" uni="13" team="POM" checkname="GROTH,MARTA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="01:51" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="MISS" type="JUMPER" x="90.949996948242188" y="54.0099983215332" side="right">
+      </play>
+      <play vh="V" time="01:49" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="V" time="01:36" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="MISS" type="JUMPER" paint="Y" x="11.699999809265137" y="40.450000762939453" side="left">
+      </play>
+      <play vh="H" time="01:36" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="BLOCK" side="right">
+      </play>
+      <play vh="H" time="01:32" uni="16" team="POM" checkname="FLIS,NICOLA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="01:32" uni="16" team="POM" checkname="FLIS,NICOLA" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="01:32" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="STEAL" side="left">
+      </play>
+      <play vh="V" time="01:15" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="MISS" type="3PTR" x="32.610000610351563" y="59.939998626708984" side="left">
+      </play>
+      <play vh="V" time="01:13" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="V" time="01:08" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="MISS" type="JUMPER" x="5.3000001907348633" y="19.829999923706055" side="left">
+      </play>
+      <play vh="V" time="01:05" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="V" time="01:05" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="GOOD" type="JUMPER" paint="Y" vscore="50" hscore="45" x="14.819999694824219" y="59.380001068115234" side="left">
+      </play>
+      <play vh="H" time="01:02" uni="13" team="POM" checkname="GROTH,MARTA" action="FOUL" paint="Y" x="14.819999694824219" y="59.380001068115234" side="right">
+      </play>
+      <play vh="H" time="01:02" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="H" time="01:02" uni="13" team="POM" checkname="GROTH,MARTA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="H" time="01:02" uni="16" team="POM" checkname="FLIS,NICOLA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="H" time="01:02" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="H" time="01:02" uni="7" team="POM" checkname="LEMAN,LIDIA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="H" time="01:02" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="01:02" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="GOOD" type="FT" vscore="51" hscore="45" side="left">
+      </play>
+      <play vh="H" time="00:44" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="00:44" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="STEAL" side="left">
+      </play>
+      <play vh="H" time="00:33" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="FOUL" side="right">
+      </play>
+      <play vh="V" time="00:33" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="MISS" type="FT" side="left">
+      </play>
+      <play vh="V" time="00:33" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="DEADB" side="left">
+      </play>
+      <play vh="V" time="00:33" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="MISS" type="FT" side="left">
+      </play>
+      <play vh="H" time="00:33" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="00:32" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="FOUL" side="left">
+      </play>
+      <play vh="H" time="00:31" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="FT" fastb="Y" vscore="51" hscore="46" side="right">
+      </play>
+      <play vh="H" time="00:31" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="MISS" type="FT" fastb="Y" side="right">
+      </play>
+      <play vh="H" time="00:31" uni="TM" team="POM" checkname="TEAM" action="REBOUND" type="OFF" side="right">
+      </play>
+      <play vh="V" time="00:31" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="V" time="00:31" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="00:31" uni="TM" team="POM" checkname="TEAM" action="TIMEOUT" type="TEAM" side="right">
+      </play>
+      <play vh="H" time="00:23" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="FOUL" side="right">
+      </play>
+      <play vh="H" time="00:23" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="00:07" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="GOOD" type="3PTR" vscore="54" hscore="46" x="27.610000610351563" y="26.049999237060547" side="left">
+      </play>
+      <play vh="V" time="00:07" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="ASSIST" side="left">
+      </play>
+      <clock time="00:00">
+      </clock>
+    </period>
+    <period number="4" time="10:00">
+      <special vh="V" pts_to="4" pts_ch2="2" pts_paint="4" pts_fastb="1" pts_bench="5" ties="0" leads="0" lead_time="0" large_lead="0">
+      </special>
+      <special vh="H" pts_to="5" pts_ch2="2" pts_paint="12" pts_fastb="4" pts_bench="18" ties="0" leads="0" lead_time="0" large_lead="0">
+      </special>
+      <summary vh="V" fgm="6" fga="19" fgm3="1" fga3="5" ftm="2" fta="4" blk="0" stl="5" ast="1" oreb="2" dreb="2" treb="7" pf="5" tf="0" to="3">
+      </summary>
+      <summary vh="H" fgm="10" fga="13" fgm3="2" fga3="4" ftm="4" fta="5" blk="2" stl="1" ast="8" oreb="2" dreb="7" treb="10" pf="2" tf="0" to="7">
+      </summary>
+      <play vh="H" time="10:00" uni="7" team="POM" checkname="LEMAN,LIDIA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="H" time="10:00" uni="11" team="POM" checkname="CHILIŃSKA,KLAUDIA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="H" time="10:00" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="H" time="10:00" uni="13" team="POM" checkname="GROTH,MARTA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="10:00" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="V" time="10:00" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="09:46" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="JUMPER" vscore="54" hscore="48" x="90.4800033569336" y="47.799999237060547" side="right">
+      </play>
+      <play vh="V" time="09:45" uni="13" team="DOL" checkname="ZYZAŃSKA,AMELIA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="V" time="09:45" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="V" time="09:27" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="MISS" type="JUMPER" x="8.2700004577636719" y="80.279998779296875" side="left">
+      </play>
+      <play vh="H" time="09:25" uni="13" team="POM" checkname="GROTH,MARTA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="09:17" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="08:58" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="GOOD" type="JUMPER" paint="Y" vscore="56" hscore="48" x="15.600000381469727" y="49.770000457763672" side="left">
+      </play>
+      <play vh="V" time="08:41" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="FOUL" side="left">
+      </play>
+      <play vh="H" time="08:41" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="FT" vscore="56" hscore="49" side="right">
+      </play>
+      <play vh="H" time="08:41" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="FT" vscore="56" hscore="50" side="right">
+      </play>
+      <play vh="V" time="08:29" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="MISS" type="JUMPER" x="7.9600000381469727" y="27.739999771118164" side="left">
+      </play>
+      <play vh="H" time="08:29" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="BLOCK" side="right">
+      </play>
+      <play vh="H" time="08:26" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="08:16" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="JUMPER" paint="Y" vscore="56" hscore="52" x="90.639999389648438" y="41.020000457763672" side="right">
+      </play>
+      <play vh="H" time="08:16" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="ASSIST" side="right">
+      </play>
+      <play vh="V" time="08:16" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="FOUL" paint="Y" x="90.639999389648438" y="41.020000457763672" side="left">
+      </play>
+      <play vh="H" time="08:16" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="MISS" type="FT" side="right">
+      </play>
+      <play vh="H" time="08:16" uni="13" team="POM" checkname="GROTH,MARTA" action="REBOUND" type="OFF" side="right">
+      </play>
+      <play vh="H" time="08:12" uni="13" team="POM" checkname="GROTH,MARTA" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="08:12" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="STEAL" side="left">
+      </play>
+      <play vh="V" time="07:59" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="MISS" type="JUMPER" x="15.130000114440918" y="69.830001831054688" side="left">
+      </play>
+      <play vh="V" time="07:59" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="H" time="07:59" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="FOUL" side="right">
+      </play>
+      <play vh="H" time="07:59" uni="9" team="POM" checkname="PAŻUCHA,AMELIA" action="SUB" type="OUT" side="right">
+      </play>
+      <play vh="H" time="07:59" uni="10" team="POM" checkname="WŁAZ,AGATA" action="SUB" type="IN" side="right">
+      </play>
+      <play vh="V" time="07:59" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="MISS" type="FT" fastb="Y" side="left">
+      </play>
+      <play vh="V" time="07:59" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="DEADB" side="left">
+      </play>
+      <play vh="V" time="07:59" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="GOOD" type="FT" fastb="Y" vscore="57" hscore="52" side="left">
+      </play>
+      <play vh="H" time="07:41" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="JUMPER" paint="Y" vscore="57" hscore="54" x="85.6500015258789" y="46.380001068115234" side="right">
+      </play>
+      <play vh="H" time="07:41" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="ASSIST" side="right">
+      </play>
+      <play vh="V" time="07:23" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="MISS" type="JUMPER" paint="Y" x="10.609999656677246" y="65.029998779296875" side="left">
+      </play>
+      <play vh="H" time="07:20" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="07:13" uni="13" team="POM" checkname="GROTH,MARTA" action="GOOD" type="3PTR" vscore="57" hscore="57" x="68.0199966430664" y="50.060001373291016" side="right">
+      </play>
+      <play vh="H" time="07:13" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="ASSIST" side="right">
+      </play>
+      <play vh="V" time="07:11" uni="6" team="DOL" checkname="SUROWIEC,LENA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="V" time="07:11" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="V" time="07:00" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="GOOD" type="3PTR" vscore="60" hscore="57" x="21.3700008392334" y="93.55999755859375" side="left">
+      </play>
+      <play vh="V" time="07:00" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="ASSIST" side="left">
+      </play>
+      <play vh="H" time="06:43" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="LAYUP" vscore="60" hscore="59" x="95.319999694824219" y="46.380001068115234" side="right">
+      </play>
+      <play vh="H" time="06:43" uni="13" team="POM" checkname="GROTH,MARTA" action="ASSIST" side="right">
+      </play>
+      <play vh="V" time="06:23" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="GOOD" type="JUMPER" vscore="62" hscore="59" x="20.75" y="51.470001220703125" side="left">
+      </play>
+      <play vh="H" time="05:59" uni="13" team="POM" checkname="GROTH,MARTA" action="MISS" type="3PTR" x="68.169998168945313" y="56.840000152587891" side="right">
+      </play>
+      <play vh="H" time="05:57" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="REBOUND" type="OFF" side="right">
+      </play>
+      <play vh="V" time="05:52" uni="16" team="DOL" checkname="KAŁAWAJ,KAROLINA" action="SUB" type="OUT" side="left">
+      </play>
+      <play vh="V" time="05:52" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="SUB" type="IN" side="left">
+      </play>
+      <play vh="H" time="05:51" uni="13" team="POM" checkname="GROTH,MARTA" action="GOOD" type="JUMPER" vscore="62" hscore="61" x="93.449996948242188" y="84.5199966430664" side="right">
+      </play>
+      <play vh="H" time="05:51" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="ASSIST" side="right">
+      </play>
+      <play vh="V" time="05:34" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="GOOD" type="JUMPER" vscore="64" hscore="61" x="23.090000152587891" y="52.319999694824219" side="left">
+      </play>
+      <play vh="H" time="05:11" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="JUMPER" paint="Y" vscore="64" hscore="63" x="92.199996948242188" y="35.930000305175781" side="right">
+      </play>
+      <play vh="H" time="05:11" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="ASSIST" side="right">
+      </play>
+      <play vh="V" time="04:51" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="MISS" type="3PTR" x="25.899999618530273" y="20.110000610351563" side="left">
+      </play>
+      <play vh="H" time="04:49" uni="TM" team="POM" checkname="TEAM" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="04:36" uni="10" team="POM" checkname="WŁAZ,AGATA" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="04:30" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="TURNOVER" side="left">
+      </play>
+      <play vh="H" time="04:30" uni="TM" team="POM" checkname="TEAM" action="TIMEOUT" type="TEAM" side="right">
+      </play>
+      <play vh="H" time="04:17" uni="13" team="POM" checkname="GROTH,MARTA" action="GOOD" type="3PTR" vscore="64" hscore="66" x="74.7300033569336" y="13.619999885559082" side="right">
+      </play>
+      <play vh="H" time="04:17" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="ASSIST" side="right">
+      </play>
+      <play vh="H" time="04:05" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="FOUL" side="right">
+      </play>
+      <play vh="V" time="04:05" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="MISS" type="FT" side="left">
+      </play>
+      <play vh="V" time="04:05" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="DEADB" side="left">
+      </play>
+      <play vh="V" time="04:05" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="GOOD" type="FT" vscore="65" hscore="66" side="left">
+      </play>
+      <play vh="H" time="03:51" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="03:51" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="STEAL" side="left">
+      </play>
+      <play vh="V" time="03:35" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="MISS" type="JUMPER" paint="Y" x="15.909999847412109" y="55.709999084472656" side="left">
+      </play>
+      <play vh="V" time="03:31" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="V" time="03:25" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="MISS" type="JUMPER" x="4.9899997711181641" y="42.9900016784668" side="left">
+      </play>
+      <play vh="H" time="03:22" uni="13" team="POM" checkname="GROTH,MARTA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="03:22" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="FOUL" side="left">
+      </play>
+      <play vh="V" time="03:18" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="FOUL" side="left">
+      </play>
+      <play vh="H" time="03:05" uni="13" team="POM" checkname="GROTH,MARTA" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="03:05" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="STEAL" side="left">
+      </play>
+      <play vh="V" time="02:56" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="GOOD" type="JUMPER" vscore="67" hscore="66" x="12.010000228881836" y="68.699996948242188" side="left">
+      </play>
+      <play vh="H" time="02:41" uni="13" team="POM" checkname="GROTH,MARTA" action="MISS" type="JUMPER" x="80.660003662109375" y="26.889999389648438" side="right">
+      </play>
+      <play vh="V" time="02:39" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="V" time="02:35" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="MISS" type="JUMPER" paint="Y" x="17.940000534057617" y="64.459999084472656" side="left">
+      </play>
+      <play vh="V" time="02:33" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="V" time="02:33" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="GOOD" type="LAYUP" vscore="69" hscore="66" x="6" y="50" side="left">
+      </play>
+      <play vh="H" time="02:32" uni="TM" team="POM" checkname="TEAM" action="TIMEOUT" type="TEAM" side="right">
+      </play>
+      <play vh="H" time="02:08" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="MISS" type="3PTR" x="79.55999755859375" y="88.760002136230469" side="right">
+      </play>
+      <play vh="V" time="02:06" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="REBOUND" type="DEF" side="left">
+      </play>
+      <play vh="V" time="01:57" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="MISS" type="3PTR" x="32.450000762939453" y="63.619998931884766" side="left">
+      </play>
+      <play vh="H" time="01:55" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="01:51" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="GOOD" type="JUMPER" fastb="Y" vscore="69" hscore="68" x="90.0199966430664" y="31.409999847412109" side="right">
+      </play>
+      <play vh="V" time="01:29" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="MISS" type="JUMPER" paint="Y" x="9.5200004577636719" y="60.5099983215332" side="left">
+      </play>
+      <play vh="H" time="01:24" uni="12" team="POM" checkname="USTASZEWSKA,ALICJA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="H" time="01:22" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="01:22" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="STEAL" side="left">
+      </play>
+      <play vh="V" time="01:10" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="TURNOVER" side="left">
+      </play>
+      <play vh="H" time="01:10" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="STEAL" side="right">
+      </play>
+      <play vh="H" time="00:55" uni="10" team="POM" checkname="WŁAZ,AGATA" action="TURNOVER" side="right">
+      </play>
+      <play vh="V" time="00:55" uni="11" team="DOL" checkname="BAJUS,KATARZYNA" action="STEAL" side="left">
+      </play>
+      <play vh="V" time="00:40" uni="14" team="DOL" checkname="PUZIO,DOMINIKA" action="MISS" type="3PTR" x="30.420000076293945" y="83.389999389648438" side="left">
+      </play>
+      <play vh="H" time="00:38" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="REBOUND" type="DEF" side="right">
+      </play>
+      <play vh="V" time="00:38" uni="8" team="DOL" checkname="GŁÓWCZAK,MARTYNA" action="FOUL" side="left">
+      </play>
+      <play vh="H" time="00:38" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="GOOD" type="FT" fastb="Y" vscore="69" hscore="69" side="right">
+      </play>
+      <play vh="H" time="00:38" uni="4" team="POM" checkname="KLOSKA,MAGDALENA" action="GOOD" type="FT" fastb="Y" vscore="69" hscore="70" side="right">
+      </play>
+      <play vh="V" time="00:30" uni="5" team="DOL" checkname="STĘPIEŃ,ZUZANNA" action="MISS" type="JUMPER" paint="Y" x="12.640000343322754" y="59.380001068115234" side="left">
+      </play>
+      <play vh="H" time="00:30" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="BLOCK" side="right">
+      </play>
+      <play vh="V" time="00:30" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="OFF" side="left">
+      </play>
+      <play vh="V" time="00:30" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="TURNOVER" side="left">
+      </play>
+      <play vh="H" time="00:10" uni="15" team="POM" checkname="DANIELEWICZ,HELENA" action="GOOD" type="JUMPER" vscore="69" hscore="72" x="92.199996948242188" y="44.409999847412109" side="right">
+      </play>
+      <play vh="H" time="00:10" uni="13" team="POM" checkname="GROTH,MARTA" action="ASSIST" side="right">
+      </play>
+      <play vh="V" time="00:01" uni="9" team="DOL" checkname="WARSIŃSKA,BLANKA" action="MISS" type="3PTR" x="31.670000076293945" y="37.060001373291016" side="left">
+      </play>
+      <play vh="V" time="00:01" uni="TM" team="DOL" checkname="TEAM" action="REBOUND" type="OFF" side="left">
+      </play>
+    </period>
+  </plays>
+</bbgame>
