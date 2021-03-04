@@ -1,0 +1,13 @@
+{
+"xml_path": "C://mecz.xml",
+"save_directory": "C://stats",
+"scan_times": {	"fouls": 1,
+		"players": 25635,
+		"players_oncourt": 3,
+		"teams_stats": 4,
+		"best_players": -1,
+		"random_stat": 2,
+		"players_stats": 1,
+		"team_points": 3,
+		"period_number": 3,
+		"quarter_time": 1}}
