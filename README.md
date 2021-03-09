@@ -28,7 +28,12 @@ $ python app.py
 ## Executable
 ``` 
 $ git clone https://github.com/radosz99/statistic-xml-reader-v2.git && cd statistic-xml-reader-v2
-$ ...
+$ pip install -r requirements.txt
+$ pip install pyinstaller
+$ pyinstaller scanner.spec
+$ cd dist
+$ scanner.exe <path/to/config.json>
+
 ```
 
 
