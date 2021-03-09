@@ -15,17 +15,16 @@
 <a name="run"></a>
 # Run
 
-
 <a name="script"></a>
 ## Python script
 ```
 $ git clone https://github.com/radosz99/statistic-xml-reader-v2.git && cd statistic-xml-reader-v2
 $ pip install -r requirements.txt
-$ python app.py
+$ python app.py <path/to/config.json>
 ```
 
 <a name="exec"></a>
-## Executable
+## PyInstaller Executable
 ``` 
 $ git clone https://github.com/radosz99/statistic-xml-reader-v2.git && cd statistic-xml-reader-v2
 $ pip install -r requirements.txt
@@ -36,7 +35,9 @@ $ scanner.exe <path/to/config.json>
 
 ```
 
-
+<p align="center">
+  <img src="https://i.imgur.com/zoHdcIm.png" width=90% alt="Img"/>
+</p>
 
  <a name="features"></a>
 # Features
@@ -60,6 +61,7 @@ statistic-xml-reader-v2/
 |
 ├── app.py
 ├── model.py
+├── scanner.spec
 ├── config.json
 ├── README.md
 ├── requirements.txt
