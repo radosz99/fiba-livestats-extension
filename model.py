@@ -1,16 +1,25 @@
+# coding=utf8
+import os
+import sys
 import copy
+import paramiko
+from PIL import Image, ImageFont, ImageDraw, ImageFilter 
 
-class TeamStatisticLine:
+class Team:
     """Klasa reprezentujaca linijke statystyczna druzyny"""
     def __init__(self, fgm, fga,fgm3,fga3,ftm,fta,tp,blk,stl,ast,min,oreb,dreb,treb,pf,tf,to,dq,fgpct,fg3pct,ftpct,teamname,vh, large_lead, lead_time, leads, ties, pts_bench, pts_fastb, pts_paint, pts_ch2, pts_to, short_teamname):
         self.fgm2 = int(fgm) - int(fgm3)
         self.fga2 = int(fga) - int(fga3)
+        self.fg2_percent = f"{round(self.fgm2/self.fga2 * 100, 1)}" if self.fga2 != 0 else "0.0"
         self.fgm3 = int(fgm3)
         self.fga3 = int(fga3)
+        self.fg3_percent = f"{round(self.fgm3/self.fga3 * 100, 1)}" if self.fga3 != 0 else "0.0"
         self.fgm = int(fgm)
         self.fga = int(fga)
+        self.fg_percent = f"{round(self.fgm/self.fga * 100, 1)}" if self.fga != 0 else "0.0"
         self.ftm = int(ftm)
         self.fta = int(fta)
+        self.ft_percent = f"{round(self.ftm/self.fta * 100, 1)}" if self.fta != 0 else "0.0"
         self.points = int(tp)
         self.blocks = int(blk)
         self.steals = int(stl)
@@ -36,25 +45,32 @@ class TeamStatisticLine:
         return f'\nPoints - {self.points}, Team - {self.teamname}, Players - {self.players}'
 
     def __eq__(self, other):
-        if not isinstance(other, TeamStatisticLine):
+        if not isinstance(other, Team):
             return False
         return self.teamname == other.teamname
 
 
-class PlayerStatisticLine:
+class Player:
     """Klasa reprezentujaca linijke statystyczna zawodnika"""
     def __init__(self, name, surname, code, fgm=0, fga=0,fgm3=0,fga3=0,ftm=0,fta=0,tp=0,blk=0,stl=0,ast=0,min=0,oreb=0,dreb=0,treb=0,pf=0,tf=0,to=0,dq=0,fgpct=0,fg3pct=0,ftpct=0,gp=0,gs=0,teamname=0,oncourt=0,sec=0,short_teamname=''):
         self.name = name
         self.surname = surname
         self.number = code
-        self.fgm = int(fgm)
-        self.fga = int(fga)
+        self.length_of_prefix = len(f"{name}{surname}{code}")
+        # self.prefix = (f" {code}" if len(str(code))==1 else f"{code}") + f" {name} {surname}"
+        self.fullname = f"{name} {surname}"
         self.fgm2 = int(fgm) - int(fgm3)
         self.fga2 = int(fga) - int(fga3)
+        self.fg2_percent = f"{round(self.fgm2/self.fga2 * 100, 1)}" if self.fga2 != 0 else "0.0"
         self.fgm3 = int(fgm3)
         self.fga3 = int(fga3)
+        self.fg3_percent = f"{round(self.fgm3/self.fga3 * 100, 1)}" if self.fga3 != 0 else "0.0"
+        self.fgm = int(fgm)
+        self.fga = int(fga)
+        self.fg_percent = f"{round(self.fgm/self.fga * 100, 1)}" if self.fga != 0 else "0.0"
         self.ftm = int(ftm)
         self.fta = int(fta)
+        self.ft_percent = f"{round(self.ftm/self.fta * 100, 1)}" if self.fta != 0 else "0.0"
         self.points = int(tp)
         self.blocks = int(blk)
         self.steals = int(stl)
@@ -78,9 +94,31 @@ class PlayerStatisticLine:
         return f'{self.name}, {self.surname}, {self.number}, {self.teamname}, {self.oncourt}'
 
     def __eq__(self, other):
-        if not isinstance(other, PlayerStatisticLine):
+        if not isinstance(other, Player):
             return False
         return self.name == other.name and self.surname == other.surname and self.teamname == other.teamname and self.number == other.number
+
+class RemoteXML():
+    def __init__(self, server_ip, username, private_key_path, server_path_to_xml):
+        self.server_ip = server_ip
+        self.username = username
+        self.private_key_path = private_key_path
+        self.server_path_to_xml = server_path_to_xml
+
+    def init_ssh_session(self):
+        self.ssh = paramiko.SSHClient() 
+        self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        k = paramiko.RSAKey.from_private_key_file(filename=self.private_key_path)
+        self.ssh.connect(hostname=self.server_ip, username=self.username, pkey=k)
+        self.sftp = self.ssh.open_sftp()
+
+    def download_xml_from_server(self, local_save_path):
+        self.sftp.get(self.server_path_to_xml, local_save_path)
+
+    def close_ssh_session(self):
+        self.sftp.close()
+        self.ssh.close()
+
 
 def make_player_statistic_line(player_stat, player_detail, team):
     if(player_stat is not None):
@@ -93,7 +131,8 @@ def make_player_statistic_line(player_stat, player_detail, team):
         if(key=='name'):
             if(value=='TEAM'):
                 return None
-            data = str(value).split(", ")
+            data = str(value).replace(' ', '')
+            data = data.split(",")
             player_info['name']=data[1]
             player_info['surname']=data[0]
         if(key=='gp' or key == 'gs' or key == 'code'):
@@ -103,14 +142,14 @@ def make_player_statistic_line(player_stat, player_detail, team):
                 player_info[key]=True
             elif(value=="N"):
                 player_info[key]=False
-    return PlayerStatisticLine(**player_info)
+    return Player(**player_info)
 
 def make_team_statistic_line(team_stat, special_stat, team_detail):
     info = get_dict_from_list_of_tuples(team_stat.items())
     info.update(get_dict_from_list_of_tuples(special_stat.items()))   
     info['teamname'] = get_value_from_list_of_tuples_by_key(team_detail.items(), 'name')
     info['short_teamname'] = get_value_from_list_of_tuples_by_key(team_detail.items(), 'id')
-    return TeamStatisticLine(**info)
+    return Team(**info)
 
 def get_value_from_list_of_tuples_by_key(tuples_list, key_to_find):
     for key, value in tuples_list:
@@ -149,7 +188,11 @@ def get_fouls(root):
     return fouls
 
 def get_officials(root):
-    return root.find('venue/officials').get('text')
+    officials_string = ""
+    officials_single = root.find('venue/officials').get('text').split(', ')
+    for official_single in officials_single:
+        officials_string += f"{official_single}\n"
+    return officials_string 
 
 def get_date(root):
     return f"{root.find('venue').get('date')} {root.find('venue').get('start')}"
@@ -173,19 +216,19 @@ def get_points_stat(prefix, value, object_with_stats):
     return f"{prefix} - {object_with_stats.points} {get_polish_plural('punkt', 'punkty', 'punktów', object_with_stats.points)}, {object_with_stats.fgm3}/{object_with_stats.fga3} za 3, {object_with_stats.fgm2}/{object_with_stats.fga2} za 2, {object_with_stats.ftm}/{object_with_stats.fta} za 1"
 
 def get_fga2_stat(prefix, value, object_with_stats):
-    if(isinstance(object_with_stats, PlayerStatisticLine)):
+    if(isinstance(object_with_stats, Player)):
         return f"{prefix} - {object_with_stats.points} {get_polish_plural('punkt', 'punkty', 'punktów', object_with_stats.points)}, {object_with_stats.fgm2}/{object_with_stats.fga2} za 2"
     else:
         return f"{prefix} - {object_with_stats.fgm2}/{object_with_stats.fga2} za 2"
 
 def get_fga3_stat(prefix, value, object_with_stats):
-    if(isinstance(object_with_stats, PlayerStatisticLine)):
+    if(isinstance(object_with_stats, Player)):
         return f"{prefix} - {object_with_stats.points} {get_polish_plural('punkt', 'punkty', 'punktów', object_with_stats.points)}, {object_with_stats.fgm3}/{object_with_stats.fga3} za 3"
     else:
         return f"{prefix} - {object_with_stats.fgm3}/{object_with_stats.fga3} za 3"
 
 def get_fta_stat(prefix, value, object_with_stats):
-    if(isinstance(object_with_stats, PlayerStatisticLine)):
+    if(isinstance(object_with_stats, Player)):
         return f"{prefix} - {object_with_stats.points} {get_polish_plural('punkt', 'punkty', 'punktów', object_with_stats.points)}, {object_with_stats.ftm}/{object_with_stats.fta} za 1"
     else:
         return f"{prefix} - {object_with_stats.ftm}/{object_with_stats.fta} za 1"
@@ -204,7 +247,6 @@ def get_pts_paint_stat(prefix, value, object_with_stats):
 
 def get_pts_ch2_stat(prefix, value, object_with_stats):
     return f"{prefix} - {value} {get_polish_plural('punkt', 'punkty', 'punktów', value)} drugiej szansy"
-
 
 def get_steals_stat(prefix, value, object_with_stats):
     return f"{prefix} - {value} {get_polish_plural('przechwyt', 'przechwyty', 'przechwytów', value)}"
@@ -234,3 +276,144 @@ def get_polish_plural(singularNominativ, pluralNominativ, pluralGenitive, value)
         return pluralNominativ
     else:
         return pluralGenitive
+
+def get_fg_string(attempts, made, percent):
+    space_shift = '   '
+    string = ''
+    if(attempts != 0):
+        if(len(str(made))==1):
+            player_fgm2 = f" {made}"
+        else:
+            player_fgm2 = made
+        if(len(str(attempts))==1):
+            player_fga2 = f"{attempts} "
+        else:
+            player_fga2 = attempts
+        string += f"{space_shift}{player_fgm2}/{player_fga2}"
+        string += f"{space_shift}{percent}%" + ' ' * (5 - len(percent))
+    else:
+        string += f"{space_shift}     {space_shift}0.0%  "
+    return string
+
+def get_player_stats_string(player):
+    string = ''
+    space_shift = '   '
+    string += f"{player.points}" + ' ' * (2 - len(str(player.points)))
+    string += get_fg_string(player.fga2, player.fgm2, player.fg2_percent)
+    string += get_fg_string(player.fga3, player.fgm3, player.fg3_percent)
+    string += get_fg_string(player.fta, player.ftm, player.ft_percent)
+    for counter, value in enumerate([player.offensive_rebounds, player.defensive_rebounds, player.rebounds, player.assists, player.fouls, player.turnovers, player.steals, player.blocks]):
+        if(counter != 4):
+            string += get_value_if_not_equals_to_zero(value)
+        else:
+            string += get_fouls_if_not_equals_to_zero(value)
+    string += f"{space_shift}{player.eval}"
+    return string
+
+def get_players_stats_string_to_txt(players):
+    string = ''
+    max_prefix_length = max(player.length_of_prefix for player in players)
+    for player in players:  
+        string += f"\n{player.number} {player.name} {player.surname}" + " " * (max_prefix_length - player.length_of_prefix) 
+        string += f"\t{player.points}\t{player.minutes}"
+        if(player.fga2 != 0):
+            string += f"\t{player.fgm2}/{player.fga2}"
+            string += f"\t{round(player.fgm2/player.fga2*100,1)}%"
+        else:
+            string += f"\t\t0.0%"
+
+        if(player.fga3 != 0):
+            string += f"\t{player.fgm3}/{player.fga3}"
+            string += f"\t{round(player.fgm3/player.fga3*100,1)}%"
+        else:
+            string += f"\t\t0.0%"
+
+        if(player.fga != 0):
+            string += f"\t{player.fgm}/{player.fga}"
+            string += f"\t{round(player.fgm/player.fga*100,1)}%"
+        else:
+            string += f"\t\t0.0%"
+
+        if(player.fta !=0):
+            string += f"\t{player.ftm}/{player.fta}"
+            string += f"\t{round(player.ftm/player.fta*100,1)}%"
+        else:
+            string += f"\t\t0.0%"
+        
+        string += get_value_if_not_equals_to_zero(player.offensive_rebounds)
+        string += get_value_if_not_equals_to_zero(player.defensive_rebounds)
+        string += get_value_if_not_equals_to_zero(player.rebounds)
+        string += get_value_if_not_equals_to_zero(player.assists)
+        string += get_value_if_not_equals_to_zero(player.fouls)
+        string += get_value_if_not_equals_to_zero(player.turnovers)
+        string += get_value_if_not_equals_to_zero(player.steals)
+        string += get_value_if_not_equals_to_zero(player.blocks)
+        string += f"\t{player.eval}"
+    return string
+
+def get_value_if_not_equals_to_zero( value):
+    space_shift = '   '
+    if(value != 0):
+        return f"{space_shift}{value}" + ' ' * (2 - len(str(value)))
+    else:
+        return f"{space_shift}  "
+
+def get_fouls_if_not_equals_to_zero(value):
+    space_shift = '   '
+    if(value != 0):
+        return f"{space_shift}{value}"
+    else:
+        return f"{space_shift} "
+
+class GraphicEditor():
+    def __init___(self):
+        pass
+    
+    def edit_photo(self, team_counter, path_to_template, team, filename_to_save, fontname):
+        print(fontname)
+        my_image = Image.open(path_to_template)
+        font_fullname = ImageFont.truetype(f"resources\\fonts\\{fontname}.ttf", 24)
+        font_stats_bold = ImageFont.truetype(f"resources\\fonts\\{fontname}.ttf", 22)
+        team_font = ImageFont.truetype(f"resources\\fonts\\{fontname}.ttf", 80)
+        image_editable = ImageDraw.Draw(my_image)
+        try:
+            team_logo = Image.open(f"resources\\photos\\druzyna_{team_counter}_logo.png")
+            team_logo.thumbnail((335,335), Image.ANTIALIAS)
+            my_image.paste(team_logo)
+        except FileNotFoundError:
+            print(f"Wątek ze skanowaniem statystyk nie mógł odnaleźć loga drużyny {team.teamname}, powinno znajdować się w katalogu 'resources\\photos\' w pliku 'druzyna_{team_counter}_logo.png'")
+        image_editable.text((400, 120), team.teamname, (255, 255, 255), font=team_font)
+        shift = 50
+        shift_common = 4
+        shift_fg = 6
+        stats_string = f"PKT{' ' * shift_common}2P{' ' * shift_fg}2P%{' ' * shift_fg}3P{' ' * shift_fg}3P%{' ' * shift_fg}1P{' ' * shift_fg}1P%     ZA   ZO   ZS   A    F   S    P    B   EVAL"
+        
+        image_editable.text((550, 350), stats_string, (255, 255, 255), font=font_stats_bold)
+
+        image_editable.line([(530,350), (530, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(605,350), (605, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(705,350), (705, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(825,350), (825, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(925,350), (925, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1045,350), (1045, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1145,350), (1145, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1265,350), (1265, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1330,350), (1330, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1395,350), (1395, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1460,350), (1460, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1525,350), (1525, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1580,350), (1580, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1645, 350), (1645, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1710, 350), (1710, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1775, 350), (1775, 980)], fill =(0, 0, 0), width = 2)
+        
+
+        for counter, player in enumerate(team.players):
+            number = player.number if len(player.number)==2 else f" {player.number}"
+            image_editable.text((100, 400 + shift * counter), number, (255, 255, 255), font=font_fullname)
+            image_editable.text((160, 400 + shift * counter), player.fullname, (0, 0, 0), font=font_fullname)
+            image_editable.text((560, 400 + shift * counter), get_player_stats_string(player), (0, 0, 0), font=font_stats_bold)
+            image_editable.line([(110, 390 + shift * counter), (1850, 390 + shift * counter)], fill =(0, 0, 0), width = 2)
+        my_image.save(filename_to_save)
+
+

@@ -1,7 +1,9 @@
+# coding=utf8
 import codecs
 import time
 import threading
 import json
+import shutil
 import sys
 import app
 import signal
@@ -15,14 +17,22 @@ import logging
 import traceback
 from datetime import datetime
 import xml.etree.ElementTree as ET
-from model import TeamStatisticLine, PlayerStatisticLine, get_teams_from_xml, get_fouls, get_officials, get_date, get_value_from_list_of_tuples_by_key
+from xml.etree.ElementTree import ParseError
+from paramiko.ssh_exception import AuthenticationException, SSHException
 
-thismodule = sys.modules[__name__]
+from model import get_teams_from_xml, get_fouls, get_officials, get_date, get_value_from_list_of_tuples_by_key, get_player_stats_string, get_players_stats_string_to_txt, GraphicEditor, RemoteXML
 
+this_module = sys.modules[__name__]
 
+points_detected = False
+probability_random_stat_team, probability_random_stat_player = 1, 3
+player_stats_probabilities, team_stats_probabilities = dict(), dict()
+logging.getLogger("paramiko").setLevel(logging.WARNING)
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 path_to_save, xml_file_path = None, None
-log = logging.getLogger("my-logger")
+log = logging.getLogger("basic_logger")
+fontname = None
+remote_xml = None
 
 def get_best_player_from_team_line(team):
     return max(team.players, key=attrgetter('eval'))
@@ -46,12 +56,6 @@ def get_players_string(players):
         string += f"\n{player.number} {player.name} {player.surname}"
     return string
 
-def get_value_if_not_equals_to_zero(string, value):
-    if(value != 0):
-        return f"\t{value}"
-    else:
-        return f"\t"
-
 def get_string_quarter(period):
     try:
         quarter_int = int(period)
@@ -62,45 +66,12 @@ def get_string_quarter(period):
     else:
         return f"OT{quarter_int - 4}"
 
-
-def get_players_stats_string(players):
-    string = ''
-    for player in players:
-        string += f"\n{player.number} {player.name} {player.surname}"
-        string += f"\t{player.points}\t{player.minutes}"
-        if(player.fga2 != 0):
-            string += f"\t{player.fgm2}/{player.fga2}"
-            string += f"\t{round(player.fgm2/player.fga2*100,1)}%"
-        else:
-            string += f"\t\t0.0%"
-
-        if(player.fga3 != 0):
-            string += f"\t{player.fgm3}/{player.fga3}"
-            string += f"\t{round(player.fgm3/player.fga3*100,1)}%"
-        else:
-            string += f"\t\t0.0%"
-
-        if(player.fga != 0):
-            string += f"\t{player.fgm}/{player.fga}"
-            string += f"\t{round(player.fgm/player.fga*100,1)}%"
-        else:
-            string += f"\t\t0.0%"
-
-        if(player.fta !=0):
-            string += f"\t{player.ftm}/{player.fta}"
-            string += f"\t{round(player.ftm/player.fta*100,1)}%"
-        else:
-            string += f"\t\t0.0%"
-        
-        string += get_value_if_not_equals_to_zero(string, player.offensive_rebounds)
-        string += get_value_if_not_equals_to_zero(string, player.defensive_rebounds)
-        string += get_value_if_not_equals_to_zero(string, player.rebounds)
-        string += get_value_if_not_equals_to_zero(string, player.assists)
-        string += get_value_if_not_equals_to_zero(string, player.fouls)
-        string += get_value_if_not_equals_to_zero(string, player.turnovers)
-        string += get_value_if_not_equals_to_zero(string, player.steals)
-        string += get_value_if_not_equals_to_zero(string, player.blocks)
-        string += f"\t{player.eval}"
+def get_team_stat_string(team):
+    string = f"\n{team.defensive_rebounds}\n{team.offensive_rebounds}\n{team.assists}\n{team.steals}\n{team.turnovers}"
+    string += f"\n{team.fgm2}/{team.fga2} ({team.fg2_percent}%)"
+    string += f"\n{team.fgm3}/{team.fga3} ({team.fg3_percent}%)"
+    string += f"\n{team.ftm}/{team.fta} ({team.ft_percent}%)"
+    string += f"\n{team.large_lead}\n{team.pts_bench}\n{team.pts_fastb}\n{team.pts_paint}\n{team.pts_ch2}\n{team.pts_to}"
     return string
 
 def get_players_oncourt_string(players):
@@ -118,36 +89,79 @@ def save_players_oncourt_to_file():
 def save_team_stats_to_file():
     teams = get_teams_from_xml(ET.parse(xml_file_path).getroot())
     for counter, team in enumerate(teams):
-        write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_team_stats.txt", f"{team.teamname}\n{team.defensive_rebounds}\n{team.offensive_rebounds}\n{team.assists}\n{team.steals}\n{team.turnovers}\n{team.fgm2}/{team.fga2}\n{team.fgm3}/{team.fga3}\n{team.large_lead}\n{team.pts_bench}\n{team.pts_fastb}\n{team.pts_paint}\n{team.pts_ch2}\n{team.pts_to}")
+        write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_team_stats.txt", f"{team.teamname}{get_team_stat_string(team)}")
 
 def save_players_stats_to_file():
     teams = get_teams_from_xml(ET.parse(xml_file_path).getroot())
     for counter, team in enumerate(teams):
-        write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_players_stats.txt", f"{team.teamname}{get_players_stats_string(team.players)}")
+        graphic_editor = GraphicEditor()
+        try:
+            graphic_editor.edit_photo(counter, f"resources\\templates\\player_stats.png", team, f"{path_to_save}/druzyna_{counter}_players_stats.png", fontname)
+        except OSError:
+            make_error_log(f"Wątek ze skanowaniem statystyk nie mógł odnaleźć fontu")
+        write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_players_stats.txt", f"{team.teamname}{get_players_stats_string_to_txt(team.players)}")
+        
+def get_players_stats_string(players):
+    string = ''
+    for player in players:
+        string += get_player_stats_string(player)
+    return string
 
 def save_players_to_file():
     teams = get_teams_from_xml(ET.parse(xml_file_path).getroot())
     for counter, team in enumerate(teams):
         write_one_line_to_file(f"{path_to_save}/druzyna_{counter}.txt", f"{team.teamname}{get_players_string(team.players)}")
+    make_info_log("Zapisano zawodników")
          
 def save_date_to_file(date):
     write_one_line_to_file(f"{path_to_save}/data.txt", date)
-    make_log("Zapisano datę")
+    make_info_log("Zapisano datę")
 
 def save_officials_to_file(officials):
     write_one_line_to_file(f"{path_to_save}/officials.txt", officials)
-    make_log("Zapisano sędziów")
+    make_info_log("Zapisano sędziów")
 
-def save_team_names_to_files(teams):
+def save_team_names_to_files():
+    teams = get_teams_from_xml(ET.parse(xml_file_path).getroot())
     for counter, team in enumerate(teams):
         write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_name.txt", team.teamname)
         write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_id.txt", team.id)
-    make_log("Zapisano nazwy oraz id drużyn")
+    make_info_log("Zapisano nazwy oraz id drużyn")
 
 def save_team_points_to_files():
+    global points_detected
     root = ET.parse(xml_file_path).getroot()
-    for counter, linescore in enumerate(root.findall(f"./team/linescore")):
-        write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_score.txt", get_value_from_list_of_tuples_by_key(linescore.items(), 'score'))
+    points = []
+    for linescore in root.findall(f"./team/linescore"):
+        points.append(int(get_value_from_list_of_tuples_by_key(linescore.items(), 'score')))
+    if(points[0] > 0 or points[1] > 0):
+        points_detected = True
+    if(points_detected):
+        if(points[0] == 0 and points[1] == 0):
+            make_info_log("Punkty w xml się wyzerowały, nie zapisuję, zostaje stary wynik")
+            return
+        else:
+            write_one_line_to_file(f"{path_to_save}/druzyna_0_score.txt", str(points[0]))
+            write_one_line_to_file(f"{path_to_save}/druzyna_1_score.txt", str(points[1]))
+    else:
+        write_one_line_to_file(f"{path_to_save}/druzyna_0_score.txt", "0")
+        write_one_line_to_file(f"{path_to_save}/druzyna_1_score.txt", "0")
+
+def get_xml_from_server(scan_time):
+    while(True):
+        try:
+            sleeptime = scan_time
+            start = time.time()
+            download_xml_from_server()
+            end = time.time()
+            execution_time = end - start
+            make_info_log(f"Uaktualniono plik XML, wykonano w {round(execution_time, 3)}s")
+            sleeptime = 0
+        except FileNotFoundError:
+            make_error_log(f"Plik XML nie został pobrany z serwera, zła ścieżka do pliku XML na serwerze - {traceback.format_exc()}")
+        finally:
+            time.sleep(sleeptime)
+    
 
 def save_fouls_to_files():
     fouls = get_fouls(ET.parse(xml_file_path).getroot())
@@ -159,11 +173,14 @@ def save_quarter_to_file():
     period = get_value_from_list_of_tuples_by_key(root.find('status').items(), 'period')
     write_one_line_to_file(f"{path_to_save}/period.txt", get_string_quarter(period))
 
+def get_status(root):
+    return False if get_value_from_list_of_tuples_by_key(root.find('status').items(), 'running') == 'F' else True
+
 def save_time_to_file():
     root = ET.parse(xml_file_path).getroot()
     period_time = get_value_from_list_of_tuples_by_key(root.find('status').items(), 'clock')
-    status = False if get_value_from_list_of_tuples_by_key(root.find('status').items(), 'running') == 'F' else True
-    if(not status):
+    
+    if(not get_status(root)):
         write_one_line_to_file(f"{path_to_save}/time.txt", period_time)
     else:
         try:
@@ -195,124 +212,183 @@ def decrement_time(old_time):
         time_in_seconds -= 1
     return convert_from_seconds_to_quarter_time(time_in_seconds)
 
-def make_log(text):
+def make_info_log(text):
     now = datetime.now()
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
     log.info(f"{dt_string}\t{text}")
 
-def make_difference_entries(player, differences_dict, prefix):
-    return [getattr(model, f"get_{key}_stat")(prefix, value, player) for key, value in differences_dict.items()]
+def make_warn_log(text):
+    now = datetime.now()
+    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+    log.warning(f"{dt_string}\t{text}")
+
+def make_error_log(text):
+    now = datetime.now()
+    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+    log.error(f"{dt_string}\t{text}") 
 
 
-def find_differences(object_with_stats, old_object_with_stats):
-    differences = {}
-    for key, value in object_with_stats.__dict__.items():
-        if(value != old_object_with_stats.__dict__.get(key) and key in {'points', 'fga2', 'fga3', 'fta', 'blocks', 'steals', 'assists', 'offensive_rebounds', 'defensive_rebounds', 'fouls', 'turnovers'}):
-            differences[key] = value  
-    return differences
-
-def get_differences(teams, old_teams):
-    difference_entries = []
-    # teams[0].points = 40
-    # teams[1].players[0].assists = 30
-    # teams[0].players[0].eval = 2030
-    for counter, team in enumerate(teams):
-        difference_entries.extend(make_difference_entries(team, find_differences(team, old_teams[counter]), team.teamname))
-        for counter_player, player in enumerate(team.players):
-            difference_entries.extend(make_difference_entries(player, find_differences(player, old_teams[counter].players[counter_player]), f"{player.number} {player.name} {player.surname}"))
-    return difference_entries
-
-def save_last_play_to_file(teams, old_teams):
-    if(old_teams is None):
-        return
-    differences = get_differences(teams, old_teams)
-    if(differences):
-        write_one_line_to_file(f"{path_to_save}/last_play.txt", random.choice(differences))
-        # with codecs.open(f"{path_to_save}/last_plays.txt", "w", "utf-8") as myfile:
-        #     for difference in differences:
-        #         myfile.write(f"{difference}\n")
+    
 
 def get_type_of_random_object():
-    probabilities = [1] * 1 + [2] * 3  # 1 - team, 2 - player
+    probabilities = [1] * probability_random_stat_team + [2] * probability_random_stat_player  # 1 - team, 2 - player
     return random.choice(probabilities)
 
-def get_random_player_from_teams(teams, stat_type):
+def get_player_from_teams_depends_on_stat_type(teams, stat_type):
     players_with_weights = []
     for team in teams:
         for player in team.players:
             players_with_weights.extend([player] * (math.ceil(player.minutes / 3)) * math.ceil(getattr(player, stat_type) / 3))
     return random.choice(players_with_weights)
 
+def remove_player_photo():
+    try:
+        os.remove(f"{path_to_save}/player_photo.png")
+        make_info_log("Usunięto zdjęcie zawodnika")
+    except FileNotFoundError:
+        pass
+
+def update_player_photo(player):
+    filename = prepare_photo_file_name(player)
+    player_photo_path = f"resources/photos/{filename}"
+    try:
+        shutil.copyfile(player_photo_path, f"{path_to_save}/player_photo.png")
+        make_info_log(f"Uaktualniono zdjęcie zawodnika, skopiowany plik - \"{player_photo_path}\"")
+    except FileNotFoundError:
+        remove_player_photo()
+        make_warn_log(f"Nieuaktualniono zdjęcia zawodnika, poszukiwany plik do skopiowania nieznaleziony- \"{player_photo_path}\"")
+    
+
+def prepare_photo_file_name(player):
+    string = f"{remove_accents(player.short_teamname)}_{remove_accents(player.name)}_{remove_accents(player.surname)}.png"
+    return string.lower()
+
+def remove_accents(input_text):
+    strange='ŮôῡΒძěἊἦëĐᾇόἶἧзвŅῑἼźἓŉἐÿἈΌἢὶЁϋυŕŽŎŃğûλВὦėἜŤŨîᾪĝžἙâᾣÚκὔჯᾏᾢĠфĞὝŲŊŁČῐЙῤŌὭŏყἀхῦЧĎὍОуνἱῺèᾒῘᾘὨШūლἚύсÁóĒἍŷöὄЗὤἥბĔõὅῥŋБщἝξĢюᾫაπჟῸდΓÕűřἅгἰშΨńģὌΥÒᾬÏἴქὀῖὣᾙῶŠὟὁἵÖἕΕῨčᾈķЭτἻůᾕἫжΩᾶŇᾁἣჩαἄἹΖеУŹἃἠᾞåᾄГΠКíōĪὮϊὂᾱიżŦИὙἮὖÛĮἳφᾖἋΎΰῩŚἷРῈĲἁéὃσňİΙῠΚĸὛΪᾝᾯψÄᾭêὠÀღЫĩĈμΆᾌἨÑἑïოĵÃŒŸζჭᾼőΣŻçųøΤΑËņĭῙŘАдὗპŰἤცᾓήἯΐÎეὊὼΘЖᾜὢĚἩħĂыῳὧďТΗἺĬὰὡὬὫÇЩᾧñῢĻᾅÆßшδòÂчῌᾃΉᾑΦÍīМƒÜἒĴἿťᾴĶÊΊȘῃΟúχΔὋŴćŔῴῆЦЮΝΛῪŢὯнῬũãáἽĕᾗნᾳἆᾥйᾡὒსᾎĆрĀüСὕÅýფᾺῲšŵкἎἇὑЛვёἂΏθĘэᾋΧĉᾐĤὐὴιăąäὺÈФĺῇἘſგŜæῼῄĊἏØÉПяწДĿᾮἭĜХῂᾦωთĦлðὩზკίᾂᾆἪпἸиᾠώᾀŪāоÙἉἾρаđἌΞļÔβĖÝᾔĨНŀęᾤÓцЕĽŞὈÞუтΈέıàᾍἛśìŶŬȚĳῧῊᾟάεŖᾨᾉςΡმᾊᾸįᾚὥηᾛġÐὓłγľмþᾹἲἔбċῗჰხοἬŗŐἡὲῷῚΫŭᾩὸùᾷĹēრЯĄὉὪῒᾲΜᾰÌœĥტ'
+    ascii_replacements='UoyBdeAieDaoiiZVNiIzeneyAOiiEyyrZONgulVoeETUiOgzEaoUkyjAoGFGYUNLCiIrOOoqaKyCDOOUniOeiIIOSulEySAoEAyooZoibEoornBSEkGYOapzOdGOuraGisPngOYOOIikoioIoSYoiOeEYcAkEtIuiIZOaNaicaaIZEUZaiIaaGPKioIOioaizTIYIyUIifiAYyYSiREIaeosnIIyKkYIIOpAOeoAgYiCmAAINeiojAOYzcAoSZcuoTAEniIRADypUitiiIiIeOoTZIoEIhAYoodTIIIaoOOCSonyKaAsSdoACIaIiFIiMfUeJItaKEISiOuxDOWcRoiTYNLYTONRuaaIeinaaoIoysACRAuSyAypAoswKAayLvEaOtEEAXciHyiiaaayEFliEsgSaOiCAOEPYtDKOIGKiootHLdOzkiaaIPIIooaUaOUAIrAdAKlObEYiINleoOTEKSOTuTEeiaAEsiYUTiyIIaeROAsRmAAiIoiIgDylglMtAieBcihkoIrOieoIYuOouaKerYAOOiaMaIoht'
+    translator=str.maketrans(strange,ascii_replacements)
+    return input_text.translate(translator)
+
+def get_team_probabilities():
+    list_prob = []
+    for key, value in team_stats_probabilities.items():
+        list_prob.extend([key] * value)
+    return list_prob
+
+def get_player_probabilities():
+    list_prob = []
+    for key, value in player_stats_probabilities.items():
+        list_prob.extend([key] * value)
+    return list_prob
+ 
 def save_random_stat_to_file():
     teams = get_teams_from_xml(ET.parse(xml_file_path).getroot())
     object_type = get_type_of_random_object()
-    
+    if (not get_status(ET.parse(xml_file_path).getroot())):
+        make_info_log(f"Losowa statystyka nie zapisana, czas stoi w miejscu")
+        return
     if(object_type == 1):
-        possible_stats = ['fga2'] * 4 + ['fga3'] * 4 + ['fta'] * 4 + ['blocks'] * 2 + ['steals'] * 5 + ['assists'] * 6 + ['rebounds'] * 4 + ['fouls'] + ['turnovers'] * 6 + ['offensive_rebounds'] * 4 + ['pts_fastb'] * 3 + ['pts_bench'] * 3 + ['pts_paint'] * 3 + ['pts_ch2'] * 3 
-        random_possible_stat = random.choice(possible_stats)
+        remove_player_photo()
+        random_possible_stat = random.choice(get_team_probabilities())
         random_stat = f"{getattr(model, f'get_{random_possible_stat}_stat')(teams[0].id, getattr(teams[0], random_possible_stat), teams[0])}, {getattr(model, f'get_{random_possible_stat}_stat')(teams[1].id, getattr(teams[1], random_possible_stat), teams[1])}"
     elif(object_type == 2):
-        possible_stats = ['fga2'] * 4 + ['fga3'] * 4 + ['fta'] * 4 + ['blocks'] * 2 + ['steals'] * 5 + ['assists'] * 6 + ['rebounds'] * 4 + ['offensive_rebounds'] * 4 + ['fouls'] + ['turnovers'] * 6
-        random_possible_stat = random.choice(possible_stats)
-        random_player = get_random_player_from_teams(teams, random_possible_stat)
+        random_possible_stat = random.choice(get_player_probabilities())
+        random_player = get_player_from_teams_depends_on_stat_type(teams, random_possible_stat)
+        update_player_photo(random_player)
         random_stat = getattr(model, f'get_{random_possible_stat}_stat')(f'{random_player.short_teamname}: {random_player.number} {random_player.name} {random_player.surname}', getattr(random_player, random_possible_stat), random_player)
     write_one_line_to_file(f"{path_to_save}/random_stat.txt", random_stat)
-    make_log(f"Losowa statystyka - {random_stat}")
+    make_info_log(f"Losowa statystyka - {random_stat}")
 
 def infinity_scan(scan_time, function_name, update_log, exception_log):
     while(True):
         try:
-            getattr(thismodule, function_name)()
-            make_log(f"Uaktualniono {update_log}")
+            start = time.time()
+            getattr(this_module, function_name)()
+            end = time.time()
+            execution_time = end - start
+            make_info_log(f"Uaktualniono {update_log}, wykonano w {round(execution_time, 3)}s")
+        except ParseError:
+            make_warn_log(f"Wątek ze skanowaniem {exception_log} nie mógł odczytać pliku XML")
+            execution_time = 0
         except Exception:
-            make_log(f"Wątek ze {exception_log} natrafił na błąd - {traceback.format_exc()}")
-        time.sleep(scan_time)
+            make_error_log(f"Wątek ze skanowaniem {exception_log} natrafił na błąd - {traceback.format_exc()}")
+            execution_time = 0
+        sleeptime = scan_time - execution_time if (scan_time - execution_time) > 0 else 0
+        time.sleep(sleeptime)
 
 def scan_fouls(scan_time):
-    infinity_scan(scan_time, "save_fouls_to_files", "faule", "skanowaniem fauli")
+    infinity_scan(scan_time, "save_fouls_to_files", "faule", "fauli")
 
 def scan_players_stats(scan_time):
-    infinity_scan(scan_time, "save_players_stats_to_file", "statystyki zawodników", "skanowaniem statystyk zawodników")
-
-def scan_players(scan_time):
-    infinity_scan(scan_time, "save_players_to_file", "zawodników", "skanowaniem zawodników")
+    infinity_scan(scan_time, "save_players_stats_to_file", "statystyki zawodników", "statystyk zawodników")
 
 def scan_points(scan_time):
-    infinity_scan(scan_time, "save_team_points_to_files", "punkty drużyn", "skanowaniem punktów drużyn")
+    infinity_scan(scan_time, "save_team_points_to_files", "punkty drużyn", "punktów drużyn")
 
 def scan_players_oncourt(scan_time):
-    infinity_scan(scan_time, "save_players_oncourt_to_file", "zawodników na parkiecie", "skanowaniem zawodników na parkiecie")
+    infinity_scan(scan_time, "save_players_oncourt_to_file", "zawodników na parkiecie", "zawodników na parkiecie")
 
 def scan_team_stats(scan_time):
-    infinity_scan(scan_time, "save_team_stats_to_file", "statystyki drużynowe", "skanowaniem statystyk drużynowych")
+    infinity_scan(scan_time, "save_team_stats_to_file", "statystyki drużynowe", "statystyk drużynowych")
 
 def scan_best_players(scan_time):
-    infinity_scan(scan_time, "save_best_players_to_files", "najlepszych zawodników", "skanowaniem najlepszych zawodników")
+    infinity_scan(scan_time, "save_best_players_to_files", "najlepszych zawodników", "najlepszych zawodników")
 
 def get_random_stat(scan_time):
-    infinity_scan(scan_time, "save_random_stat_to_file", "losową statystykę", "skanowaniem ostatnich zmian")
+    infinity_scan(scan_time, "save_random_stat_to_file", "losową statystykę", "ostatnich zmian")
 
 def scan_quarter(scan_time):
-    infinity_scan(scan_time, "save_quarter_to_file", "numer kwarty", "skanowaniem numeru kwarty")
+    infinity_scan(scan_time, "save_quarter_to_file", "numer kwarty", "numeru kwarty")
 
 def scan_quarter_time(scan_time):
-    infinity_scan(scan_time, "save_time_to_file", "czas kwarty", "skanowaniem czasu kwarty")
+    infinity_scan(scan_time, "save_time_to_file", "czas kwarty", "czasu kwarty")
 
 def start_thread(method_name, scan_time):
     if(scan_time > 0):
         fouls_thread = threading.Thread(target=method_name, args=(scan_time,))
         fouls_thread.start()
     else:
-        make_log(f"{method_name} nie wystartowało")
+        make_warn_log(f"{method_name} nie wystartowało, czas z 'config.json' nie jest większy od 0")
+
+def download_xml_from_server():
+    remote_xml.download_xml_from_server("temp.xml")
+    shutil.copy("temp.xml", xml_file_path)
+    os.remove("temp.xml")
+
+def init_ssh_session_with_server():
+    make_info_log("Pobieranie pliku .xml z serwera")
+    remote_xml.init_ssh_session()
+    download_xml_from_server()
+    make_info_log("Pobrano plik .xml z serwera")
 
 
 def scan(scan_times):
+    global remote_xml
+    remote_xml = RemoteXML(server_ip, username, private_key_path, server_path_to_xml)
+    if_remote = check_if_xml_download_is_needed()
+    if(if_remote):
+        try:
+            init_ssh_session_with_server()
+        except AuthenticationException:
+            make_error_log(f"Plik XML nie został pobrany z serwera, prawdopodobnie zła nazwa użytkownika bądź klucz nierozpoznawany przez serwer - {traceback.format_exc()}")
+            sys.exit(1)
+        except SSHException:
+            make_error_log(f"Plik XML nie został pobrany z serwera, prawdopodobnie zły format klucza - {traceback.format_exc()}")
+            sys.exit(1)
+        except FileNotFoundError:
+            make_error_log(f"Plik XML nie został pobrany z serwera, zła ścieżka do klucza bądź do pliku XML na serwerze - {traceback.format_exc()}")
+            sys.exit(1)
+        except TimeoutError:
+            make_error_log(f"Plik XML nie został pobrany z serwera, prawdopodobnie zły adres IP - {traceback.format_exc()}")
+            sys.exit(1)
     try:
+        if(if_remote):
+            start_thread(get_xml_from_server, 2)
         save_date_to_file(get_date(ET.parse(xml_file_path)))
         save_officials_to_file(get_officials(ET.parse(xml_file_path)))
-        save_team_names_to_files(get_teams_from_xml(ET.parse(xml_file_path).getroot()))
+        save_team_names_to_files()
+        save_players_to_file()
         start_thread(scan_fouls, scan_times['fouls'])
-        start_thread(scan_players, scan_times['players'])
         start_thread(scan_players_oncourt, scan_times['players_oncourt'])
         start_thread(scan_team_stats, scan_times['teams_stats'])
         start_thread(scan_best_players, scan_times['best_players'])
@@ -322,25 +398,95 @@ def scan(scan_times):
         start_thread(scan_quarter, scan_times['period_number'])
         start_thread(scan_quarter_time, scan_times['quarter_time'])
     except FileNotFoundError:
-        make_log(f"Plik .xml nie istnieje - {traceback.format_exc()}")
+        make_error_log(f"Plik {xml_file_path} nie istnieje - {traceback.format_exc()}")
     except KeyError:
-        make_log(f"Źle skonfigurowany plik konfiguracyjny 'config.json'- {traceback.format_exc()}") 
+        make_error_log(f"Źle skonfigurowany plik konfiguracyjny 'config.json'- {traceback.format_exc()}") 
     except Exception:
-        make_log(f"Coś nie tak - {traceback.format_exc()}")
+        make_error_log(f"Coś nie tak - {traceback.format_exc()}")
+
+def parse_config_json():
+    with codecs.open('config.json') as myfile:
+        return json.load(myfile)
+
+def get_path_from_config_json(value):
+    json_config = parse_config_json()
+    try:
+        return json_config[value]
+    except:
+        make_error_log(f"Nieprawidłowe nazwy ścieżek w pliku konfiguracyjnym 'config.json' - {traceback.format_exc()}")
+        raise KeyError
+
+
+def check_if_files_exist(files):
+    for file_to_check in files:
+        if(not os.path.exists(file_to_check)):
+            return False
+    return True
+
+def check_if_file_exists(file_to_check):
+    if(os.path.exists(file_to_check)):
+        return True
+    else:
+        return False
+
+def get_probabilities_of_object_with_stats_from_config_json():
+    config_json = parse_config_json()
+    return config_json["probabilities"]["team"], config_json["probabilities"]["player"]
+
+def get_probabilities_of_stats_from_config_json():
+    config_json = parse_config_json()
+    return config_json["probabilities"]["player_stats"], config_json["probabilities"]["team_stats"]
+
+def get_server_info_from_config_json():
+    config_json = parse_config_json()
+    server_info = config_json['remote_xml']
+    return server_info['server_ip'], server_info['server_username'], server_info['private_key_path'], server_info['server_path']
+
+def check_if_xml_download_is_needed():
+    config_json = parse_config_json()
+    return bool(config_json['remote_xml']['if_remote'])
+
+def set_probabilities():
+    global probability_random_stat_player, probability_random_stat_team, player_stats_probabilities, team_stats_probabilities
+    probability_random_stat_team, probability_random_stat_player = get_probabilities_of_object_with_stats_from_config_json()
+    player_stats_probabilities, team_stats_probabilities = get_probabilities_of_stats_from_config_json()
+
+def set_fontname():
+    global fontname
+    fontname = parse_config_json()['fontname']
+
+    
+def get_paths_from_config_json():
+    global xml_file_path, path_to_save
+    try:
+        xml_file_path = get_path_from_config_json('local_xml_path')
+        path_to_save = get_path_from_config_json('save_directory')
+    except KeyError:
+        make_error_log(f"Złe nazwy ścieżek w pliku 'config.json' - {traceback.format_exc()}")
+        sys.exit(1)
+    
+    if(check_if_file_exists(get_path_from_config_json('save_directory'))):
+        make_info_log("Ścieżka do zapisu pobrana z config.json istnieje!")
+        if(not check_if_file_exists(get_path_from_config_json('local_xml_path'))):
+            if(check_if_xml_download_is_needed()):
+                make_info_log("Plik XML będzie pobierany z serwera!")
+            else:
+                make_error_log("Nie wybrano pobierania pliku XML z serwera, a plik zawarty w 'local_xml_path' nie istnieje!")
+                sys.exit(1)
+    else:
+        make_error_log("Ścieżka do zapisu pobrana z config.json NIE ISTNIEJE!")
+        sys.exit(1)
+
+def parametrize_scanner():
+    try:
+        get_paths_from_config_json()
+        set_probabilities()
+        set_fontname()
+        return parse_config_json()['scan_times']
+    except KeyError:
+        print(f"Nieprawidłowa nazwa odstępów czasowych skanowania w pliku konfiguracyjnym 'config.json' - {traceback.format_exc()}")
+        sys.exit(1)
 
 if __name__ == "__main__":
-    if(len(sys.argv) != 3):
-        print("Podaj lokalizację pliku .xml i folderu zapisu")
-        sys.exit(1)
-    try:
-        with codecs.open('config.json') as myfile:
-            json_config = json.load(myfile)
-        xml_file_path = sys.argv[1]
-        path_to_save = sys.argv[2]
-        scan_times = json_config['scan_times']
-        scan(scan_times)
-    except KeyError:
-        print(f"Źle skonfigurowany plik konfiguracyjny 'config.json'- {traceback.format_exc()}")
-    except ValueError:
-        print(f"Niepoprawne okresy odświeżania - {traceback.format_exc()}")
-        sys.exit(1)
+    server_ip, username, private_key_path, server_path_to_xml = get_server_info_from_config_json()
+    scan(parametrize_scanner())
