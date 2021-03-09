@@ -369,15 +369,14 @@ class GraphicEditor():
     def __init___(self):
         pass
     
-    def edit_photo(self, team_counter, path_to_template, team, filename_to_save, fontname):
-        print(fontname)
-        my_image = Image.open(path_to_template)
-        font_fullname = ImageFont.truetype(f"resources\\fonts\\{fontname}.ttf", 24)
-        font_stats_bold = ImageFont.truetype(f"resources\\fonts\\{fontname}.ttf", 22)
-        team_font = ImageFont.truetype(f"resources\\fonts\\{fontname}.ttf", 80)
+    def edit_photo(self, team_counter, resources_path, team, filename_to_save, fontname):
+        my_image = Image.open(f"{resources_path}\\templates\\player_stats.png")
+        font_fullname = ImageFont.truetype(f"{resources_path}\\fonts\\{fontname}.ttf", 24)
+        font_stats_bold = ImageFont.truetype(f"{resources_path}\\fonts\\{fontname}.ttf", 22)
+        team_font = ImageFont.truetype(f"{resources_path}\\fonts\\{fontname}.ttf", 80)
         image_editable = ImageDraw.Draw(my_image)
         try:
-            team_logo = Image.open(f"resources\\photos\\druzyna_{team_counter}_logo.png")
+            team_logo = Image.open(f"{resources_path}\\photos\\druzyna_{team_counter}_logo.png")
             team_logo.thumbnail((335,335), Image.ANTIALIAS)
             my_image.paste(team_logo)
         except FileNotFoundError:

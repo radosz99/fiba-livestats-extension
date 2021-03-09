@@ -6,8 +6,9 @@
 			"server_path": "/home/stats/xmls/mecz.xml",
 			"private_key_path": "keys\\xml_stats_key"
 			},
-"local_xml_path": "exemplary_xmls\\mecz.xml",
-"save_directory": "stats",
+"local_xml_path": "C:\\Users\\Radek\\Desktop\\Aplikacje\\statistic-xml-reader-v2\\exemplary_xmls\\mecz.xml",
+"save_directory_path": "C:\\Users\\Radek\\Desktop\\Aplikacje\\statistic-xml-reader-v2\\stats",
+"resources_path": "C:\\Users\\Radek\\Desktop\\Aplikacje\\statistic-xml-reader-v2\\resources",
 "fontname": "RobotoMono-SemiBold",
 "scan_times": {	"fouls": -1,
 		"players_oncourt": -1,

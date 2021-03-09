@@ -29,10 +29,11 @@ probability_random_stat_team, probability_random_stat_player = 1, 3
 player_stats_probabilities, team_stats_probabilities = dict(), dict()
 logging.getLogger("paramiko").setLevel(logging.WARNING)
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
-path_to_save, xml_file_path = None, None
+path_to_save, xml_file_path, resources_path = None, None, None
 log = logging.getLogger("basic_logger")
 fontname = None
 remote_xml = None
+config_json_path = None
 
 def get_best_player_from_team_line(team):
     return max(team.players, key=attrgetter('eval'))
@@ -96,7 +97,7 @@ def save_players_stats_to_file():
     for counter, team in enumerate(teams):
         graphic_editor = GraphicEditor()
         try:
-            graphic_editor.edit_photo(counter, f"resources\\templates\\player_stats.png", team, f"{path_to_save}/druzyna_{counter}_players_stats.png", fontname)
+            graphic_editor.edit_photo(counter, resources_path, team, f"{path_to_save}/druzyna_{counter}_players_stats.png", fontname)
         except OSError:
             make_error_log(f"Wątek ze skanowaniem statystyk nie mógł odnaleźć fontu")
         write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_players_stats.txt", f"{team.teamname}{get_players_stats_string_to_txt(team.players)}")
@@ -250,7 +251,7 @@ def remove_player_photo():
 
 def update_player_photo(player):
     filename = prepare_photo_file_name(player)
-    player_photo_path = f"resources/photos/{filename}"
+    player_photo_path = f"{resources_path}/photos/{filename}"
     try:
         shutil.copyfile(player_photo_path, f"{path_to_save}/player_photo.png")
         make_info_log(f"Uaktualniono zdjęcie zawodnika, skopiowany plik - \"{player_photo_path}\"")
@@ -361,7 +362,6 @@ def init_ssh_session_with_server():
     download_xml_from_server()
     make_info_log("Pobrano plik .xml z serwera")
 
-
 def scan(scan_times):
     global remote_xml
     remote_xml = RemoteXML(server_ip, username, private_key_path, server_path_to_xml)
@@ -405,7 +405,13 @@ def scan(scan_times):
         make_error_log(f"Coś nie tak - {traceback.format_exc()}")
 
 def parse_config_json():
-    with codecs.open('config.json') as myfile:
+    # if getattr(sys, 'frozen', False):
+    #     folder = Path(sys._MEIPASS)
+    # else:
+    #     folder = Path(__file__).parent
+    # file_to_open = folder/'resources/config.json'
+    # print(os.path.abspath(file_to_open))
+    with codecs.open(config_json_path) as myfile:
         return json.load(myfile)
 
 def get_path_from_config_json(value):
@@ -457,17 +463,20 @@ def set_fontname():
 
     
 def get_paths_from_config_json():
-    global xml_file_path, path_to_save
+    global xml_file_path, path_to_save, resources_path
     try:
         xml_file_path = get_path_from_config_json('local_xml_path')
-        path_to_save = get_path_from_config_json('save_directory')
+        path_to_save = get_path_from_config_json('save_directory_path')
+        resources_path = get_path_from_config_json('resources_path')
+        if(not check_if_file_exists(resources_path)):
+            make_warn_log(f"Ścieżka do 'resources' nie istnieje ({resources_path}), nie będzie możliwe utworzenie grafik oraz kopii zdjęć zawodników")
     except KeyError:
         make_error_log(f"Złe nazwy ścieżek w pliku 'config.json' - {traceback.format_exc()}")
         sys.exit(1)
     
-    if(check_if_file_exists(get_path_from_config_json('save_directory'))):
+    if(check_if_file_exists(path_to_save)):
         make_info_log("Ścieżka do zapisu pobrana z config.json istnieje!")
-        if(not check_if_file_exists(get_path_from_config_json('local_xml_path'))):
+        if(not check_if_file_exists(xml_file_path)):
             if(check_if_xml_download_is_needed()):
                 make_info_log("Plik XML będzie pobierany z serwera!")
             else:
@@ -484,9 +493,14 @@ def parametrize_scanner():
         set_fontname()
         return parse_config_json()['scan_times']
     except KeyError:
-        print(f"Nieprawidłowa nazwa odstępów czasowych skanowania w pliku konfiguracyjnym 'config.json' - {traceback.format_exc()}")
+        make_error_log(f"Nieprawidłowa nazwa odstępów czasowych skanowania w pliku konfiguracyjnym 'config.json' - {traceback.format_exc()}")
         sys.exit(1)
 
 if __name__ == "__main__":
+    try:
+        config_json_path = sys.argv[1]
+    except IndexError:
+        print("Podaj pełną ścieżkę do pliku 'config.json'")
+        sys.exit(1)
     server_ip, username, private_key_path, server_path_to_xml = get_server_info_from_config_json()
     scan(parametrize_scanner())
