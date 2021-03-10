@@ -36,7 +36,7 @@ $ scanner.exe <path/to/config.json>
 ```
 
 <p align="center">
-  <img src="https://i.imgur.com/zoHdcIm.png" width=90% alt="Img"/>
+  <img src="https://i.imgur.com/Z1zviyu.png" width=110% alt="Img"/>
 </p>
 
  <a name="features"></a>
