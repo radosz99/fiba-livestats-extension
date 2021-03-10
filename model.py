@@ -3,7 +3,13 @@ import os
 import sys
 import copy
 import paramiko
+import logging
 from PIL import Image, ImageFont, ImageDraw, ImageFilter 
+from paramiko.ssh_exception import AuthenticationException, SSHException
+
+logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
+log = logging.getLogger("paramiko_logger")
+
 
 class Team:
     """Klasa reprezentujaca linijke statystyczna druzyny"""
@@ -41,8 +47,15 @@ class Team:
         self.pts_to = int(pts_to)
         self.players = []
         self.id = short_teamname
+
     def __repr__(self):
         return f'\nPoints - {self.points}, Team - {self.teamname}, Players - {self.players}'
+
+    def set_team_stats(self, oreb, dreb, treb, pf, tf, to, dq, code):
+        self.team_oreb = oreb
+        self.team_dreb = dreb
+        self.team_treb = treb
+        self.team_to = to
 
     def __eq__(self, other):
         if not isinstance(other, Team):
@@ -99,18 +112,29 @@ class Player:
         return self.name == other.name and self.surname == other.surname and self.teamname == other.teamname and self.number == other.number
 
 class RemoteXML():
-    def __init__(self, server_ip, username, private_key_path, server_path_to_xml):
+    def __init__(self, server_ip, username, private_key_path, server_path_to_xml, password):
         self.server_ip = server_ip
         self.username = username
         self.private_key_path = private_key_path
         self.server_path_to_xml = server_path_to_xml
+        self.password = password
 
     def init_ssh_session(self):
         self.ssh = paramiko.SSHClient() 
         self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        k = paramiko.RSAKey.from_private_key_file(filename=self.private_key_path)
-        self.ssh.connect(hostname=self.server_ip, username=self.username, pkey=k)
+        try:
+            k = paramiko.RSAKey.from_private_key_file(filename=self.private_key_path)
+            self.ssh.connect(hostname=self.server_ip, username=self.username, pkey=k)
+        except (AuthenticationException, FileNotFoundError, SSHException):
+            log.warning("Plik z kluczem nie znaleziony bądź nieprawidłowy, próba logowania przez hasło")
+            try:
+                self.ssh.connect(hostname=self.server_ip, username=self.username, password=self.password)
+                log.info("Udało się zalogować za pomocą hasła")
+            except AuthenticationException:
+                log.error("Hasło z 'config.json' jest nieprawidłowe!")
+                return False
         self.sftp = self.ssh.open_sftp()
+        return True
 
     def download_xml_from_server(self, local_save_path):
         self.sftp.get(self.server_path_to_xml, local_save_path)
@@ -125,11 +149,10 @@ def make_player_statistic_line(player_stat, player_detail, team):
         player_info = get_dict_from_list_of_tuples(player_stat.items())
     else:
         player_info = dict()
-    player_info['teamname'] = team.teamname
-    player_info['short_teamname'] = team.id
     for key, value in player_detail.items():
         if(key=='name'):
             if(value=='TEAM'):
+                team.set_team_stats(**player_info)
                 return None
             data = str(value).replace(' ', '')
             data = data.split(",")
@@ -142,6 +165,8 @@ def make_player_statistic_line(player_stat, player_detail, team):
                 player_info[key]=True
             elif(value=="N"):
                 player_info[key]=False
+    player_info['teamname'] = team.teamname
+    player_info['short_teamname'] = team.id
     return Player(**player_info)
 
 def make_team_statistic_line(team_stat, special_stat, team_detail):
@@ -206,6 +231,7 @@ def get_teams_from_xml(root):
             player = make_player_statistic_line(player_info.find('stats'), player_info, team)
             if(player is not None):
                 players.append(player)
+    
         team.players = copy.deepcopy(players)
         players = []
         teams.append(team)
@@ -310,53 +336,68 @@ def get_player_stats_string(player):
     string += f"{space_shift}{player.eval}"
     return string
 
-def get_players_stats_string_to_txt(players):
+def get_players_stats_string_to_txt(team):
     string = ''
-    max_prefix_length = max(player.length_of_prefix for player in players)
-    for player in players:  
+    max_prefix_length = max(player.length_of_prefix for player in team.players)
+    for player in team.players:  
         string += f"\n{player.number} {player.name} {player.surname}" + " " * (max_prefix_length - player.length_of_prefix) 
         string += f"\t{player.points}\t{player.minutes}"
-        if(player.fga2 != 0):
-            string += f"\t{player.fgm2}/{player.fga2}"
-            string += f"\t{round(player.fgm2/player.fga2*100,1)}%"
-        else:
-            string += f"\t\t0.0%"
-
-        if(player.fga3 != 0):
-            string += f"\t{player.fgm3}/{player.fga3}"
-            string += f"\t{round(player.fgm3/player.fga3*100,1)}%"
-        else:
-            string += f"\t\t0.0%"
-
-        if(player.fga != 0):
-            string += f"\t{player.fgm}/{player.fga}"
-            string += f"\t{round(player.fgm/player.fga*100,1)}%"
-        else:
-            string += f"\t\t0.0%"
-
-        if(player.fta !=0):
-            string += f"\t{player.ftm}/{player.fta}"
-            string += f"\t{round(player.ftm/player.fta*100,1)}%"
-        else:
-            string += f"\t\t0.0%"
-        
-        string += get_value_if_not_equals_to_zero(player.offensive_rebounds)
-        string += get_value_if_not_equals_to_zero(player.defensive_rebounds)
-        string += get_value_if_not_equals_to_zero(player.rebounds)
-        string += get_value_if_not_equals_to_zero(player.assists)
-        string += get_value_if_not_equals_to_zero(player.fouls)
-        string += get_value_if_not_equals_to_zero(player.turnovers)
-        string += get_value_if_not_equals_to_zero(player.steals)
-        string += get_value_if_not_equals_to_zero(player.blocks)
+        string += get_object_with_stat_string(player)
         string += f"\t{player.eval}"
+    string += f"\nDrużynowe\t\t\t\t\t\t\t\t\t\t\t{get_value_with_tab_if_not_equals_to_zero(team.team_oreb)}{get_value_with_tab_if_not_equals_to_zero(team.team_dreb)}{get_value_with_tab_if_not_equals_to_zero(team.team_treb)}\t\t\t{get_value_with_tab_if_not_equals_to_zero(team.team_to)}"
+    string += "\nSuma\t"
     return string
 
-def get_value_if_not_equals_to_zero( value):
+def get_object_with_stat_string(object_with_stat):
+    string = ''
+    if(object_with_stat.fga2 != 0):
+        string += f"\t{object_with_stat.fgm2}/{object_with_stat.fga2}"
+        string += f"\t{object_with_stat.fg2_percent}%"
+    else:
+        string += f"\t\t0.0%"
+
+    if(object_with_stat.fga3 != 0):
+        string += f"\t{object_with_stat.fgm3}/{object_with_stat.fga3}"
+        string += f"\t{object_with_stat.fg3_percent}%"
+    else:
+        string += f"\t\t0.0%"
+
+    if(object_with_stat.fga != 0):
+        string += f"\t{object_with_stat.fgm}/{object_with_stat.fga}"
+        string += f"\t{object_with_stat.fg_percent}%"
+    else:
+        string += f"\t\t0.0%"
+
+    if(object_with_stat.fta !=0):
+        string += f"\t{object_with_stat.ftm}/{object_with_stat.fta}"
+        string += f"\t{object_with_stat.ft_percent}%"
+    else:
+        string += f"\t\t0.0%"
+        
+    string += get_value_with_tab_if_not_equals_to_zero(object_with_stat.offensive_rebounds)
+    string += get_value_with_tab_if_not_equals_to_zero(object_with_stat.defensive_rebounds)
+    string += get_value_with_tab_if_not_equals_to_zero(object_with_stat.rebounds)
+    string += get_value_with_tab_if_not_equals_to_zero(object_with_stat.assists)
+    string += get_value_with_tab_if_not_equals_to_zero(object_with_stat.fouls)
+    string += get_value_with_tab_if_not_equals_to_zero(object_with_stat.turnovers)
+    string += get_value_with_tab_if_not_equals_to_zero(object_with_stat.steals)
+    string += get_value_with_tab_if_not_equals_to_zero(object_with_stat.blocks)
+    return string
+
+def get_value_if_not_equals_to_zero(value):
     space_shift = '   '
     if(value != 0):
         return f"{space_shift}{value}" + ' ' * (2 - len(str(value)))
     else:
         return f"{space_shift}  "
+
+def get_value_with_tab_if_not_equals_to_zero(value):
+    if(value != 0):
+        return f"\t{value}"
+    else:
+        return f"\t"
+
+
 
 def get_fouls_if_not_equals_to_zero(value):
     space_shift = '   '
@@ -414,5 +455,4 @@ class GraphicEditor():
             image_editable.text((560, 400 + shift * counter), get_player_stats_string(player), (0, 0, 0), font=font_stats_bold)
             image_editable.line([(110, 390 + shift * counter), (1850, 390 + shift * counter)], fill =(0, 0, 0), width = 2)
         my_image.save(filename_to_save)
-
 

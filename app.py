@@ -32,8 +32,9 @@ logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 path_to_save, xml_file_path, resources_path = None, None, None
 log = logging.getLogger("basic_logger")
 fontname = None
-remote_xml = None
+server = None
 config_json_path = None
+server_ip, username, private_key_path, server_path_to_xml, password = None, None, None, None, None
 
 def get_best_player_from_team_line(team):
     return max(team.players, key=attrgetter('eval'))
@@ -100,7 +101,7 @@ def save_players_stats_to_file():
             graphic_editor.edit_photo(counter, resources_path, team, f"{path_to_save}/druzyna_{counter}_players_stats.png", fontname)
         except OSError:
             make_error_log(f"Wątek ze skanowaniem statystyk nie mógł odnaleźć fontu")
-        write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_players_stats.txt", f"{team.teamname}{get_players_stats_string_to_txt(team.players)}")
+        write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_players_stats.txt", f"{team.teamname}{get_players_stats_string_to_txt(team)}")
         
 def get_players_stats_string(players):
     string = ''
@@ -153,10 +154,13 @@ def get_xml_from_server(scan_time):
         try:
             sleeptime = scan_time
             start = time.time()
-            download_xml_from_server()
-            end = time.time()
-            execution_time = end - start
-            make_info_log(f"Uaktualniono plik XML, wykonano w {round(execution_time, 3)}s")
+            if(download_xml_from_server()):
+
+                end = time.time()
+                execution_time = end - start
+                make_info_log(f"Pobrano plik XML z serwera, wykonano w {round(execution_time, 3)}s")
+            else:
+                make_warn_log("Plik XML z serwera ma nieprawidłowy format i nie został pobrany")
             sleeptime = 0
         except FileNotFoundError:
             make_error_log(f"Plik XML nie został pobrany z serwera, zła ścieżka do pliku XML na serwerze - {traceback.format_exc()}")
@@ -352,42 +356,67 @@ def start_thread(method_name, scan_time):
         make_warn_log(f"{method_name} nie wystartowało, czas z 'config.json' nie jest większy od 0")
 
 def download_xml_from_server():
-    remote_xml.download_xml_from_server("temp.xml")
-    shutil.copy("temp.xml", xml_file_path)
-    os.remove("temp.xml")
+    server.download_xml_from_server("temp.xml")
+    try:
+        ET.parse("temp.xml")
+        shutil.copy("temp.xml", xml_file_path)
+        os.remove("temp.xml")
+        return True
+    except:
+        os.remove("temp.xml")
+        return False
+    
 
 def init_ssh_session_with_server():
-    make_info_log("Pobieranie pliku .xml z serwera")
-    remote_xml.init_ssh_session()
-    download_xml_from_server()
-    make_info_log("Pobrano plik .xml z serwera")
+    make_info_log("Pobieranie pliku XML z serwera")
+    if(server.init_ssh_session()):
+        if(download_xml_from_server()):
+            make_info_log("Pobrano plik XML z serwera")
+        else:
+            make_warn_log("Plik XML z serwera ma nieprawidłowy format i nie został pobrany")
+        return True
+    else:
+        return False
+
+def init_ssh_session():
+    try:
+        if(not init_ssh_session_with_server()):
+            make_error_log("Nie powiodła się próba zalogowania ani przez hasło ani przez klucz")
+            sys.exit(1)
+            
+    except AuthenticationException:
+        make_error_log(f"Plik XML nie został pobrany z serwera, prawdopodobnie zła nazwa użytkownika bądź klucz nierozpoznawany przez serwer - {traceback.format_exc()}")
+        sys.exit(1)
+    except SSHException:
+        make_error_log(f"Plik XML nie został pobrany z serwera, prawdopodobnie zły format klucza - {traceback.format_exc()}")
+        sys.exit(1)
+    except FileNotFoundError:
+        make_error_log(f"Plik XML nie został pobrany z serwera, zła ścieżka do klucza bądź do pliku XML na serwerze - {traceback.format_exc()}")
+        sys.exit(1)
+    except TimeoutError:
+        make_error_log(f"Plik XML nie został pobrany z serwera, prawdopodobnie zły adres IP - {traceback.format_exc()}")
+        sys.exit(1)
+ 
+def save_basic_info_to_files():
+    while(True):
+        try:    
+            save_date_to_file(get_date(ET.parse(xml_file_path)))
+            save_officials_to_file(get_officials(ET.parse(xml_file_path)))
+            save_team_names_to_files()
+            save_players_to_file()
+            break
+        except Exception:
+            make_error_log("Plik xml jest niewłaściwie sformatowany, nie można pobrać daty, sędziów, drużyn i zawodników!")
+            time.sleep(0.5)
 
 def scan(scan_times):
-    global remote_xml
-    remote_xml = RemoteXML(server_ip, username, private_key_path, server_path_to_xml)
-    if_remote = check_if_xml_download_is_needed()
-    if(if_remote):
-        try:
-            init_ssh_session_with_server()
-        except AuthenticationException:
-            make_error_log(f"Plik XML nie został pobrany z serwera, prawdopodobnie zła nazwa użytkownika bądź klucz nierozpoznawany przez serwer - {traceback.format_exc()}")
-            sys.exit(1)
-        except SSHException:
-            make_error_log(f"Plik XML nie został pobrany z serwera, prawdopodobnie zły format klucza - {traceback.format_exc()}")
-            sys.exit(1)
-        except FileNotFoundError:
-            make_error_log(f"Plik XML nie został pobrany z serwera, zła ścieżka do klucza bądź do pliku XML na serwerze - {traceback.format_exc()}")
-            sys.exit(1)
-        except TimeoutError:
-            make_error_log(f"Plik XML nie został pobrany z serwera, prawdopodobnie zły adres IP - {traceback.format_exc()}")
-            sys.exit(1)
+    global server
+    server = RemoteXML(server_ip, username, private_key_path, server_path_to_xml, password)
     try:
-        if(if_remote):
+        if(remote_xml):
+            init_ssh_session()
             start_thread(get_xml_from_server, 2)
-        save_date_to_file(get_date(ET.parse(xml_file_path)))
-        save_officials_to_file(get_officials(ET.parse(xml_file_path)))
-        save_team_names_to_files()
-        save_players_to_file()
+        save_basic_info_to_files()
         start_thread(scan_fouls, scan_times['fouls'])
         start_thread(scan_players_oncourt, scan_times['players_oncourt'])
         start_thread(scan_team_stats, scan_times['teams_stats'])
@@ -405,12 +434,6 @@ def scan(scan_times):
         make_error_log(f"Coś nie tak - {traceback.format_exc()}")
 
 def parse_config_json():
-    # if getattr(sys, 'frozen', False):
-    #     folder = Path(sys._MEIPASS)
-    # else:
-    #     folder = Path(__file__).parent
-    # file_to_open = folder/'resources/config.json'
-    # print(os.path.abspath(file_to_open))
     with codecs.open(config_json_path) as myfile:
         return json.load(myfile)
 
@@ -421,7 +444,6 @@ def get_path_from_config_json(value):
     except:
         make_error_log(f"Nieprawidłowe nazwy ścieżek w pliku konfiguracyjnym 'config.json' - {traceback.format_exc()}")
         raise KeyError
-
 
 def check_if_files_exist(files):
     for file_to_check in files:
@@ -443,14 +465,42 @@ def get_probabilities_of_stats_from_config_json():
     config_json = parse_config_json()
     return config_json["probabilities"]["player_stats"], config_json["probabilities"]["team_stats"]
 
-def get_server_info_from_config_json():
+def check_if_login_by_private_key(server_info):
+    global private_key_path
+    try:
+        private_key_path = server_info['private_key_path']
+        return check_if_file_exists(private_key_path)
+    except KeyError:
+        return False
+    
+def check_if_xml_file_from_server():
+    global server_ip, username, server_path_to_xml, password
     config_json = parse_config_json()
-    server_info = config_json['remote_xml']
-    return server_info['server_ip'], server_info['server_username'], server_info['private_key_path'], server_info['server_path']
+    try:
+        server_info = config_json['server']
+        make_info_log("Wybrano pobieranie pliku XML z serwera")
+    except:
+        make_error_log("Brakuje parametru 'server' w pliku 'config.json', XML będzie pobierany z lokalnej lokalizacji")
+        return False
 
-def check_if_xml_download_is_needed():
-    config_json = parse_config_json()
-    return bool(config_json['remote_xml']['if_remote'])
+    try:
+        server_ip, username, server_path_to_xml = server_info['ip'], server_info['username'], server_info['xml_path']   
+    except KeyError:
+        make_error_log("Brakuje którego z parametrów w 'config.json' - 'ip', 'username' albo 'xml_path'")
+        sys.exit(1)
+    
+    if(check_if_login_by_private_key(server_info)):
+        make_info_log(f"Wybrano logowanie przez klucz prywatny z lokalizacji {private_key_path}")
+        return True
+    else:
+        try:
+            password = server_info['password']
+            make_info_log(f"Wybrano logowanie przez hasło")
+            return True
+        except KeyError:
+            make_error_log(f"Nie będzie można pobrać pliku z serwera, dodaj parametr 'private_key_path' bądź 'password'")
+            sys.exit(1)
+
 
 def set_probabilities():
     global probability_random_stat_player, probability_random_stat_team, player_stats_probabilities, team_stats_probabilities
@@ -459,7 +509,10 @@ def set_probabilities():
 
 def set_fontname():
     global fontname
-    fontname = parse_config_json()['fontname']
+    try:
+        fontname = parse_config_json()['fontname']
+    except KeyError:
+        fontname = None
 
     
 def get_paths_from_config_json():
@@ -471,13 +524,13 @@ def get_paths_from_config_json():
         if(not check_if_file_exists(resources_path)):
             make_warn_log(f"Ścieżka do 'resources' nie istnieje ({resources_path}), nie będzie możliwe utworzenie grafik oraz kopii zdjęć zawodników")
     except KeyError:
-        make_error_log(f"Złe nazwy ścieżek w pliku 'config.json' - {traceback.format_exc()}")
+        make_error_log(f"Złe nazwy ścieżek w pliku 'config.json', brakuje 'local_xml_path' albo 'save_directory_path'")
         sys.exit(1)
     
     if(check_if_file_exists(path_to_save)):
         make_info_log("Ścieżka do zapisu pobrana z config.json istnieje!")
         if(not check_if_file_exists(xml_file_path)):
-            if(check_if_xml_download_is_needed()):
+            if(remote_xml):
                 make_info_log("Plik XML będzie pobierany z serwera!")
             else:
                 make_error_log("Nie wybrano pobierania pliku XML z serwera, a plik zawarty w 'local_xml_path' nie istnieje!")
@@ -486,14 +539,17 @@ def get_paths_from_config_json():
         make_error_log("Ścieżka do zapisu pobrana z config.json NIE ISTNIEJE!")
         sys.exit(1)
 
-def parametrize_scanner():
+def get_scan_times():
+    return parse_config_json()['scan_times']
+
+def parametrize_scanner_by_variables_from_config_json():
+    get_paths_from_config_json()
+    set_fontname()
+
     try:
-        get_paths_from_config_json()
         set_probabilities()
-        set_fontname()
-        return parse_config_json()['scan_times']
     except KeyError:
-        make_error_log(f"Nieprawidłowa nazwa odstępów czasowych skanowania w pliku konfiguracyjnym 'config.json' - {traceback.format_exc()}")
+        make_error_log("Źle ustawione prawdopobieństwa w pliku 'config.json'")
         sys.exit(1)
 
 if __name__ == "__main__":
@@ -502,5 +558,17 @@ if __name__ == "__main__":
     except IndexError:
         print("Podaj pełną ścieżkę do pliku 'config.json'")
         sys.exit(1)
-    server_ip, username, private_key_path, server_path_to_xml = get_server_info_from_config_json()
-    scan(parametrize_scanner())
+    if(not check_if_file_exists(config_json_path)):
+        print(f"Plik {config_json_path} nie istnieje")
+        sys.exit(1)
+
+    remote_xml = check_if_xml_file_from_server()
+    parametrize_scanner_by_variables_from_config_json()
+
+    try:
+        scan_times = get_scan_times()
+    except KeyError:
+        print("Brakuje parametru 'scan_times' w pliku 'config.json'")
+        sys.exit(1)
+    
+    scan(scan_times)

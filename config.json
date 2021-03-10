@@ -1,14 +1,14 @@
 {
-"remote_xml": {
-			"if_remote": false,
-			"server_ip": "23.102.185.73",
-			"server_username": "stats",
-			"server_path": "/home/stats/xmls/mecz.xml",
-			"private_key_path": "keys\\xml_stats_key"
+"server": {
+			"ip": "23.102.185.73",
+			"username": "stats",
+			"xml_path": "/home/stats/xmls/mecz.xml",
+			"private_key_ath": "keys\\xml_stats_key",
+			"password": "123456"
 			},
-"local_xml_path": "C:\\Users\\Radek\\Desktop\\Aplikacje\\statistic-xml-reader-v2\\exemplary_xmls\\mecz.xml",
-"save_directory_path": "C:\\Users\\Radek\\Desktop\\Aplikacje\\statistic-xml-reader-v2\\stats",
-"resources_path": "C:\\Users\\Radek\\Desktop\\Aplikacje\\statistic-xml-reader-v2\\resources",
+"local_xml_path": "C:\\Users\\rlis\\Desktop\\studia\\jackowe\\nowe\\exemplary_xmls\\mecz.xml",
+"save_directory_path": "C:\\Users\\rlis\\Desktop\\studia\\jackowe\\nowe\\stats",
+"resources_path": "C:\\Users\\rlis\\Desktop\\studia\\jackowe\\nowe\\resources",
 "fontname": "RobotoMono-SemiBold",
 "scan_times": {	"fouls": -1,
 		"players_oncourt": -1,
