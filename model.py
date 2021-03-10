@@ -303,6 +303,15 @@ def get_polish_plural(singularNominativ, pluralNominativ, pluralGenitive, value)
     else:
         return pluralGenitive
 
+def get_fg_percent_string(percent):
+    if(len(percent)==3):
+        return f"  {percent}"
+    elif(len(percent)==4):
+        return f" {percent}" 
+    elif(len(percent)==5):
+        return percent
+
+
 def get_fg_string(attempts, made, percent):
     space_shift = '   '
     string = ''
@@ -316,25 +325,34 @@ def get_fg_string(attempts, made, percent):
         else:
             player_fga2 = attempts
         string += f"{space_shift}{player_fgm2}/{player_fga2}"
-        string += f"{space_shift}{percent}%" + ' ' * (5 - len(percent))
+        string += f"{space_shift}{get_fg_percent_string(percent)}%"
     else:
-        string += f"{space_shift}     {space_shift}0.0%  "
+        string += f"{space_shift}     {space_shift}  0.0%"
     return string
 
-def get_player_stats_string(player):
+def get_value_on_3_position(value):
+    if(len(value)==1):
+        return f" {value} "
+    elif(len(value)==2):
+        return f"{value} "
+    elif(len(value)==3):
+        return f"{value}"
+
+def get_object_with_stat_stats_string(object_with_stat):
     string = ''
     space_shift = '   '
-    string += f"{player.points}" + ' ' * (2 - len(str(player.points)))
-    string += get_fg_string(player.fga2, player.fgm2, player.fg2_percent)
-    string += get_fg_string(player.fga3, player.fgm3, player.fg3_percent)
-    string += get_fg_string(player.fta, player.ftm, player.ft_percent)
-    for counter, value in enumerate([player.offensive_rebounds, player.defensive_rebounds, player.rebounds, player.assists, player.fouls, player.turnovers, player.steals, player.blocks]):
-        if(counter != 4):
-            string += get_value_if_not_equals_to_zero(value)
-        else:
-            string += get_fouls_if_not_equals_to_zero(value)
-    string += f"{space_shift}{player.eval}"
+    string += get_value_on_3_position(str(object_with_stat.points))
+    string += get_fg_string(object_with_stat.fga2, object_with_stat.fgm2, object_with_stat.fg2_percent)
+    string += get_fg_string(object_with_stat.fga3, object_with_stat.fgm3, object_with_stat.fg3_percent)
+    string += get_fg_string(object_with_stat.fta, object_with_stat.ftm, object_with_stat.ft_percent)
+    for value in [object_with_stat.offensive_rebounds, object_with_stat.defensive_rebounds, object_with_stat.rebounds, object_with_stat.assists, object_with_stat.fouls, object_with_stat.turnovers, object_with_stat.steals, object_with_stat.blocks]:
+        string += get_value_if_not_equals_to_zero(value)
+    if(isinstance(object_with_stat, Player)):
+        string += f"{space_shift}{object_with_stat.eval}"
     return string
+
+def get_team_stats_string(team):
+    return ' ' * 54 + f"{get_value_if_not_equals_to_zero(team.team_oreb)}{get_value_if_not_equals_to_zero(team.team_dreb)}{get_value_if_not_equals_to_zero(team.team_treb)}" + ' ' * 12 + get_value_with_tab_if_not_equals_to_zero(team.team_to)
 
 def get_players_stats_string_to_txt(team):
     string = ''
@@ -397,15 +415,6 @@ def get_value_with_tab_if_not_equals_to_zero(value):
     else:
         return f"\t"
 
-
-
-def get_fouls_if_not_equals_to_zero(value):
-    space_shift = '   '
-    if(value != 0):
-        return f"{space_shift}{value}"
-    else:
-        return f"{space_shift} "
-
 class GraphicEditor():
     def __init___(self):
         pass
@@ -423,36 +432,45 @@ class GraphicEditor():
         except FileNotFoundError:
             print(f"Wątek ze skanowaniem statystyk nie mógł odnaleźć loga drużyny {team.teamname}, powinno znajdować się w katalogu 'resources\\photos\' w pliku 'druzyna_{team_counter}_logo.png'")
         image_editable.text((400, 120), team.teamname, (255, 255, 255), font=team_font)
-        shift = 50
+        shift = 45
         shift_common = 4
         shift_fg = 6
-        stats_string = f"PKT{' ' * shift_common}2P{' ' * shift_fg}2P%{' ' * shift_fg}3P{' ' * shift_fg}3P%{' ' * shift_fg}1P{' ' * shift_fg}1P%     ZA   ZO   ZS   A    F   S    P    B   EVAL"
+        stats_string = f"PKT{' ' * shift_common}2P{' ' * shift_fg}2P%{' ' * shift_fg}3P{' ' * shift_fg}3P%{' ' * shift_fg}1P{' ' * shift_fg}1P%     ZA   ZO   ZS   A    F    S    P    B   EVAL"
         
-        image_editable.text((550, 350), stats_string, (255, 255, 255), font=font_stats_bold)
+        image_editable.text((550, 330), stats_string, (255, 255, 255), font=font_stats_bold)
 
-        image_editable.line([(530,350), (530, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(605,350), (605, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(705,350), (705, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(825,350), (825, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(925,350), (925, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(1045,350), (1045, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(1145,350), (1145, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(1265,350), (1265, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(1330,350), (1330, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(1395,350), (1395, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(1460,350), (1460, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(1525,350), (1525, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(1580,350), (1580, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(1645, 350), (1645, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(1710, 350), (1710, 980)], fill =(0, 0, 0), width = 2)
-        image_editable.line([(1775, 350), (1775, 980)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(530,330), (530, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(605,330), (605, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(705,330), (705, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(830,330), (830, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(925,330), (925, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1050,330), (1050, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1145,330), (1145, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1270,330), (1270, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1330,330), (1330, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1395,330), (1395, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1460,330), (1460, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1525,330), (1525, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1590,330), (1590, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1655, 330), (1655, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1720, 330), (1720, 995)], fill =(0, 0, 0), width = 2)
+        image_editable.line([(1785, 330), (1785, 995)], fill =(0, 0, 0), width = 2)
         
 
-        for counter, player in enumerate(team.players):
+        counter = 0
+        for player in team.players:
             number = player.number if len(player.number)==2 else f" {player.number}"
-            image_editable.text((100, 400 + shift * counter), number, (255, 255, 255), font=font_fullname)
-            image_editable.text((160, 400 + shift * counter), player.fullname, (0, 0, 0), font=font_fullname)
-            image_editable.text((560, 400 + shift * counter), get_player_stats_string(player), (0, 0, 0), font=font_stats_bold)
-            image_editable.line([(110, 390 + shift * counter), (1850, 390 + shift * counter)], fill =(0, 0, 0), width = 2)
+            image_editable.text((100, 380 + shift * counter), number, (255, 255, 255), font=font_fullname)
+            image_editable.text((160, 380 + shift * counter), player.fullname, (0, 0, 0), font=font_fullname)
+            image_editable.text((550, 380 + shift * counter), get_object_with_stat_stats_string(player), (0, 0, 0), font=font_stats_bold)
+            image_editable.line([(100, 370 + shift * counter), (1850, 370 + shift * counter)], fill =(0, 0, 0), width = 2)
+            counter += 1
+        image_editable.text((160, 380 + shift * counter), "Drużynowe", (0, 0, 0), font=font_fullname)
+        image_editable.text((550, 380 + shift * counter), get_team_stats_string(team), (0, 0, 0), font=font_stats_bold)
+        image_editable.line([(100, 370 + shift * counter), (1850, 370 + shift * counter)], fill =(0, 0, 0), width = 4)
+        counter += 1
+        image_editable.text((160, 380 + shift * counter), "Suma", (0, 0, 0), font=font_fullname)
+        image_editable.text((550, 380 + shift * counter), get_object_with_stat_stats_string(team), (0, 0, 0), font=font_stats_bold)
+        image_editable.line([(100, 370 + shift * counter), (1850, 370 + shift * counter)], fill =(0, 0, 0), width = 5)
         my_image.save(filename_to_save)
 

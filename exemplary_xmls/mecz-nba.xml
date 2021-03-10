@@ -1,4 +1,4 @@
-﻿<bbgame source="Basketball LiveStats In-Arena Tool" toolVersion="1.25.0" version="1.1.1" generated="Feb 26, 2021">
+<bbgame source="Basketball LiveStats In-Arena Tool" toolVersion="1.25.0" version="1.1.1" generated="Feb 26, 2021">
   <venue gameid="121827" visid="DOL" visname="Dolnośląskie" homeid="DOL" homename="Dolnośląskie" date="02/26/2021" location="Hala Powiatowej Bursy Szkolnej" start="03:30 PM" leaguegame="N" neutralgame="N" nitegame="N" postseason="N">
     <officials text="Mateusz Kreft">
     </officials>
@@ -7,8 +7,8 @@
   </venue>
   <status complete="Y" period="4" clock="00:00" running="T">
   </status>
-  <team vh="V" code="804" id="DOL" name="Dolnośląskie">
-    <linescore line="16,25,13,15" score="102">
+  <team vh="V" code="804" id="DEN" name="Denver Nuggets">
+    <linescore line="16,25,13,15" score="69">
       <lineprd prd="1" score="16">
       </lineprd>
       <lineprd prd="2" score="25">
@@ -19,7 +19,7 @@
       </lineprd>
     </linescore>
     <totals>
-      <stats fgm="26" fga="65" fgm3="6" fga3="21" ftm="11" fta="20" tp="102" blk="0" stl="11" ast="9" min="200" oreb="16" dreb="24" treb="40" pf="22" tf="0" to="21" dq="0" fgpct="40" fg3pct="28.6" ftpct="55">
+      <stats fgm="26" fga="65" fgm3="6" fga3="21" ftm="11" fta="20" tp="69" blk="0" stl="11" ast="9" min="200" oreb="16" dreb="24" treb="40" pf="22" tf="0" to="21" dq="0" fgpct="40" fg3pct="28.6" ftpct="55">
       </stats>
       <special vh="V" pts_to="23" pts_ch2="9" pts_paint="26" pts_fastb="10" pts_bench="35" ties="0" leads="0" lead_time="1782" large_lead="13">
       </special>
@@ -32,7 +32,7 @@
       <statsbyprd prd="4" fgm="6" fga="19" fgm3="1" fga3="5" ftm="2" fta="4" tp="15" blk="0" stl="5" ast="1" min="50" oreb="5" dreb="2" treb="7" pf="5" tf="0" to="3" dq="0">
       </statsbyprd>
     </totals>
-    <player uni="4" code="4" name="Morawska, Julia" checkname="MORAWSKA,JULIA" class="" gp="1" gs="0" pos="S" oncourt="N">
+    <player uni="1" code="1" name="Porter Jr., Michael" checkname="" class="" gp="1" gs="0" pos="S" oncourt="N">
       <stats fgm="1" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="2" blk="10" stl="10" ast="10" min="3" sec="-" oreb="10" dreb="11" treb="21" pf="2" tf="0" to="10" dq="0" fgpct="100" fg3pct="0" ftpct="0">
       </stats>
       <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
@@ -44,7 +44,7 @@
       <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="5" code="5" name="Stępień, Zuzanna" checkname="STĘPIEŃ,ZUZANNA" class="" gp="1" gs="1" pos="G" oncourt="Y">
+    <player uni="0" code="0" name="Green, JaMychal" checkname="STĘPIEŃ,ZUZANNA" class="" gp="1" gs="1" pos="G" oncourt="Y">
       <stats fgm="0" fga="2" fgm3="0" fga3="0" ftm="0" fta="2" tp="0" blk="0" stl="0" ast="1" min="25" sec="-" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="1" dq="0" fgpct="0" fg3pct="0" ftpct="0">
       </stats>
       <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
@@ -56,7 +56,7 @@
       <statsbyprd prd="4" fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="7" sec="+" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="1" dq="0">
       </statsbyprd>
     </player>
-    <player uni="6" code="6" name="Surowiec, Lena" checkname="SUROWIEC,LENA" class="" gp="1" gs="0" pos="G" oncourt="N">
+    <player uni="15" code="15" name="Jokic, Nikola" checkname="SUROWIEC,LENA" class="" gp="1" gs="0" pos="G" oncourt="N">
       <stats fgm="0" fga="3" fgm3="0" fga3="2" ftm="0" fta="2" tp="0" blk="0" stl="1" ast="0" min="18" sec="-" oreb="2" dreb="0" treb="2" pf="1" tf="0" to="1" dq="0" fgpct="0" fg3pct="0" ftpct="0">
       </stats>
       <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="0" dq="0">
@@ -68,11 +68,11 @@
       <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="3" sec="-" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="7" code="7" name="Murat, Julia" checkname="MURAT,JULIA" class="" gp="0" gs="0" pos="S" oncourt="N">
+    <player uni="27" code="27" name="Murray, Jamal" checkname="MURAT,JULIA" class="" gp="0" gs="0" pos="S" oncourt="N">
       <stats fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0" fgpct="0" fg3pct="0" ftpct="0">
       </stats>
     </player>
-    <player uni="8" code="8" name="Główczak, Martyna" checkname="GŁÓWCZAK,MARTYNA" class="" gp="1" gs="0" pos="G" oncourt="Y">
+    <player uni="7" code="7" name="Campazzo, Facundo" checkname="GŁÓWCZAK,MARTYNA" class="" gp="1" gs="0" pos="G" oncourt="Y">
       <stats fgm="7" fga="16" fgm3="0" fga3="2" ftm="2" fta="3" tp="16" blk="0" stl="1" ast="5" min="27" oreb="0" dreb="4" treb="4" pf="4" tf="0" to="1" dq="0" fgpct="43.8" fg3pct="0" ftpct="66.7">
       </stats>
       <statsbyprd prd="1" fgm="1" fga="3" fgm3="0" fga3="1" ftm="1" fta="1" tp="3" blk="0" stl="1" ast="2" min="5" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="1" dq="0">
@@ -84,7 +84,7 @@
       <statsbyprd prd="4" fgm="2" fga="5" fgm3="0" fga3="0" ftm="0" fta="0" tp="4" blk="0" stl="0" ast="1" min="10" oreb="0" dreb="1" treb="1" pf="3" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="9" code="9" name="Warsińska, Blanka" checkname="WARSIŃSKA,BLANKA" class="" gp="1" gs="1" pos="G" oncourt="Y">
+    <player uni="13" code="13" name="Hampton, RJ" checkname="WARSIŃSKA,BLANKA" class="" gp="1" gs="1" pos="G" oncourt="Y">
       <stats fgm="7" fga="19" fgm3="3" fga3="9" ftm="2" fta="2" tp="19" blk="0" stl="4" ast="1" min="30" oreb="0" dreb="2" treb="2" pf="3" tf="0" to="4" dq="0" fgpct="36.8" fg3pct="33.3" ftpct="100">
       </stats>
       <statsbyprd prd="1" fgm="0" fga="2" fgm3="0" fga3="1" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="1" dq="0">
@@ -96,7 +96,7 @@
       <statsbyprd prd="4" fgm="3" fga="9" fgm3="1" fga3="4" ftm="0" fta="0" tp="7" blk="0" stl="1" ast="0" min="10" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="2" dq="0">
       </statsbyprd>
     </player>
-    <player uni="10" code="10" name="Suwała, Marta" checkname="SUWAŁA,MARTA" class="" gp="1" gs="0" pos="G" oncourt="N">
+    <player uni="22" code="22" name="Nnaji, Zeke" checkname="SUWAŁA,MARTA" class="" gp="1" gs="0" pos="G" oncourt="N">
       <stats fgm="0" fga="1" fgm3="0" fga3="0" ftm="1" fta="2" tp="1" blk="0" stl="1" ast="0" min="13" sec="+" oreb="0" dreb="2" treb="2" pf="3" tf="0" to="3" dq="0" fgpct="0" fg3pct="0" ftpct="50">
       </stats>
       <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="1" ast="0" min="5" oreb="0" dreb="2" treb="2" pf="0" tf="0" to="1" dq="0">
@@ -108,7 +108,7 @@
       <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="11" code="11" name="Bajus, Katarzyna" checkname="BAJUS,KATARZYNA" class="" gp="1" gs="0" pos="S" oncourt="Y">
+    <player uni="00" code="00" name="Howard, Markus" checkname="BAJUS,KATARZYNA" class="" gp="1" gs="0" pos="S" oncourt="Y">
       <stats fgm="3" fga="4" fgm3="1" fga3="1" ftm="2" fta="2" tp="9" blk="0" stl="3" ast="1" min="26" sec="+" oreb="1" dreb="4" treb="5" pf="2" tf="0" to="3" dq="0" fgpct="75" fg3pct="100" ftpct="100">
       </stats>
       <statsbyprd prd="1" fgm="2" fga="2" fgm3="0" fga3="0" ftm="0" fta="0" tp="4" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="2" treb="2" pf="0" tf="0" to="2" dq="0">
@@ -120,7 +120,7 @@
       <statsbyprd prd="4" fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="3" ast="0" min="10" sec="-" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="13" code="13" name="Zyzańska, Amelia" checkname="ZYZAŃSKA,AMELIA" class="" gp="1" gs="1" pos="G" oncourt="N">
+    <player uni="25" code="25" name="Hartenstein, Isaiah" checkname="ZYZAŃSKA,AMELIA" class="" gp="1" gs="1" pos="G" oncourt="N">
       <stats fgm="1" fga="6" fgm3="0" fga3="3" ftm="1" fta="1" tp="3" blk="0" stl="0" ast="0" min="14" sec="-" oreb="2" dreb="0" treb="2" pf="2" tf="0" to="0" dq="0" fgpct="16.7" fg3pct="0" ftpct="100">
       </stats>
       <statsbyprd prd="1" fgm="0" fga="2" fgm3="0" fga3="2" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
@@ -132,7 +132,7 @@
       <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" sec="+" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="14" code="14" name="Puzio, Dominika" checkname="PUZIO,DOMINIKA" class="" gp="1" gs="1" pos="F" oncourt="Y">
+    <player uni="31" code="31" name="Cancar, Vlatko" checkname="PUZIO,DOMINIKA" class="" gp="1" gs="1" pos="F" oncourt="Y">
       <stats fgm="3" fga="7" fgm3="2" fga3="4" ftm="2" fta="4" tp="10" blk="0" stl="1" ast="0" min="19" sec="+" oreb="1" dreb="7" treb="8" pf="4" tf="0" to="0" dq="0" fgpct="42.9" fg3pct="50" ftpct="50">
       </stats>
       <statsbyprd prd="1" fgm="1" fga="1" fgm3="1" fga3="1" ftm="0" fta="0" tp="3" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="3" treb="3" pf="1" tf="0" to="0" dq="0">
@@ -144,7 +144,7 @@
       <statsbyprd prd="4" fgm="1" fga="2" fgm3="0" fga3="1" ftm="1" fta="2" tp="3" blk="0" stl="1" ast="0" min="6" sec="-" oreb="1" dreb="1" treb="2" pf="0" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="15" code="15" name="Gryszko, Milena" checkname="GRYSZKO,MILENA" class="" gp="1" gs="1" pos="G" oncourt="N">
+    <player uni="10" code="10" name="Bol, Bol" checkname="GRYSZKO,MILENA" class="" gp="1" gs="1" pos="G" oncourt="N">
       <stats fgm="1" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="2" blk="0" stl="0" ast="1" min="10" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="4" dq="0" fgpct="100" fg3pct="0" ftpct="0">
       </stats>
       <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="1" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="3" dq="0">
@@ -156,7 +156,7 @@
       <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="16" code="16" name="Kaławaj, Karolina" checkname="KAŁAWAJ,KAROLINA" class="" gp="1" gs="0" pos="S" oncourt="N">
+    <player uni="11" code="11" name="Morris, Monte" checkname="KAŁAWAJ,KAROLINA" class="" gp="1" gs="0" pos="S" oncourt="N">
       <stats fgm="3" fga="5" fgm3="0" fga3="0" ftm="1" fta="2" tp="7" blk="0" stl="0" ast="0" min="15" sec="-" oreb="3" dreb="1" treb="4" pf="1" tf="0" to="1" dq="0" fgpct="60" fg3pct="0" ftpct="50">
       </stats>
       <statsbyprd prd="1" fgm="3" fga="4" fgm3="0" fga3="0" ftm="0" fta="0" tp="6" blk="0" stl="0" ast="0" min="5" oreb="2" dreb="0" treb="2" pf="1" tf="0" to="0" dq="0">
@@ -181,7 +181,7 @@
       </statsbyprd>
     </player>
   </team>
-  <team vh="H" code="798" id="POM" name="Pomorskie">
+  <team vh="H" code="798" id="BOS" name="Boston Celtics">
     <linescore line="16,14,16,26" score="72">
       <lineprd prd="1" score="16">
       </lineprd>
@@ -206,7 +206,7 @@
       <statsbyprd prd="4" fgm="10" fga="13" fgm3="2" fga3="4" ftm="4" fta="5" tp="26" blk="2" stl="1" ast="8" min="50" oreb="2" dreb="8" treb="10" pf="2" tf="0" to="7" dq="0">
       </statsbyprd>
     </totals>
-    <player uni="4" code="4" name="Kloska, Magdalena" checkname="KLOSKA,MAGDALENA" class="" gp="1" gs="0" pos="P" oncourt="Y">
+    <player uni="0" code="0" name="Tatum, Jayson" checkname="KLOSKA,MAGDALENA" class="" gp="1" gs="0" pos="P" oncourt="Y">
       <stats fgm="2" fga="8" fgm3="0" fga3="3" ftm="4" fta="4" tp="8" blk="0" stl="2" ast="3" min="27" sec="-" oreb="0" dreb="2" treb="2" pf="1" tf="0" to="0" dq="0" fgpct="25" fg3pct="0" ftpct="100">
       </stats>
       <statsbyprd prd="1" fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="1" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
@@ -218,7 +218,7 @@
       <statsbyprd prd="4" fgm="1" fga="2" fgm3="0" fga3="1" ftm="2" fta="2" tp="4" blk="0" stl="0" ast="2" min="10" oreb="0" dreb="2" treb="2" pf="0" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="6" code="6" name="Bargiel, Amelia" checkname="BARGIEL,AMELIA" class="" gp="1" gs="0" pos="S" oncourt="N">
+    <player uni="37" code="37" name="Ojeleye, Semi" checkname="BARGIEL,AMELIA" class="" gp="1" gs="0" pos="S" oncourt="N">
       <stats fgm="0" fga="2" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="1" ast="0" min="3" sec="-" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="1" dq="0" fgpct="0" fg3pct="0" ftpct="0">
       </stats>
       <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
@@ -230,7 +230,7 @@
       <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="7" code="7" name="Leman, Lidia" checkname="LEMAN,LIDIA" class="" gp="1" gs="0" pos="P" oncourt="N">
+    <player uni="13" code="13" name="Thompson, Tristan" checkname="LEMAN,LIDIA" class="" gp="1" gs="0" pos="P" oncourt="N">
       <stats fgm="1" fga="3" fgm3="0" fga3="1" ftm="0" fta="0" tp="2" blk="0" stl="0" ast="1" min="11" sec="+" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="2" dq="0" fgpct="33.3" fg3pct="0" ftpct="0">
       </stats>
       <statsbyprd prd="1" fgm="0" fga="1" fgm3="0" fga3="1" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="1" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="1" dq="0">
@@ -242,7 +242,7 @@
       <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="9" code="9" name="Pażucha, Amelia" checkname="PAŻUCHA,AMELIA" class="" gp="1" gs="1" pos="P" oncourt="N">
+    <player uni="7" code="7" name="Brown, Jaylen" checkname="PAŻUCHA,AMELIA" class="" gp="1" gs="1" pos="P" oncourt="N">
       <stats fgm="1" fga="4" fgm3="0" fga3="2" ftm="1" fta="3" tp="3" blk="0" stl="0" ast="2" min="15" sec="+" oreb="0" dreb="1" treb="1" pf="5" tf="0" to="0" dq="0" fgpct="25" fg3pct="0" ftpct="33.3">
       </stats>
       <statsbyprd prd="1" fgm="1" fga="3" fgm3="0" fga3="1" ftm="0" fta="1" tp="2" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="0" dq="0">
@@ -254,7 +254,7 @@
       <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="1" min="2" sec="+" oreb="0" dreb="0" treb="0" pf="1" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="10" code="10" name="Właz, Agata" checkname="WŁAZ,AGATA" class="" gp="1" gs="0" pos="S" oncourt="Y">
+    <player uni="8" code="8" name="Walker, Kemba" checkname="WŁAZ,AGATA" class="" gp="1" gs="0" pos="S" oncourt="Y">
       <stats fgm="2" fga="3" fgm3="0" fga3="0" ftm="1" fta="2" tp="5" blk="0" stl="0" ast="0" min="24" sec="-" oreb="1" dreb="1" treb="2" pf="1" tf="0" to="4" dq="0" fgpct="66.7" fg3pct="0" ftpct="50">
       </stats>
       <statsbyprd prd="1" fgm="2" fga="2" fgm3="0" fga3="0" ftm="1" fta="2" tp="5" blk="0" stl="0" ast="0" min="5" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="1" dq="0">
@@ -266,7 +266,7 @@
       <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="8" sec="-" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="2" dq="0">
       </statsbyprd>
     </player>
-    <player uni="11" code="11" name="Chilińska, Klaudia" checkname="CHILIŃSKA,KLAUDIA" class="" gp="1" gs="1" pos="S" oncourt="N">
+    <player uni="26" code="26" name="Nesmith, Aaron" checkname="CHILIŃSKA,KLAUDIA" class="" gp="1" gs="1" pos="S" oncourt="N">
       <stats fgm="0" fga="7" fgm3="0" fga3="2" ftm="0" fta="0" tp="0" blk="1" stl="3" ast="2" min="12" sec="+" oreb="2" dreb="2" treb="4" pf="2" tf="0" to="2" dq="0" fgpct="0" fg3pct="0" ftpct="0">
       </stats>
       <statsbyprd prd="1" fgm="0" fga="3" fgm3="0" fga3="1" ftm="0" fta="0" tp="0" blk="0" stl="2" ast="2" min="5" oreb="1" dreb="2" treb="3" pf="1" tf="0" to="0" dq="0">
@@ -278,7 +278,7 @@
       <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="12" code="12" name="Ustaszewska, Alicja" checkname="USTASZEWSKA,ALICJA" class="" gp="1" gs="1" pos="S" oncourt="Y">
+    <player uni="44" code="44" name="Williams III, Robert" checkname="USTASZEWSKA,ALICJA" class="" gp="1" gs="1" pos="S" oncourt="Y">
       <stats fgm="3" fga="5" fgm3="0" fga3="0" ftm="4" fta="4" tp="10" blk="0" stl="2" ast="1" min="29" sec="-" oreb="4" dreb="2" treb="6" pf="2" tf="0" to="1" dq="0" fgpct="60" fg3pct="0" ftpct="100">
       </stats>
       <statsbyprd prd="1" fgm="1" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="2" blk="0" stl="2" ast="0" min="5" oreb="1" dreb="0" treb="1" pf="0" tf="0" to="0" dq="0">
@@ -290,7 +290,7 @@
       <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="1" min="10" oreb="0" dreb="2" treb="2" pf="0" tf="0" to="1" dq="0">
       </statsbyprd>
     </player>
-    <player uni="13" code="13" name="Groth, Marta" checkname="GROTH,MARTA" class="" gp="1" gs="1" pos="G" oncourt="Y">
+    <player uni="11" code="11" name="Pritchard, Payton" checkname="GROTH,MARTA" class="" gp="1" gs="1" pos="G" oncourt="Y">
       <stats fgm="6" fga="12" fgm3="3" fga3="4" ftm="4" fta="6" tp="19" blk="0" stl="3" ast="4" min="27" sec="+" oreb="1" dreb="6" treb="7" pf="4" tf="0" to="6" dq="0" fgpct="50" fg3pct="75" ftpct="66.7">
       </stats>
       <statsbyprd prd="1" fgm="2" fga="3" fgm3="1" fga3="1" ftm="0" fta="0" tp="5" blk="0" stl="0" ast="1" min="5" oreb="0" dreb="2" treb="2" pf="1" tf="0" to="3" dq="0">
@@ -302,7 +302,7 @@
       <statsbyprd prd="4" fgm="3" fga="5" fgm3="2" fga3="3" ftm="0" fta="0" tp="8" blk="0" stl="0" ast="2" min="10" oreb="1" dreb="2" treb="3" pf="0" tf="0" to="2" dq="0">
       </statsbyprd>
     </player>
-    <player uni="14" code="14" name="Baranowska, Oliwia" checkname="BARANOWSKA,OLIWIA" class="" gp="1" gs="0" pos="C" oncourt="N">
+    <player uni="43" code="43" name="Green, Javonte" checkname="BARANOWSKA,OLIWIA" class="" gp="1" gs="0" pos="C" oncourt="N">
       <stats fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="7" sec="+" oreb="0" dreb="1" treb="1" pf="1" tf="0" to="0" dq="0" fgpct="0" fg3pct="0" ftpct="0">
       </stats>
       <statsbyprd prd="1" fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
@@ -314,7 +314,7 @@
       <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="15" code="15" name="Danielewicz, Helena" checkname="DANIELEWICZ,HELENA" class="" gp="1" gs="0" pos="F" oncourt="Y">
+    <player uni="4" code="4" name="Edwards, Carsen" checkname="DANIELEWICZ,HELENA" class="" gp="1" gs="0" pos="F" oncourt="Y">
       <stats fgm="10" fga="13" fgm3="0" fga3="0" ftm="5" fta="7" tp="25" blk="3" stl="2" ast="3" min="29" sec="-" oreb="4" dreb="5" treb="9" pf="4" tf="0" to="5" dq="0" fgpct="76.9" fg3pct="0" ftpct="71.4">
       </stats>
       <statsbyprd prd="1" fgm="1" fga="3" fgm3="0" fga3="0" ftm="0" fta="0" tp="2" blk="0" stl="1" ast="0" min="5" oreb="1" dreb="0" treb="1" pf="1" tf="0" to="1" dq="0">
@@ -326,7 +326,7 @@
       <statsbyprd prd="4" fgm="6" fga="6" fgm3="0" fga3="0" ftm="2" fta="3" tp="14" blk="2" stl="1" ast="2" min="10" oreb="1" dreb="1" treb="2" pf="1" tf="0" to="2" dq="0">
       </statsbyprd>
     </player>
-    <player uni="16" code="16" name="Flis, Nicola" checkname="FLIS,NICOLA" class="" gp="1" gs="1" pos="S" oncourt="N">
+    <player uni="99" code="99" name="Fall, Tacko" checkname="FLIS,NICOLA" class="" gp="1" gs="1" pos="S" oncourt="N">
       <stats fgm="0" fga="1" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="13" sec="+" oreb="0" dreb="1" treb="1" pf="0" tf="0" to="1" dq="0" fgpct="0" fg3pct="0" ftpct="0">
       </stats>
       <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="5" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
@@ -338,7 +338,7 @@
       <statsbyprd prd="4" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">
       </statsbyprd>
     </player>
-    <player uni="18" code="18" name="Szwichtenberg, Zofia" checkname="SZWICHTENBERG,ZOFIA" class="" gp="1" gs="0" pos="C" oncourt="N">
+    <player uni="55" code="55" name="Teague, Jeff" checkname="SZWICHTENBERG,ZOFIA" class="" gp="1" gs="0" pos="C" oncourt="N">
       <stats fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="3" sec="-" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0" fgpct="0" fg3pct="0" ftpct="0">
       </stats>
       <statsbyprd prd="1" fgm="0" fga="0" fgm3="0" fga3="0" ftm="0" fta="0" tp="0" blk="0" stl="0" ast="0" min="0" oreb="0" dreb="0" treb="0" pf="0" tf="0" to="0" dq="0">

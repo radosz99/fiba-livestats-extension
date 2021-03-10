@@ -1,12 +1,12 @@
 {
-"server": {
+"serer": {
 			"ip": "23.102.185.73",
 			"username": "stats",
 			"xml_path": "/home/stats/xmls/mecz.xml",
 			"private_key_path": "keys\\xml_stats_key",
 			"password": "1234"
 			},
-"local_xml_path": "C:\\Users\\Radek\\Desktop\\Aplikacje\\statistic-xml-reader-v2\\exemplary_xmls\\mecz.xml",
+"local_xml_path": "C:\\Users\\Radek\\Desktop\\Aplikacje\\statistic-xml-reader-v2\\exemplary_xmls\\mecz-nba.xml",
 "save_directory_path": "C:\\Users\\Radek\\Desktop\\Aplikacje\\statistic-xml-reader-v2\\stats",
 "resources_path": "C:\\Users\\Radek\\Desktop\\Aplikacje\\statistic-xml-reader-v2\\resources",
 "fontname": "RobotoMono-SemiBold",

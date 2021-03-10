@@ -20,7 +20,7 @@ import xml.etree.ElementTree as ET
 from xml.etree.ElementTree import ParseError
 from paramiko.ssh_exception import AuthenticationException, SSHException
 
-from model import get_teams_from_xml, get_fouls, get_officials, get_date, get_value_from_list_of_tuples_by_key, get_player_stats_string, get_players_stats_string_to_txt, GraphicEditor, RemoteXML
+from model import get_teams_from_xml, get_fouls, get_officials, get_date, get_value_from_list_of_tuples_by_key, get_object_with_stat_stats_string, get_players_stats_string_to_txt, GraphicEditor, RemoteXML
 
 this_module = sys.modules[__name__]
 
@@ -31,6 +31,7 @@ logging.getLogger("paramiko").setLevel(logging.WARNING)
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
 path_to_save, xml_file_path, resources_path = None, None, None
 log = logging.getLogger("basic_logger")
+look_for_player_photos = False
 fontname = None
 server = None
 config_json_path = None
@@ -106,7 +107,7 @@ def save_players_stats_to_file():
 def get_players_stats_string(players):
     string = ''
     for player in players:
-        string += get_player_stats_string(player)
+        string += get_object_with_stat_stats_string(player)
     return string
 
 def save_players_to_file():
@@ -299,7 +300,8 @@ def save_random_stat_to_file():
     elif(object_type == 2):
         random_possible_stat = random.choice(get_player_probabilities())
         random_player = get_player_from_teams_depends_on_stat_type(teams, random_possible_stat)
-        update_player_photo(random_player)
+        if(look_for_player_photos):
+            update_player_photo(random_player)
         random_stat = getattr(model, f'get_{random_possible_stat}_stat')(f'{random_player.short_teamname}: {random_player.number} {random_player.name} {random_player.surname}', getattr(random_player, random_possible_stat), random_player)
     write_one_line_to_file(f"{path_to_save}/random_stat.txt", random_stat)
     make_info_log(f"Losowa statystyka - {random_stat}")
@@ -445,6 +447,14 @@ def get_path_from_config_json(value):
         make_error_log(f"Nieprawidłowe nazwy ścieżek w pliku konfiguracyjnym 'config.json' - {traceback.format_exc()}")
         raise KeyError
 
+def check_if_look_for_photos():
+    json_config = parse_config_json()
+    try:
+        return bool(json_config['look_for_player_photos'])
+    except (KeyError, TypeError):
+        return False
+    
+
 def check_if_files_exist(files):
     for file_to_check in files:
         if(not os.path.exists(file_to_check)):
@@ -563,6 +573,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     remote_xml = check_if_xml_file_from_server()
+    look_for_player_photos = check_if_look_for_photos()
     parametrize_scanner_by_variables_from_config_json()
 
     try:
