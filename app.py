@@ -303,7 +303,9 @@ def save_random_stat_to_file():
         if(look_for_player_photos):
             update_player_photo(random_player)
         random_stat = getattr(model, f'get_{random_possible_stat}_stat')(f'{random_player.short_teamname}: {random_player.number} {random_player.name} {random_player.surname}', getattr(random_player, random_possible_stat), random_player)
+    start = time.time()
     write_one_line_to_file(f"{path_to_save}/random_stat.txt", random_stat)
+    end = time.time()
     make_info_log(f"Losowa statystyka - {random_stat}")
 
 def infinity_scan(scan_time, function_name, update_log, exception_log):
@@ -408,8 +410,8 @@ def save_basic_info_to_files():
             save_players_to_file()
             break
         except Exception:
-            make_error_log("Plik xml jest niewłaściwie sformatowany, nie można pobrać daty, sędziów, drużyn i zawodników!")
-            time.sleep(0.5)
+            make_error_log(f"Plik xml jest niewłaściwie sformatowany, nie można pobrać daty, sędziów, drużyn i zawodników! - {traceback.format_exc()}")
+            time.sleep(2)
 
 def scan(scan_times):
     global server
