@@ -74,8 +74,17 @@ All parameters can be set in JSON file to which path is given as a first and onl
  <a name="features"></a>
 # Features
 <p align="center">
-  <img src="https://i.imgur.com/Z1zviyu.png" width=110% alt="Img"/>
+  <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/player_random_stat.png" width=50% alt="Img"/>
 </p>
+
+<p align="center">
+  <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/player_stats.png" width=110% alt="Img"/>
+</p>
+
+<p align="center">
+  <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/team_stats.png" width=110% alt="Img"/>
+</p>
+
 
 
  <a name="structure"></a>
