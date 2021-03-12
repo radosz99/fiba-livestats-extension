@@ -427,7 +427,7 @@ class GraphicEditor():
         image_editable = ImageDraw.Draw(my_image)
         try:
             team_logo = Image.open(f"{resources_path}\\photos\\druzyna_{team_counter}_logo.png")
-            team_logo.thumbnail((335,335), Image.ANTIALIAS)
+            team_logo.thumbnail((337,337), Image.ANTIALIAS)
             my_image.paste(team_logo)
         except FileNotFoundError:
             print(f"Wątek ze skanowaniem statystyk nie mógł odnaleźć loga drużyny {team.teamname}, powinno znajdować się w katalogu 'resources\\photos\' w pliku 'druzyna_{team_counter}_logo.png'")

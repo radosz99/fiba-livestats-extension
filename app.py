@@ -95,14 +95,19 @@ def save_team_stats_to_file():
         write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_team_stats.txt", f"{team.teamname}{get_team_stat_string(team)}")
 
 def save_players_stats_to_file():
-    teams = get_teams_from_xml(ET.parse(xml_file_path).getroot())
+    root = ET.parse(xml_file_path).getroot()
+    teams = get_teams_from_xml(root)
     for counter, team in enumerate(teams):
         graphic_editor = GraphicEditor()
-        try:
-            graphic_editor.edit_photo(counter, resources_path, team, f"{path_to_save}/druzyna_{counter}_players_stats.png", fontname)
-        except OSError:
-            make_error_log(f"Wątek ze skanowaniem statystyk nie mógł odnaleźć fontu")
-        write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_players_stats.txt", f"{team.teamname}{get_players_stats_string_to_txt(team)}")
+        if(get_status(root)):
+            try:
+                graphic_editor.edit_photo(counter, resources_path, team, f"{path_to_save}/druzyna_{counter}_players_stats.png", fontname)
+                make_info_log(f"Zaktualizowano grafikę ze statystykami zawodników drużyny nr {counter}")
+            except OSError:
+                make_error_log(f"Wątek ze skanowaniem statystyk nie mógł odnaleźć fontu")
+            write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_players_stats.txt", f"{team.teamname}{get_players_stats_string_to_txt(team)}")
+        else:
+             make_info_log(f"Nie zaktualizowano grafiki ze statystykami zawodników drużyny nr {counter}, czas stoi w miejscu")
         
 def get_players_stats_string(players):
     string = ''
