@@ -4,6 +4,7 @@
   - [Executable](#exec)  
 - [Setup](#setup)  
   - [XML file](#xml)  
+  - [Resources directory](#resources)  
 - [Detail info](#detail)  
 - [Status](#stat)  
 
@@ -70,9 +71,9 @@ This is primary thing in application. In this file there are all statistics and 
 ```bash
 $ python xml_sender.py <local/path/to/xml> <server/path/to/xml>
 ```
-And you must update JSON file on *live stream computer* to add extra thread which will download XML constantly. Parameter that must be added it is `server` with any additional informations.
+And you must update JSON file on *live stream computer* to add extra thread which will download XML constantly. Parameter that must be added it is `server` with any additional informations such as `ip`, `username`, remote `xml_path` and local `private_key_path` or `password` (or both).
 
-:heavy_exclamation_mark: :heavy_exclamation_mark: :heavy_exclamation_mark: You can choose (depends on server) way of authentication, if you leave both (`private_key_path` and `password`) program will try first to login by key and then by password if key is incorrect or doesn't found. :heavy_exclamation_mark: :heavy_exclamation_mark: :heavy_exclamation_mark:
+:heavy_exclamation_mark: :heavy_exclamation_mark: :heavy_exclamation_mark: You can choose (depends on server) authentication method, if you leave both ways (`private_key_path` and `password`) program will try first to login by key and then by password if key is incorrect or doesn't found. :heavy_exclamation_mark: :heavy_exclamation_mark: :heavy_exclamation_mark:
 ```javascript
 "server": {
     "ip": "12.345.67.89",
@@ -80,9 +81,31 @@ And you must update JSON file on *live stream computer* to add extra thread whic
     "xml_path": "/home/stats/game.xml",
     "private_key_path": "C:\\rsa_keys\\xml_stats_key",
     "password": "123456"
-    },
+    }
 ```
 
+ <a name="resources"></a>
+## Resources directory
+Another parameter from JSON file is path to resources directory - `resources_path`. Directory is obligate to have following structure:
+```
+resources/
+|
+|── photos/
+|   |── druzyna_0_logo.png
+|   |── druzyna_1_logo.png
+|   |── den_nikola_jokic.png
+|   |── ...
+|   |── bos_kemba_walker.png
+|
+|── fonts/
+|   |── RobotoMono-Bold.ttf
+|   |── <any other fonts>
+|
+|── templates/
+|   |── player_stats.png
+|   |── <any other femplates>
+|
+```
  <a name="detail"></a>
 # Detail info
 <p align="center">
