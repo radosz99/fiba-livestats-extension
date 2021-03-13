@@ -121,44 +121,37 @@ In `templates` subdirectory there must be all needed templates, currently only o
 
  <a name="detail"></a>
 # Detail info
-<p align="center">
-  <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/player_random_stat.png" width=50% alt="Img"/>
-</p>
-
-<p align="center">
-  <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/player_stats.png" width=110% alt="Img"/>
-</p>
+fouls": -1, "players_oncourt": -1, "teams_stats": 2, "best_players": -1,
+        "random_stat": 2, "players_stats": 4, "team_points": -1, "period_number": -1, "quarter_time": 1
+        
+Application allows to extract from XML file few things. All of it has own thread and own scan interval which are defined in JSON file in `scan_times` parameter. Value equals scan interval in seconds and if it is less or equal than zero thread will not run and parameter will be not scanning.
+1. Teams fouls (`fouls`)
+2. Players on court (`players_oncourt`)
+3. Teams statistics (`teams_stats`)
 
 <p align="center">
   <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/team_stats.png" width=110% alt="Img"/>
 </p>
 
+4. Best players from teams (`best_players`)
+5. Random statistic line from game (`random_stat`)
+
+<p align="center">
+  <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/player_random_stat.png" width=50% alt="Img"/>
+</p>
+
+6. Players statistics from teams (`players_stats`)
+
+<p align="center">
+  <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/player_stats.png" width=110% alt="Img"/>
+</p>
 
 
- <a name="structure"></a>
-## Project structure
-```
-statistic-xml-reader-v2/
-|
-├── resources/
-|   |── photos/
-|      |── druzyna_0_logo.png
-|      |── druzyna_1_logo.png
-|      |── den_nikola_jokic.png
-|      |── ...
-|      |── bos_kemba_walker.png
-|   |── fonts/
-|      |── RobotoMono-Bold.ttf
-|   |── templates/
-|      |── player_stats.png
-|
-├── app.py
-├── model.py
-├── scanner.spec
-├── config.json
-├── README.md
-├── requirements.txt
-```
+7. Teams points (`team_points`)
+8. Quarter number (`period_number`)
+9. Time which left to end of the quarter (`quarter_time`)
+
+
 
  <a name="stat"></a>
 # Status
