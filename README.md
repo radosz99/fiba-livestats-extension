@@ -120,36 +120,44 @@ In `templates` subdirectory there must be all needed templates, currently only o
 
 
  <a name="detail"></a>
-# Detail info
-fouls": -1, "players_oncourt": -1, "teams_stats": 2, "best_players": -1,
-        "random_stat": 2, "players_stats": 4, "team_points": -1, "period_number": -1, "quarter_time": 1
-        
+# Detail info        
 Application allows to extract from XML file few things. All of it has own thread and own scan interval which are defined in JSON file in `scan_times` parameter. Value equals scan interval in seconds and if it is less or equal than zero thread will not run and parameter will be not scanning.
-1. Teams fouls (`fouls`)
-2. Players on court (`players_oncourt`)
-3. Teams statistics (`teams_stats`)
+1. Teams fouls (`fouls`) - save team fouls to file named `druzyna_<id>_fouls.txt` where id is 0 for host and 1 for guest,
+2. Players on court (`players_oncourt`) - save current players who are on court to file named `druzyna_<id>_players_oncourt.txt`. Files can be used in animated graphic:
+<p align="center">
+  <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/players_oncourt.png" width=80% alt="Img"/> 
+</p> 
+
+
+3. Teams statistics (`teams_stats`) - save team statistic to file named `druzyna_<id>_team_stats.txt`. Files can be used in graphic in such a way:
 
 <p align="center">
   <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/team_stats.png" width=110% alt="Img"/>
 </p>
 
-4. Best players from teams (`best_players`)
-5. Random statistic line from game (`random_stat`)
+4. Best players from teams (`best_players`) - save best player from team with his statistic lines to file named `druzyna_<id>_best_player.txt`:
+```
+11 Nikola Jokic 16 pkt. 43 eval 1/1 za 2 0/0 za 3 21 zb. 10 as. 10 prz.
+```
+6. Random statistic line from game (`random_stat`) - save random statistic line to file named `random_stat.txt` and it can be show on live stream in such a way:
 
 <p align="center">
-  <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/player_random_stat.png" width=50% alt="Img"/>
+  <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/player_random_stat.png" width=60% alt="Img"/>
 </p>
 
-6. Players statistics from teams (`players_stats`)
+6. Players statistics from teams (`players_stats`) - save players statistics from teams to file named `druzyna_<id>_players_stats.txt` and also makes graphic with team logo and statistics:
 
 <p align="center">
   <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/player_stats.png" width=110% alt="Img"/>
 </p>
 
 
-7. Teams points (`team_points`)
-8. Quarter number (`period_number`)
-9. Time which left to end of the quarter (`quarter_time`)
+7. Teams points (`team_points`) - save team amount of points to file named `druzyna_<id>_score.txt`,
+8. Quarter number (`period_number`) - save current quarter number to file named `period.txt.` in format `1Q`, `2Q` etc.,
+9. Time which left to end of the quarter (`quarter_time`) - save time which left to file named `time.txt`:
+<p align="center">
+  <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/info.png" width=60% alt="Img"/>
+</p>
 
 
 
