@@ -4,6 +4,7 @@
   - [Executable](#exec)  
 - [Setup](#setup)  
   - [XML file](#xml)  
+  - [Save directory](#savedir)  
   - [Resources directory](#resources)  
 - [Detail info](#detail)  
 - [Status](#stat)  
@@ -56,13 +57,14 @@ All parameters and needed informations can be set in JSON file to which path is 
         "player_stats": {"fga2": 4, "fga3": 4, "fta": 4, "blocks": 2, "steals": 5, "assists": 6,
             "rebounds": 4, "offensive_rebounds": 4, "defensive_rebounds": 0, "fouls": 1, "turnovers": 6
         },
-        "team_stats": {"fga2": 4, "fga3": 4, "fta": 4, "blocks": 2,	"steals": 5, "assists": 6, "rebounds": 4,
+        "team_stats": {"fga2": 4, "fga3": 4, "fta": 4, "blocks": 2, "steals": 5, "assists": 6, "rebounds": 4,
             "offensive_rebounds": 4, "defensive_rebounds": 0, "fouls": 1, "turnovers": 6, "pts_fastb": 3,
             "pts_bench": 3, "pts_paint": 3, "pts_ch2": 3
         }
     }
 }
 ```
+Parameters `scan_times` and `probabilities` will be discused in [Detail info](#detail) section.
  <a name="xml"></a>
 ## XML file
 This is primary thing in application. In this file there are all statistics and plays from the game, and also additional information such as league or game date. Path to this file can be set in `local_xml_path` parameter in JSON file. To operate on this file there is a need to have it visible from computer on which live stream is working. There are two possible ways to do it:
@@ -83,6 +85,10 @@ And you must update JSON file on *live stream computer* to add extra thread whic
     "password": "123456"
     }
 ```
+<a name="savedir"></a>
+## Save directory
+This is path to the folder where all .txt files with stats, graphics and photos will be saving.
+
 
  <a name="resources"></a>
 ## Resources directory
@@ -106,6 +112,13 @@ resources/
 |   |── <any other femplates>
 |
 ```
+In `photos` subdirectory you can put teams logos with names `druzyna_0_logo.png` and `druzyna_1_logo.png`, and also (this is optionally) players photos in `<team_shortname>_<name>_<surname>.png` format, e.g. `den_nikola_jokic.png`.  
+
+In `fonts` subdirectory you can put whatever (monospaced are prefered) fonts you like and refer to any of it in JSON file in `fontname` parameter. It will be used in all created graphics.
+
+In `templates` subdirectory there must be all needed templates, currently only one is used it is `player_stats.png` template.
+
+
  <a name="detail"></a>
 # Detail info
 <p align="center">
