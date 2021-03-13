@@ -1,11 +1,11 @@
 - [General info](#desc)
-- [Run](#run)  
-  - [Python script](#script)  
-  - [Executable](#exec)  
 - [Setup](#setup)  
   - [XML file](#xml)  
   - [Save directory](#savedir)  
   - [Resources directory](#resources)  
+- [Run](#run)  
+  - [Python script](#script)  
+  - [Executable](#exec)  
 - [Detail info](#detail)  
 - [Status](#stat)  
 
@@ -15,29 +15,6 @@
 Application which helps to integrate video live stream from official Polish Basketball Association games with live stats from [Fiba Live Stats](https://geniussports.com/sports/sports-management/livestats/).   
 
 It creates basic .txt files which can be read by OBS Studio (or any other live streaming software) and converted in many ways to show current result, time, quarter number or any statistics.
-
-<a name="run"></a>
-# Run
-
-<a name="script"></a>
-## Python script
-```bash
-$ git clone https://github.com/radosz99/statistic-xml-reader-v2.git && cd statistic-xml-reader-v2
-$ pip install -r requirements.txt
-$ python app.py <path/to/json/file>
-```
-
-<a name="exec"></a>
-## PyInstaller Executable
-``` bash
-$ git clone https://github.com/radosz99/statistic-xml-reader-v2.git && cd statistic-xml-reader-v2
-$ pip install -r requirements.txt
-$ pip install pyinstaller
-$ pyinstaller scanner.spec
-$ cd dist
-$ scanner.exe <path/to/json/file>
-
-```
 
  <a name="setup"></a>
 # Setup
@@ -118,6 +95,28 @@ In `fonts` subdirectory you can put whatever (monospaced are prefered) fonts you
 
 In `templates` subdirectory there must be all needed templates, currently only one is used it is `player_stats.png` template.
 
+<a name="run"></a>
+# Run
+
+<a name="script"></a>
+## Python script
+```bash
+$ git clone https://github.com/radosz99/statistic-xml-reader-v2.git && cd statistic-xml-reader-v2
+$ pip install -r requirements.txt
+$ python app.py <path/to/json/file>
+```
+
+<a name="exec"></a>
+## PyInstaller Executable
+``` bash
+$ git clone https://github.com/radosz99/statistic-xml-reader-v2.git && cd statistic-xml-reader-v2
+$ pip install -r requirements.txt
+$ pip install pyinstaller
+$ pyinstaller scanner.spec
+$ cd dist
+$ scanner.exe <path/to/json/file>
+
+```
 
  <a name="detail"></a>
 # Detail info        
@@ -139,7 +138,7 @@ Application allows to extract from XML file few things. All of it has own thread
 ```
 11 Nikola Jokic 16 pkt. 43 eval 1/1 za 2 0/0 za 3 21 zb. 10 as. 10 prz.
 ```
-6. Random statistic line from game (`random_stat`) - save random statistic line to file named `random_stat.txt` and it can be show on live stream in such a way:
+5. Random statistic line from game (`random_stat`) - save random statistic line to file named `random_stat.txt` and it can be show on live stream in such a way:
 
 <p align="center">
   <img src="https://github.com/radosz99/statistic-xml-reader-v2/blob/master/screens/player_random_stat.png" width=60% alt="Img"/>
