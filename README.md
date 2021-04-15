@@ -1,15 +1,3 @@
-- [General info](#desc)
-- [Setup](#setup)  
-  - [XML file](#xml)  
-  - [Save directory](#savedir)  
-  - [Resources directory](#resources)  
-- [Run](#run)  
-  - [Python script](#script)  
-  - [Executable](#exec)  
-- [Detail info](#detail)  
-- [Status](#stat)  
-
-
 <a name="desc"></a>
 # General info
 Application which helps to integrate video live stream from official Polish Basketball Association games with live stats from [Fiba Live Stats](https://geniussports.com/sports/sports-management/livestats/).   
