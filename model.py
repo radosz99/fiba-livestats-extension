@@ -57,6 +57,9 @@ class Team:
         self.team_treb = treb
         self.team_to = to
 
+    def set_timeouts_in_current_half(self, root):
+        self.timeouts = get_timeouts_from_current_half(root, self.id)
+
     def __eq__(self, other):
         if not isinstance(other, Team):
             return False
@@ -200,6 +203,9 @@ def get_fouls_from_period(root, period):
                 fouls[f"druzyna_{counter}"] = foul_amount
     return fouls
         
+def get_timeouts_from_current_quarter(root):
+    period = get_value_from_list_of_tuples_by_key(root.find('status').items(), 'period')
+
 
 def get_fouls(root):
     period = int(root.find('status').get('period'))
@@ -233,10 +239,26 @@ def get_teams_from_xml(root):
                 players.append(player)
     
         team.players = copy.deepcopy(players)
+        team.set_timeouts_in_current_half(root)
         players = []
         teams.append(team)
     return teams
 
+def get_timeouts_from_current_half(root, team_shortname):
+    timeouts = 0
+    period = get_value_from_list_of_tuples_by_key(root.find('status').items(), 'period')
+    if(int(period) < 3):
+        periods = ['1', '2']
+    else:
+        periods = ['3', '4', '5', '6', '7']
+
+    for quarter_plays in root.findall(f"./plays/period"):
+        if(get_value_from_list_of_tuples_by_key(quarter_plays.items(), 'number') in periods):
+            for play in quarter_plays.findall('play'):
+                if(get_value_from_list_of_tuples_by_key(play.items(), 'action') == "TIMEOUT"):
+                    if(get_value_from_list_of_tuples_by_key(play.items(), 'team') == team_shortname):
+                        timeouts += 1
+    return timeouts
 
 def get_points_stat(prefix, value, object_with_stats):
     return f"{prefix} - {object_with_stats.points} {get_polish_plural('punkt', 'punkty', 'punktów', object_with_stats.points)}, {object_with_stats.fgm3}/{object_with_stats.fga3} za 3, {object_with_stats.fgm2}/{object_with_stats.fga2} za 2, {object_with_stats.ftm}/{object_with_stats.fta} za 1"

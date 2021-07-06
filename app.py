@@ -56,17 +56,20 @@ def write_one_line_to_file(path, text):
 def get_players_string(players):
     string = ''
     for player in players:
-        string += f"\n{player.number} {player.name} {player.surname}"
+        string += f"{player.number} {player.name} {player.surname}\n"
     return string
 
 def get_string_quarter(period):
     try:
         quarter_int = int(period)
     except ValueError:
+        overtime = True
         return 'OT'
     if(quarter_int <= 4):
+        overtime = False
         return f"{quarter_int}Q"
     else:
+        overtime = True
         return f"OT{quarter_int - 4}"
 
 def get_team_stat_string(team):
@@ -118,7 +121,7 @@ def get_players_stats_string(players):
 def save_players_to_file():
     teams = get_teams_from_xml(ET.parse(xml_file_path).getroot())
     for counter, team in enumerate(teams):
-        write_one_line_to_file(f"{path_to_save}/druzyna_{counter}.txt", f"{team.teamname}{get_players_string(team.players)}")
+        write_one_line_to_file(f"{path_to_save}/druzyna_{counter}.txt", f"{get_players_string(team.players)}")
     make_info_log("Zapisano zawodników")
          
 def save_date_to_file(date):
@@ -183,6 +186,11 @@ def save_quarter_to_file():
     root = ET.parse(xml_file_path).getroot()
     period = get_value_from_list_of_tuples_by_key(root.find('status').items(), 'period')
     write_one_line_to_file(f"{path_to_save}/period.txt", get_string_quarter(period))
+
+def save_timeouts_to_file():
+    teams = get_teams_from_xml(ET.parse(xml_file_path).getroot())
+    for counter, team in enumerate(teams):
+        write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_timeouts.txt", str(team.timeouts))
 
 def get_status(root):
     return False if get_value_from_list_of_tuples_by_key(root.find('status').items(), 'running') == 'F' else True
@@ -354,6 +362,9 @@ def get_random_stat(scan_time):
 def scan_quarter(scan_time):
     infinity_scan(scan_time, "save_quarter_to_file", "numer kwarty", "numeru kwarty")
 
+def scan_timeouts(scan_time):
+    infinity_scan(scan_time, "save_timeouts_to_file", "numer kwarty", "numeru kwarty")
+
 def scan_quarter_time(scan_time):
     infinity_scan(scan_time, "save_time_to_file", "czas kwarty", "czasu kwarty")
 
@@ -435,6 +446,7 @@ def scan(scan_times):
         start_thread(scan_points, scan_times['team_points'])
         start_thread(scan_quarter, scan_times['period_number'])
         start_thread(scan_quarter_time, scan_times['quarter_time'])
+        start_thread(scan_timeouts, scan_times['timeouts'])
     except FileNotFoundError:
         make_error_log(f"Plik {xml_file_path} nie istnieje - {traceback.format_exc()}")
     except KeyError:
@@ -553,8 +565,9 @@ def get_paths_from_config_json():
                 make_error_log("Nie wybrano pobierania pliku XML z serwera, a plik zawarty w 'local_xml_path' nie istnieje!")
                 sys.exit(1)
     else:
-        make_error_log("Ścieżka do zapisu pobrana z config.json NIE ISTNIEJE!")
-        sys.exit(1)
+        make_warn_log("Ścieżka do zapisu pobrana z config.json NIE ISTNIEJE!")
+        os.mkdir(path_to_save)
+        make_info_log(f"Utworzono folder w którym będą zapisywane pliki")
 
 def get_scan_times():
     return parse_config_json()['scan_times']
