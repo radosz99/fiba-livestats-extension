@@ -10,6 +10,7 @@ import signal
 import copy
 import random
 import model
+from shutil import copyfile
 import math
 from operator import attrgetter
 import os
@@ -20,7 +21,7 @@ import xml.etree.ElementTree as ET
 from xml.etree.ElementTree import ParseError
 from paramiko.ssh_exception import AuthenticationException, SSHException
 
-from model import get_teams_from_xml, get_fouls, get_officials, get_date, get_value_from_list_of_tuples_by_key, get_object_with_stat_stats_string, get_players_stats_string_to_txt, GraphicEditor, RemoteXML
+from model import get_teams_from_xml, get_fouls, get_officials, get_date, get_value_from_list_of_tuples_by_key, get_object_with_stat_stats_string, get_players_stats_string_to_txt, GraphicEditor, RemoteXML, check_if_files_exist, check_if_file_exists
 
 this_module = sys.modules[__name__]
 
@@ -29,7 +30,7 @@ probability_random_stat_team, probability_random_stat_player = 1, 3
 player_stats_probabilities, team_stats_probabilities = dict(), dict()
 logging.getLogger("paramiko").setLevel(logging.WARNING)
 logging.basicConfig(level=os.environ.get("LOGLEVEL", "INFO"))
-path_to_save, xml_file_path, resources_path = None, None, None
+path_to_save, xml_file_path, resources_path, logos_save_path = None, None, None, None
 log = logging.getLogger("basic_logger")
 look_for_player_photos = False
 fontname = None
@@ -88,7 +89,7 @@ def get_players_oncourt_string(players):
     return string
 
 def save_players_oncourt_to_file():
-    teams = teams = get_teams_from_xml(ET.parse(xml_file_path).getroot())
+    teams = get_teams_from_xml(ET.parse(xml_file_path).getroot())
     for counter, team in enumerate(teams):
         write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_players_oncourt.txt", f"{team.teamname}{get_players_oncourt_string(team.players)}")
 
@@ -139,6 +140,35 @@ def save_team_names_to_files():
         write_one_line_to_file(f"{path_to_save}/druzyna_{counter}_id.txt", team.id)
     make_info_log("Zapisano nazwy oraz id drużyn")
 
+def get_logo_path_by_team_id(team_id):
+    path = f"{resources_path}\\logos\\{team_id}.png"
+    if(check_if_file_exists(path)):
+        return path
+    else:
+        raise FileNotFoundError
+
+def copy_file(file_path, path_to_copy_in):
+    copyfile(file_path, path_to_copy_in)
+
+def save_logos():
+    teams = get_teams_from_xml(ET.parse(xml_file_path).getroot())
+    try:
+        logo_guest = get_logo_path_by_team_id(teams[0].id)
+        copy_file(logo_guest, f"{resources_path}\\photos\\druzyna_0_logo.png")
+        copy_file(logo_guest, f"{logos_save_path}\\gosc_logo.png")
+        make_info_log("Skopiowano logo gościa do odpowiednich folderów")
+    except FileNotFoundError:
+        traceback.print_exc()
+        make_error_log(f"Logo gospodarza o id {teams[0].id} nieznalezione, powinno być pod nazwą {teams[0].id}.png w katalogu 'resources/logos'")
+
+    try:
+        logo_host = get_logo_path_by_team_id(teams[1].id)
+        copy_file(logo_host, f"{resources_path}\\photos\\druzyna_1_logo.png")
+        copy_file(logo_host, f"{logos_save_path}\\gospodarz_logo.png")
+        make_info_log("Skopiowano logo gospodarza do odpowiednich folderów")
+    except FileNotFoundError:
+        make_error_log(f"Logo gospodarza o id {teams[1].id} nieznalezione, powinno być pod nazwą {teams[1].id}.png w katalogu 'resources/logos'")
+    
 def save_team_points_to_files():
     global points_detected
     root = ET.parse(xml_file_path).getroot()
@@ -424,6 +454,7 @@ def save_basic_info_to_files():
             save_officials_to_file(get_officials(ET.parse(xml_file_path)))
             save_team_names_to_files()
             save_players_to_file()
+            save_logos()
             break
         except Exception:
             make_error_log(f"Plik xml jest niewłaściwie sformatowany, nie można pobrać daty, sędziów, drużyn i zawodników! - {traceback.format_exc()}")
@@ -473,18 +504,6 @@ def check_if_look_for_photos():
     except (KeyError, TypeError):
         return False
     
-
-def check_if_files_exist(files):
-    for file_to_check in files:
-        if(not os.path.exists(file_to_check)):
-            return False
-    return True
-
-def check_if_file_exists(file_to_check):
-    if(os.path.exists(file_to_check)):
-        return True
-    else:
-        return False
 
 def get_probabilities_of_object_with_stats_from_config_json():
     config_json = parse_config_json()
@@ -545,8 +564,9 @@ def set_fontname():
 
     
 def get_paths_from_config_json():
-    global xml_file_path, path_to_save, resources_path
+    global xml_file_path, path_to_save, resources_path, logos_save_path
     try:
+        logos_save_path = get_path_from_config_json('logos_obs_path')
         xml_file_path = get_path_from_config_json('local_xml_path')
         path_to_save = get_path_from_config_json('save_directory_path')
         resources_path = get_path_from_config_json('resources_path')
@@ -556,6 +576,11 @@ def get_paths_from_config_json():
         make_error_log(f"Złe nazwy ścieżek w pliku 'config.json', brakuje 'local_xml_path' albo 'save_directory_path'")
         sys.exit(1)
     
+    if(check_if_file_exists(logos_save_path)):
+        make_info_log("Ścieżka do zapisu logo pobrana z config.json istnieje!")
+    else:
+        make_error_log("Ścieżka do zapisu logo pobrana z config.json istnieje!")
+
     if(check_if_file_exists(path_to_save)):
         make_info_log("Ścieżka do zapisu pobrana z config.json istnieje!")
         if(not check_if_file_exists(xml_file_path)):

@@ -207,6 +207,20 @@ def get_timeouts_from_current_quarter(root):
     period = get_value_from_list_of_tuples_by_key(root.find('status').items(), 'period')
 
 
+def check_if_files_exist(files):
+    for file_to_check in files:
+        if(not os.path.exists(file_to_check)):
+            return False
+    return True
+
+
+def check_if_file_exists(file_to_check):
+    if(os.path.exists(file_to_check)):
+        return True
+    else:
+        return False
+
+
 def get_fouls(root):
     period = int(root.find('status').get('period'))
     fouls = get_fouls_from_period(root, period)
@@ -224,6 +238,7 @@ def get_officials(root):
     for official_single in officials_single:
         officials_string += f"{official_single}\n"
     return officials_string 
+
 
 def get_date(root):
     return f"{root.find('venue').get('date')} {root.find('venue').get('start')}"
